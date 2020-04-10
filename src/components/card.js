@@ -4,7 +4,7 @@ export const createCard = (card) => {
 
   return (
     `<li class="cards__item">
-        <div>
+        <div class="cards__img">
         <img src=${image} width="213" height="213" alt="Название товара">
         </div>
         <h3>${title}</h3>
