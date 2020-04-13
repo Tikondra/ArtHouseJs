@@ -23,13 +23,21 @@ const load = (onload) => {
   xhr.send();
 };
 
+const getImage = (img) => {
+  if (typeof (img) === `string`) {
+    return img;
+  } else {
+    return img[0];
+  }
+};
+
 const loadCard = (data) => {
   const getOffers = () => {
     return data.reduce((cardList, card) => {
       const product = {
         title: card.name,
         price: card.price,
-        image: card.picture,
+        image: getImage(card.picture),
         available: card.available
       };
       cardList.push(product);
