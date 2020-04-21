@@ -36,7 +36,7 @@ const getImage = (img) => {
   if (typeof (img) === `string`) {
     return img;
   } else {
-    return img[0];
+    return img[1];
   }
 };
 
