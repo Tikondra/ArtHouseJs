@@ -1,3 +1,4 @@
-import {load, loadCard} from "./load/load";
+import {load, loadCard, loadCategory, Url} from "./load/load";
 
-load(loadCard);
+load(loadCard, Url.offers);
+load(loadCategory, Url.category);

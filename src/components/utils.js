@@ -1,17 +1,26 @@
 import {Place} from "./consts";
-import {createCard} from "./card";
 
-const cleanContainer = (container) => {
+export const cleanContainer = (container) => {
   container.innerHTML = ``;
 };
 
-const renderCard = (container, count, cards) => {
-
-  for (let i = 0; i < count; i++) {
-    render(container, createCard(cards[i]), Place.BEFOREEND);
+export const render = (container, element, place) => {
+  switch (place) {
+    case Place.AFTERBEGIN:
+      container.prepend(element);
+      break;
+    case Place.BEFOREEND:
+      container.append(element);
+      break;
+    case Place.AFTERNODE:
+      container.after(element);
+      break;
   }
 };
 
-const render = (container, template, place) => container.insertAdjacentHTML(place, template);
+export const createElement = (template) => {
+  const newElement = document.createElement(`div`);
+  newElement.innerHTML = template;
 
-export {cleanContainer, renderCard, render};
+  return newElement.firstChild;
+};
