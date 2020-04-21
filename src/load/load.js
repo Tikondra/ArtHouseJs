@@ -14,6 +14,7 @@ const cardBox = document.querySelector(`.cards`);
 const buttonMoreBox = document.querySelector(`.store-content__more-box`);
 const loadMoreButton = document.querySelector(`.store-content__btn-more`);
 const categoryList = document.querySelector(`.sort__list--category`);
+const allCategoruBtn = document.querySelector(`.sort__link--category`);
 let offers = [];
 let categories = [];
 let isSort = null;
@@ -92,19 +93,26 @@ const renderCard = (container, card) => {
 const renderCategory = (container, category) => {
   const categoryComponent = new CategoryComponent(category);
 
+  const someCategory = categories.filter((it) => {
+    return it.parentId === category.id;
+  }).reduce((catList, cat) => {
+    catList.push(cat.id);
+    return catList;
+  }, []);
+
+  // сравнение двух массивов
+  const getTrue = (card) => card.categoryId.some((n) => someCategory.includes(n));
+
   categoryComponent.getElement().addEventListener(`click`, (evt) => {
     evt.preventDefault();
-    const someCategory = categories.filter((it) => {
-      return it.parentId === category.id;
-    }).reduce((catList, cat) => {
-      catList.push(cat.id);
-      return catList;
-    }, []);
-    // сравнение двух массивов
-    const getTrue = (card) => {
 
-      return card.categoryId.some((n) => someCategory.includes(n));
-    };
+    const categoryButtons = categoryList.querySelectorAll(`.sort__link`);
+
+    categoryButtons.forEach((link) => {
+      link.classList.remove(`sort__link--active`);
+    });
+
+    evt.target.classList.add(`sort__link--active`);
 
     const someCards = offers.filter((card) => {
       if (typeof card.categoryId === `string`) {
@@ -115,10 +123,13 @@ const renderCategory = (container, category) => {
     });
 
     cleanContainer(cardBox);
+
     const btnMore = document.querySelector(`.store-content__btn-more`);
+
     if (btnMore) {
       btnMore.remove();
     }
+
     isSort = true;
 
     renderCards(cardBox, someCards);
@@ -159,3 +170,28 @@ const loadCategory = (data) => {
 };
 
 export {load, loadCard, loadCategory, Url};
+
+allCategoruBtn.addEventListener(`click`, (evt) => {
+  evt.preventDefault();
+  const copyOffers = offers.slice();
+  const categoryButtons = categoryList.querySelectorAll(`.sort__link`);
+
+  categoryButtons.forEach((link) => {
+    link.classList.remove(`sort__link--active`);
+  });
+
+  if (isSort) {
+    cleanContainer(cardBox);
+
+    const btnMore = document.querySelector(`.store-content__btn-more`);
+
+    if (btnMore) {
+      btnMore.remove();
+    }
+
+    renderCards(cardBox, copyOffers);
+
+    isSort = null;
+  }
+
+});
