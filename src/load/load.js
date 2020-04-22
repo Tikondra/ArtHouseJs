@@ -49,8 +49,8 @@ const getOffers = (data) => {
     const product = {
       title: card.name,
       price: card.price,
+      sale: card.wholesalePrice,
       image: getImage(card.picture),
-      available: card.available,
       categoryId: card.categoryId,
     };
     cardList.push(product);
