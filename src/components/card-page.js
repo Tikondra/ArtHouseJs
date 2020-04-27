@@ -2,7 +2,7 @@ import AbstractComponent from "./AbstractComponent";
 import {createImg} from "./card-page-img";
 
 const createCardPage = (card) => {
-  const {title, price, sale, image, material} = card;
+  const {title, price, sale, image, material, article} = card;
 
   const getImages = (pictures) => pictures.map((it) => createImg(it)).join(`\n`);
 
@@ -17,13 +17,13 @@ const createCardPage = (card) => {
         </ul>
         <div class="card-page__info">
           <p class="card-page__info-text card-page__info-text--price">
-            <span>Цена:</span> ${price} ₽
+            <span>Цена:</span> ${sale} ₽
           </p>
-          <p class="card-page__info-text card-page__info-text--price">
-            <span>Цена со скидкой:</span> ${sale} ₽
+          <p class="card-page__info-text card-page__info-text--old-price">
+            <span>Цена без скидки:</span> ${price} ₽
           </p>
           <p class="card-page__info-text">
-            <span>Артикул:</span>  RALPH-2K-СЕРО-ЗЕЛЕНЫЙ-CRU10
+            <span>Артикул:</span>  ${article}
           </p>
           <p class="card-page__info-text">
             <span>Материалы:</span>  ${material}

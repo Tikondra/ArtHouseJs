@@ -23,6 +23,8 @@ const getCategoryId = (category) => {
   }
 };
 
+const isTrue = (it) => it ? it : ``;
+
 export const getOffers = (data) => {
   return data.reduce((cardList, card) => {
     const product = {
@@ -32,7 +34,8 @@ export const getOffers = (data) => {
       image: getImage(card.picture),
       categoryId: getCategoryId(card.categoryId),
       id: card._attributes.id,
-      material: card.material._text
+      material: isTrue(card.material._text),
+      article: isTrue(card.vendorCode._text)
     };
     cardList.push(product);
     return cardList;
