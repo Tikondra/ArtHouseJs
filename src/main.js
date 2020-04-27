@@ -1,4 +1,10 @@
-import {load, loadCard, loadCategory, Url} from "./load/load";
+import {load, loadData, loadDataToProduct} from "./load/load";
+import {LOCAL_DECOR} from "./components/consts";
 
-load(loadCard, Url.offers);
-load(loadCategory, Url.category);
+if (document.querySelector(`.store-content`)) {
+  load(loadData, LOCAL_DECOR);
+}
+
+if (document.querySelector(`.product`)) {
+  load(loadDataToProduct, LOCAL_DECOR);
+}

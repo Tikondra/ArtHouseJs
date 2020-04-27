@@ -1,31 +1,34 @@
+const convert = require(`xml-js`);
+
 import {cleanContainer, render} from "../components/utils";
+
 import {START_SHOW_TASK, MORE_SHOW_TASK, Place} from "../components/consts";
+
 import CardComponent from "../components/card";
 import CategoryComponent from "../components/category";
 import ButtonMoreComponent from "../components/button-more";
 
-const Url = {
-  offers: `./data/decor.json`,
-  category: `./data/category.json`
-};
+import {getOffers} from "../components/offers";
+import {getCategory} from "../components/categories";
+import {getCard} from "./load-card";
 
-const STATUS_OK = 200;
 const cardBox = document.querySelector(`.cards`);
 const buttonMoreBox = document.querySelector(`.store-content__more-box`);
 const loadMoreButton = document.querySelector(`.store-content__btn-more`);
 const categoryList = document.querySelector(`.sort__list--category`);
-const allCategoruBtn = document.querySelector(`.sort__link--category`);
+const allCategoryBtn = document.querySelector(`.sort__link--category`);
 let offers = [];
 let categories = [];
 let isSort = null;
 
 const load = (onload, url) => {
   const xhr = new XMLHttpRequest();
-  xhr.responseType = `json`;
 
   xhr.addEventListener(`load`, () => {
-    if (xhr.status === STATUS_OK) {
-      onload(xhr.response);
+    if (xhr.status === 200) {
+
+      const result = convert.xml2json(xhr.response, {compact: true});
+      onload(JSON.parse(result));
     }
   });
 
@@ -33,29 +36,40 @@ const load = (onload, url) => {
   xhr.send();
 };
 
-const getImage = (img) => {
-  if (typeof (img) === `string`) {
-    return img;
-  } else {
-    if (!img[0].endsWith(`jpg`)) {
-      return img[1];
-    }
-    return img[0];
-  }
+const loadData = (data) => {
+  const dataOffers = data.yml_catalog.shop.offers.offer;
+  const dataCategory = data.yml_catalog.shop.categories.category;
+
+  offers = getOffers(dataOffers);
+  categories = getCategory(dataCategory);
+
+  const offersCopy = offers.slice();
+
+  const someCategory = categories.filter((it) => {
+    return it.parentId === ``;
+  });
+
+  someCategory.forEach((category) => renderCategory(categoryList, category));
+  renderCards(cardBox, offersCopy);
 };
 
-const getOffers = (data) => {
-  return data.reduce((cardList, card) => {
-    const product = {
-      title: card.name,
-      price: card.price,
-      sale: card.wholesalePrice,
-      image: getImage(card.picture),
-      categoryId: card.categoryId,
-    };
-    cardList.push(product);
-    return cardList;
-  }, []);
+const loadDataToProduct = (data) => {
+  const dataOffers = data.yml_catalog.shop.offers.offer;
+  const dataCategory = data.yml_catalog.shop.categories.category;
+  let strGET = window.location.search.replace(`?`, ``);
+
+  offers = getOffers(dataOffers);
+  categories = getCategory(dataCategory);
+
+  getCard(offers, strGET);
+
+  $(document).ready(function () {
+    $(`.owl-carousel`).owlCarousel({
+      items: 1,
+      dots: false,
+      nav: true
+    });
+  });
 };
 
 const renderCards = (container, cards) => {
@@ -99,7 +113,6 @@ const renderCategory = (container, category) => {
     catList.push(cat.id);
     return catList;
   }, []);
-
   // сравнение двух массивов
   const getTrue = (card) => card.categoryId.some((n) => someCategory.includes(n));
 
@@ -135,63 +148,36 @@ const renderCategory = (container, category) => {
     renderCards(cardBox, someCards);
   });
 
-  render(container, categoryComponent.getElement(category), Place.BEFOREEND);
+  if (someCategory.length !== 0) {
+    render(container, categoryComponent.getElement(category), Place.BEFOREEND);
+  }
 };
 
-const loadCard = (data) => {
+export {load, loadData, loadDataToProduct};
 
-  offers = getOffers(data);
-  const offersCopy = offers.slice();
+if (document.querySelector(`.store-content`)) {
+  allCategoryBtn.addEventListener(`click`, (evt) => {
+    evt.preventDefault();
+    const copyOffers = offers.slice();
+    const categoryButtons = categoryList.querySelectorAll(`.sort__link`);
 
-  renderCards(cardBox, offersCopy);
-};
+    categoryButtons.forEach((link) => {
+      link.classList.remove(`sort__link--active`);
+    });
 
-const getParentId = (id) => id ? id : ``;
+    if (isSort) {
+      cleanContainer(cardBox);
 
-const getCategory = (data) => {
-  return data.reduce((categoriesList, card) => {
-    const category = {
-      title: card.title,
-      id: card.id,
-      parentId: getParentId(card.parentId)
-    };
-    categoriesList.push(category);
-    return categoriesList;
-  }, []);
-};
+      const btnMore = document.querySelector(`.store-content__btn-more`);
 
-const loadCategory = (data) => {
-  categories = getCategory(data);
-  const someCategory = categories.filter((it) => {
-    return it.parentId === ``;
-  });
+      if (btnMore) {
+        btnMore.remove();
+      }
 
-  someCategory.forEach((category) => renderCategory(categoryList, category));
-};
+      renderCards(cardBox, copyOffers);
 
-export {load, loadCard, loadCategory, Url};
-
-allCategoruBtn.addEventListener(`click`, (evt) => {
-  evt.preventDefault();
-  const copyOffers = offers.slice();
-  const categoryButtons = categoryList.querySelectorAll(`.sort__link`);
-
-  categoryButtons.forEach((link) => {
-    link.classList.remove(`sort__link--active`);
-  });
-
-  if (isSort) {
-    cleanContainer(cardBox);
-
-    const btnMore = document.querySelector(`.store-content__btn-more`);
-
-    if (btnMore) {
-      btnMore.remove();
+      isSort = null;
     }
 
-    renderCards(cardBox, copyOffers);
-
-    isSort = null;
-  }
-
-});
+  });
+}

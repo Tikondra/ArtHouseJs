@@ -1,41 +1,38 @@
-import {createElement} from "./utils";
+import {regexp} from "./utils";
+import AbstractComponent from "./AbstractComponent";
 
 const createCard = (card) => {
-  const {title, price, sale, image} = card;
+  const {title, price, sale, image, id, material} = card;
+  const getTitle = () => {
+    return title.match(regexp).join(``);
+  };
 
   return (
     `<li class="cards__item">
-      <img src=${image} width="213" height="213" alt="Название товара">
-      <h3 class="cards__title">${title}</h3>
-      <p class="cards__material">Материал: нерж.сталь, МДФ, пленка ПВХ.</p>
-      <div class="cards__prices">
-        <p class="cards__price">${sale} ₽</p>
-        <p class="cards__price cards__price--sale">${price} ₽</p>
-      </div>
-      <div class="cards__sale-value">-10%</div>
+        <a class="cards__link" href="card.html?${id}">
+            <img src=${image[0]} width="213" height="213" alt="Название товара">
+        </a>
+        <h3 class="cards__title">${getTitle()}</h3>
+        <p class="cards__material">${material}</p>
+        <div class="cards__prices">
+            <p class="cards__price">${sale} ₽</p>
+            <p class="cards__price cards__price--sale">${price} ₽</p>
+        </div>
+        <div class="cards__sale-value">-10%</div>
     </li>`
   );
 };
 
-export default class Card {
+class Card extends AbstractComponent {
   constructor(card) {
+    super();
+
     this._card = card;
-    this._element = null;
   }
 
   getTemplate() {
     return createCard(this._card);
   }
-
-  getElement() {
-    if (!this._element) {
-      this._element = createElement(this.getTemplate());
-    }
-
-    return this._element;
-  }
-
-  removeElement() {
-    this._element = null;
-  }
 }
+
+export default Card;
