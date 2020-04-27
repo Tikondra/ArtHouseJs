@@ -24,3 +24,5 @@ export const createElement = (template) => {
 
   return newElement.firstChild;
 };
+
+export const regexp = /[а-я А-Я \d ( )]/iug;

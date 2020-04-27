@@ -1,4 +1,5 @@
 const path = require(`path`);
+const convert = require(`xml-js`);
 
 module.exports = {
   mode: `development`,
