@@ -104,17 +104,31 @@ const renderCard = (container, card) => {
   render(container, cardComponent.getElement(card), Place.BEFOREEND);
 };
 
-const renderCategory = (container, category) => {
-  const categoryComponent = new CategoryComponent(category);
-
-  const someCategory = categories.filter((it) => {
+const getSomeCategory = (category) => {
+  return categories.filter((it) => {
     return it.parentId === category.id;
   }).reduce((catList, cat) => {
     catList.push(cat.id);
     return catList;
   }, []);
+};
+
+const getSomeCards = (category) => {
+  const someCategory = getSomeCategory(category);
   // сравнение двух массивов
   const getTrue = (card) => card.categoryId.some((n) => someCategory.includes(n));
+
+  return offers.filter((card) => {
+    if (typeof card.categoryId === `string`) {
+      return card.categoryId === category.id;
+    } else {
+      return getTrue(card);
+    }
+  });
+};
+
+const renderCategory = (container, category) => {
+  const categoryComponent = new CategoryComponent(category);
 
   categoryComponent.getElement().addEventListener(`click`, (evt) => {
     evt.preventDefault();
@@ -127,13 +141,7 @@ const renderCategory = (container, category) => {
 
     evt.target.classList.add(`sort__link--active`);
 
-    const someCards = offers.filter((card) => {
-      if (typeof card.categoryId === `string`) {
-        return card.categoryId === category.id;
-      } else {
-        return getTrue(card);
-      }
-    });
+    const someCards = getSomeCards(category);
 
     cleanContainer(cardBox);
 
@@ -148,7 +156,7 @@ const renderCategory = (container, category) => {
     renderCards(cardBox, someCards);
   });
 
-  if (someCategory.length !== 0) {
+  if (getSomeCards(category).length !== 0) {
     render(container, categoryComponent.getElement(category), Place.BEFOREEND);
   }
 };
