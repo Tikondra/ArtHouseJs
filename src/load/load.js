@@ -1,24 +1,13 @@
 const convert = require(`xml-js`);
 
-import {cleanContainer, render} from "../components/utils";
-
-import {START_SHOW_TASK, MORE_SHOW_TASK, Place} from "../components/consts";
-
-import CardComponent from "../components/card";
-import CategoryComponent from "../components/category";
-import ButtonMoreComponent from "../components/button-more";
-
-import {getOffers} from "../components/offers";
+import {getOffers, getOffersLight} from "../components/offers";
 import {getCategory} from "../components/categories";
 import {getCard} from "./load-card";
+import {renderCategory} from "../components/render-category";
+import {renderCards} from "../components/render-cards";
 
 const cardBox = document.querySelector(`.cards`);
-const buttonMoreBox = document.querySelector(`.store-content__more-box`);
-const loadMoreButton = document.querySelector(`.store-content__btn-more`);
 const categoryList = document.querySelector(`.sort__list--category`);
-const allCategoryBtn = document.querySelector(`.sort__link--category`);
-let offers = [];
-let categories = [];
 let isSort = null;
 
 const load = (onload, url) => {
@@ -40,30 +29,30 @@ const loadData = (data) => {
   const dataOffers = data.yml_catalog.shop.offers.offer;
   const dataCategory = data.yml_catalog.shop.categories.category;
 
-  offers = getOffers(dataOffers);
-  categories = getCategory(dataCategory);
+  const offersDecor = getOffers(dataOffers);
+  const categoriesDecor = getCategory(dataCategory);
 
-  const offersCopy = offers.slice();
+  const offersCopy = offersDecor.slice();
 
-  const someCategory = categories.filter((it) => {
+  const someCategory = categoriesDecor.filter((it) => {
     return it.parentId === ``;
   });
 
-  someCategory.forEach((category) => renderCategory(categoryList, category));
-  renderCards(cardBox, offersCopy);
+  someCategory.forEach((category) => renderCategory(categoryList, category, categoriesDecor, offersDecor));
+  renderCards(cardBox, offersCopy, isSort);
 };
 
 const loadDataToProduct = (data) => {
   const dataOffers = data.yml_catalog.shop.offers.offer;
-  const dataCategory = data.yml_catalog.shop.categories.category;
   let strGET = window.location.search.replace(`?`, ``);
 
-  offers = getOffers(dataOffers);
-  categories = getCategory(dataCategory);
+  const offersProduct = getOffers(dataOffers);
 
-  getCard(offers, strGET);
+  getCard(offersProduct, strGET);
 
+  // eslint-disable-next-line no-undef
   $(document).ready(function () {
+    // eslint-disable-next-line no-undef
     $(`.owl-carousel`).owlCarousel({
       items: 1,
       dots: false,
@@ -72,120 +61,21 @@ const loadDataToProduct = (data) => {
   });
 };
 
-const renderCards = (container, cards) => {
-  cards.splice(0, START_SHOW_TASK)
-    .forEach((card) => {
-      renderCard(cardBox, card);
-    });
+const loadDataToLight = (data) => {
+  const dataOffers = data.yml_catalog.shop.offers.offer;
+  const dataCategory = data.yml_catalog.shop.categories.category;
 
-  const onMoreView = (evt) => {
-    cards.splice(0, MORE_SHOW_TASK)
-      .forEach((card) => renderCard(cardBox, card));
+  const lightCategory = getCategory(dataCategory);
+  const lightOffers = getOffersLight(dataOffers);
+  const offersCopy = lightOffers.slice();
 
-    if (cards.length === 0) {
-      evt.target.remove();
-    }
-  };
-
-  if (isSort) {
-    const buttonMoreComponent = new ButtonMoreComponent();
-
-    render(buttonMoreBox, buttonMoreComponent.getElement(), Place.BEFOREEND);
-
-    buttonMoreComponent.getElement().addEventListener(`click`, onMoreView);
-  } else {
-    loadMoreButton.addEventListener(`click`, onMoreView);
-  }
-};
-
-const renderCard = (container, card) => {
-  const cardComponent = new CardComponent(card);
-
-  render(container, cardComponent.getElement(card), Place.BEFOREEND);
-};
-
-const getSomeCategory = (category) => {
-  return categories.filter((it) => {
-    return it.parentId === category.id;
-  }).reduce((catList, cat) => {
-    catList.push(cat.id);
-    return catList;
-  }, []);
-};
-
-const getSomeCards = (category) => {
-  const someCategory = getSomeCategory(category);
-  // сравнение двух массивов
-  const getTrue = (card) => card.categoryId.some((n) => someCategory.includes(n));
-
-  return offers.filter((card) => {
-    if (typeof card.categoryId === `string`) {
-      return card.categoryId === category.id;
-    } else {
-      return getTrue(card);
-    }
-  });
-};
-
-const renderCategory = (container, category) => {
-  const categoryComponent = new CategoryComponent(category);
-
-  categoryComponent.getElement().addEventListener(`click`, (evt) => {
-    evt.preventDefault();
-
-    const categoryButtons = categoryList.querySelectorAll(`.sort__link`);
-
-    categoryButtons.forEach((link) => {
-      link.classList.remove(`sort__link--active`);
-    });
-
-    evt.target.classList.add(`sort__link--active`);
-
-    const someCards = getSomeCards(category);
-
-    cleanContainer(cardBox);
-
-    const btnMore = document.querySelector(`.store-content__btn-more`);
-
-    if (btnMore) {
-      btnMore.remove();
-    }
-
-    isSort = true;
-
-    renderCards(cardBox, someCards);
+  const someCategory = lightCategory.filter((it) => {
+    return it.parentId === ``;
   });
 
-  if (getSomeCards(category).length !== 0) {
-    render(container, categoryComponent.getElement(category), Place.BEFOREEND);
-  }
+  someCategory.forEach((category) => renderCategory(categoryList, category, lightCategory, lightOffers));
+
+  renderCards(cardBox, offersCopy, isSort);
 };
 
-export {load, loadData, loadDataToProduct};
-
-if (document.querySelector(`.store-content`)) {
-  allCategoryBtn.addEventListener(`click`, (evt) => {
-    evt.preventDefault();
-    const copyOffers = offers.slice();
-    const categoryButtons = categoryList.querySelectorAll(`.sort__link`);
-
-    categoryButtons.forEach((link) => {
-      link.classList.remove(`sort__link--active`);
-    });
-
-    if (isSort) {
-      cleanContainer(cardBox);
-
-      const btnMore = document.querySelector(`.store-content__btn-more`);
-
-      if (btnMore) {
-        btnMore.remove();
-      }
-
-      renderCards(cardBox, copyOffers);
-
-      isSort = null;
-    }
-
-  });
-}
+export {load, loadData, loadDataToProduct, loadDataToLight};

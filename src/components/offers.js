@@ -41,3 +41,20 @@ export const getOffers = (data) => {
     return cardList;
   }, []);
 };
+
+export const getOffersLight = (data) => {
+
+  return data.reduce((cardList, card) => {
+    const product = {
+      title: card.name._text,
+      price: card.price._text,
+      sale: getSale(card.wholesalePrice),
+      image: getImage(card.picture),
+      categoryId: getCategoryId(card.categoryId),
+      id: card._attributes.id,
+      available: card._attributes.available,
+    };
+    cardList.push(product);
+    return cardList;
+  }, []);
+};
