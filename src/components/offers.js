@@ -48,8 +48,9 @@ export const getOffersLight = (data) => {
     const product = {
       title: card.name._text,
       price: card.price._text,
-      sale: getSale(card.wholesalePrice),
       image: getImage(card.picture),
+      vendor: card.param[1]._text,
+      country: card.param[2]._text,
       categoryId: getCategoryId(card.categoryId),
       id: card._attributes.id,
       available: card._attributes.available,

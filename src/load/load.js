@@ -6,6 +6,9 @@ import {getCard} from "./load-card";
 import {renderCategory} from "../components/render-category";
 import {renderCards} from "../components/render-cards";
 
+import CardComponent from "../components/card";
+import CardLightComponent from "../components/light-card";
+
 const cardBox = document.querySelector(`.cards`);
 const categoryList = document.querySelector(`.sort__list--category`);
 let isSort = null;
@@ -38,8 +41,8 @@ const loadData = (data) => {
     return it.parentId === ``;
   });
 
-  someCategory.forEach((category) => renderCategory(categoryList, category, categoriesDecor, offersDecor));
-  renderCards(cardBox, offersCopy, isSort);
+  someCategory.forEach((category) => renderCategory(categoryList, category, categoriesDecor, offersDecor, CardComponent));
+  renderCards(cardBox, offersCopy, isSort, CardComponent);
 };
 
 const loadDataToProduct = (data) => {
@@ -68,14 +71,14 @@ const loadDataToLight = (data) => {
   const lightCategory = getCategory(dataCategory);
   const lightOffers = getOffersLight(dataOffers);
   const offersCopy = lightOffers.slice();
-
+  console.log(dataOffers[0])
   const someCategory = lightCategory.filter((it) => {
     return it.parentId === ``;
   });
 
-  someCategory.forEach((category) => renderCategory(categoryList, category, lightCategory, lightOffers));
+  someCategory.forEach((category) => renderCategory(categoryList, category, lightCategory, lightOffers, CardLightComponent));
 
-  renderCards(cardBox, offersCopy, isSort);
+  renderCards(cardBox, offersCopy, isSort, CardLightComponent);
 };
 
 export {load, loadData, loadDataToProduct, loadDataToLight};

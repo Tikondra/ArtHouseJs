@@ -6,21 +6,21 @@ import CardComponent from "./card";
 const buttonMoreBox = document.querySelector(`.store-content__more-box`);
 const loadMoreButton = document.querySelector(`.store-content__btn-more`);
 
-const renderCard = (container, card) => {
-  const cardComponent = new CardComponent(card);
+const renderCard = (container, card, component) => {
+  const cardComponent = new component(card);
 
   render(container, cardComponent.getElement(card), Place.BEFOREEND);
 };
 
-export const renderCards = (container, cards, isSort) => {
+export const renderCards = (container, cards, isSort, component) => {
   cards.splice(0, START_SHOW_TASK)
     .forEach((card) => {
-      renderCard(container, card);
+      renderCard(container, card, component);
     });
 
   const onMoreView = (evt) => {
     cards.splice(0, MORE_SHOW_TASK)
-      .forEach((card) => renderCard(container, card));
+      .forEach((card) => renderCard(container, card, component));
 
     if (cards.length === 0) {
       evt.target.remove();

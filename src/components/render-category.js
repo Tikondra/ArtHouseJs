@@ -10,7 +10,7 @@ const categoryList = document.querySelector(`.sort__list--category`);
 let isSort = null;
 let isAddListener = null;
 
-export const renderCategory = (container, category, categories, offers) => {
+export const renderCategory = (container, category, categories, offers, component) => {
   const categoryComponent = new CategoryComponent(category);
 
   const onSortByCategory = (evt) => {
@@ -36,7 +36,7 @@ export const renderCategory = (container, category, categories, offers) => {
 
     isSort = true;
 
-    renderCards(cardBox, someCards, isSort);
+    renderCards(cardBox, someCards, isSort, component);
   };
 
   categoryComponent.getElement().addEventListener(`click`, onSortByCategory);
@@ -64,7 +64,7 @@ export const renderCategory = (container, category, categories, offers) => {
           btnMore.remove();
         }
 
-        renderCards(cardBox, copyOffers);
+        renderCards(cardBox, copyOffers, isSort, component);
 
         isSort = null;
       }
