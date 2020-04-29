@@ -25,6 +25,8 @@ const getCategoryId = (category) => {
 
 const isTrue = (it) => it ? it : ``;
 
+const getParam = (param) => param._text ? `<span>${param._attributes.name}</span>` + `: ` + param._text : ``;
+
 export const getOffers = (data) => {
   return data.reduce((cardList, card) => {
     const product = {
@@ -46,15 +48,17 @@ export const getOffersLight = (data) => {
 
   return data.reduce((cardList, card) => {
     const product = {
+      parameters: [],
       title: card.name._text,
       price: card.price._text,
       image: getImage(card.picture),
-      vendor: card.param[1]._text,
-      country: card.param[2]._text,
       categoryId: getCategoryId(card.categoryId),
       id: card._attributes.id,
-      available: card._attributes.available,
+      available: card._attributes.available
     };
+    card.param.forEach((parameter) => {
+      product.parameters.push(getParam(parameter));
+    });
     cardList.push(product);
     return cardList;
   }, []);

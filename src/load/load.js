@@ -1,3 +1,5 @@
+import {TypeCard} from "../components/consts";
+
 const convert = require(`xml-js`);
 
 import {getOffers, getOffersLight} from "../components/offers";
@@ -13,14 +15,14 @@ const cardBox = document.querySelector(`.cards`);
 const categoryList = document.querySelector(`.sort__list--category`);
 let isSort = null;
 
-const load = (onload, url) => {
+const load = (onload, url, type) => {
   const xhr = new XMLHttpRequest();
 
   xhr.addEventListener(`load`, () => {
     if (xhr.status === 200) {
 
       const result = convert.xml2json(xhr.response, {compact: true});
-      onload(JSON.parse(result));
+      onload(JSON.parse(result), type);
     }
   });
 
@@ -45,13 +47,21 @@ const loadData = (data) => {
   renderCards(cardBox, offersCopy, isSort, CardComponent);
 };
 
-const loadDataToProduct = (data) => {
+const loadDataToProduct = (data, type) => {
   const dataOffers = data.yml_catalog.shop.offers.offer;
   let strGET = window.location.search.replace(`?`, ``);
+  let offersProduct;
 
-  const offersProduct = getOffers(dataOffers);
+  switch (type) {
+    case TypeCard.DECOR:
+      offersProduct = getOffers(dataOffers);
+      break;
+    case TypeCard.LIGHT:
+      offersProduct = getOffersLight(dataOffers);
+      break;
+  }
 
-  getCard(offersProduct, strGET);
+  getCard(offersProduct, strGET, type);
 
   // eslint-disable-next-line no-undef
   $(document).ready(function () {
@@ -71,7 +81,6 @@ const loadDataToLight = (data) => {
   const lightCategory = getCategory(dataCategory);
   const lightOffers = getOffersLight(dataOffers);
   const offersCopy = lightOffers.slice();
-  console.log(dataOffers[0])
   const someCategory = lightCategory.filter((it) => {
     return it.parentId === ``;
   });

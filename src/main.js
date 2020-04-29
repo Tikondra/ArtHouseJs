@@ -6,9 +6,13 @@ if (document.querySelector(`.decor-js`)) {
 }
 
 if (document.querySelector(`.product`)) {
-  load(loadDataToProduct, LOCAL_DECOR);
+  load(loadDataToProduct, LOCAL_DECOR, `decor`);
 }
 
 if (document.querySelector(`.light-js`)) {
   load(loadDataToLight, LOCAL_LIGHT);
+}
+
+if (document.querySelector(`.product-light`)) {
+  load(loadDataToProduct, LOCAL_LIGHT, `light`);
 }

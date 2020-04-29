@@ -12,7 +12,7 @@ const createCard = (card) => {
 
   return (
     `<li class="cards__item">
-        <a class="cards__link" href="card.html?${id}">
+        <a class="cards__link" href="card-light.html?${id}">
             <img src=${image[0]} width="213" height="213" alt="${title}">
         </a>
         <h3 class="cards__title">${getTitle(title)}</h3>

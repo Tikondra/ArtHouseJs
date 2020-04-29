@@ -8,3 +8,8 @@ export const Place = {
   AFTERBEGIN: `afterbegin`,
   BEFOREEND: `beforeend`
 };
+
+export const TypeCard = {
+  DECOR: `decor`,
+  LIGHT: `light`
+};

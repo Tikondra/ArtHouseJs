@@ -1,7 +1,6 @@
 import {Place, START_SHOW_TASK, MORE_SHOW_TASK} from "./consts";
 import {render} from "./utils";
 import ButtonMoreComponent from "./button-more";
-import CardComponent from "./card";
 
 const buttonMoreBox = document.querySelector(`.store-content__more-box`);
 const loadMoreButton = document.querySelector(`.store-content__btn-more`);
