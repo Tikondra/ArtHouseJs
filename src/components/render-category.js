@@ -1,6 +1,6 @@
 import CategoryComponent from "./category";
 import {cleanContainer, render} from "./utils";
-import {getSomeCards} from "./sort";
+import {getSomeCards, getSomeCategory} from "./sort";
 import {renderCards} from "./render-cards";
 import {Place} from "./consts";
 
@@ -9,13 +9,35 @@ const allCategoryBtn = document.querySelector(`.sort__link--category`);
 const categoryList = document.querySelector(`.sort__list--category`);
 let isSort = null;
 let isAddListener = null;
+let isSubView = null;
 
-export const renderCategory = (container, category, categories, offers, component) => {
-  const categoryComponent = new CategoryComponent(category);
+const onBack = (container, categories, offers, component) => {
+  const someCategory = categories.filter((it) => {
+    return it.parentId === ``;
+  });
+  cleanContainer(container);
 
-  const onSortByCategory = (evt) => {
-    evt.preventDefault();
+  someCategory.forEach((it) => renderCategory(container, it, categories, offers, component));
 
+  isSubView = null;
+  allCategoryBtn.classList.remove(`sort__link--hide`);
+};
+
+const renderSubCategory = (category, categories, offers, component) => {
+  const someCategory = getSomeCategory(category, categories);
+  const someCategoryRender = categories.filter((it) => {
+    return someCategory.includes(it.id);
+  });
+  cleanContainer(categoryList);
+  renderCategory(categoryList, category, categories, offers, component, true);
+  someCategoryRender.forEach((it) => renderCategory(categoryList, it, categories, offers, component));
+  isSubView = true;
+  allCategoryBtn.classList.add(`sort__link--hide`);
+};
+
+const onSortByCategory = (container, category, categories, offers, component, evt) => {
+  evt.preventDefault();
+  if (!evt.target.classList.contains(`sort__link--active`)) {
     const categoryButtons = container.querySelectorAll(`.sort__link`);
 
     categoryButtons.forEach((link) => {
@@ -36,10 +58,28 @@ export const renderCategory = (container, category, categories, offers, componen
 
     isSort = true;
 
-    renderCards(cardBox, someCards, isSort, component);
-  };
+    if (!isSubView) {
+      renderSubCategory(category, categories, offers, component);
+    }
 
-  categoryComponent.getElement().addEventListener(`click`, onSortByCategory);
+    renderCards(cardBox, someCards, isSort, component);
+  }
+};
+
+export const renderCategory = (container, category, categories, offers, component, parentCategory) => {
+  const categoryComponent = new CategoryComponent(category);
+
+  categoryComponent.getElement()
+    .addEventListener(`click`, onSortByCategory.bind(this, container, category, categories, offers, component));
+
+  if (parentCategory) {
+    categoryComponent.getElement()
+      .addEventListener(`click`, onBack.bind(this, container, categories, offers, component));
+
+    categoryComponent.getElement()
+      .querySelector(`.sort__link`)
+      .textContent = `Назад`;
+  }
 
   if (getSomeCards(category, categories, offers).length !== 0) {
     render(container, categoryComponent.getElement(category), Place.BEFOREEND);

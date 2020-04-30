@@ -1,4 +1,4 @@
-const getSomeCategory = (category, categories) => {
+export const getSomeCategory = (category, categories) => {
 
   return categories.filter((it) => {
     return it.parentId === category.id;

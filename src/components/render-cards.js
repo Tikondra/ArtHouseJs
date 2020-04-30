@@ -26,7 +26,7 @@ export const renderCards = (container, cards, isSort, component) => {
     }
   };
 
-  if (isSort) {
+  if (isSort && cards.length > START_SHOW_TASK) {
     const buttonMoreComponent = new ButtonMoreComponent();
 
     render(buttonMoreBox, buttonMoreComponent.getElement(), Place.BEFOREEND);
