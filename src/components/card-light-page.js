@@ -21,10 +21,12 @@ const createCardPage = (card) => {
           <p class="card-page__info-text card-page__info-text--price">
             <span>Цена:</span> ${rest.price} ₽
           </p>
-          ${getParameterMarkup(parameters)}
           <p class="card-page__info-text">
             <span>Наличие:</span>  ${rest.available}
           </p>
+          <div class="card-page__box">
+            ${getParameterMarkup(parameters)}
+          </div>
           <a class="card-page__buy-btn" href="">Купить</a>
         </div>
       </div>

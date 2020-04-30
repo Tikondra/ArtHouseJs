@@ -15,6 +15,14 @@ const cardBox = document.querySelector(`.cards`);
 const categoryList = document.querySelector(`.sort__list--category`);
 let isSort = null;
 
+const preloader = () => {
+  document.body.classList.add(`loaded_hiding`);
+  window.setTimeout(function () {
+    document.body.classList.add(`loaded`);
+    document.body.classList.remove(`loaded_hiding`);
+  }, 500);
+};
+
 const load = (onload, url, type) => {
   const xhr = new XMLHttpRequest();
 
@@ -23,6 +31,7 @@ const load = (onload, url, type) => {
 
       const result = convert.xml2json(xhr.response, {compact: true});
       onload(JSON.parse(result), type);
+      preloader();
     }
   });
 
