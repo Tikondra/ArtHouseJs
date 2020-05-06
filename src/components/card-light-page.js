@@ -7,6 +7,50 @@ const createCardPage = (card) => {
 
   const getImages = (pictures) => pictures.map((it) => createImg(it)).join(`\n`);
   const getParameterMarkup = (params) => params.map((it) => `<p class="card-page__info-text">${it}</p>`).join(`\n`);
+  const getClearParameters = (parameters) => {
+    parameters.map((it, index) => {
+      if(it.indexOf(`Старая цена`) > -1) {
+        serviceParameters.push(it)
+      } else
+
+      if(it.indexOf(`Остаток поставщика`) > -1) {
+        serviceParameters.push(it)
+      } else
+
+      if(it.indexOf(`Автоматическая сортировка`) > -1) {
+        serviceParameters.push(it)
+      } else
+
+      if(it.indexOf(`Акция`) > -1) {
+        serviceParameters.push(it)
+      } else
+
+      if(it.indexOf(`Раздел на сайте`) > -1) {
+        serviceParameters.push(it)
+      } else
+
+      if(it.indexOf(`Дата обновления изображений`) > -1) {
+        serviceParameters.push(it)
+      } else
+
+      if(it.indexOf(`Срок окончания`) > -1) {
+        serviceParameters.push(it)
+      } else {
+        restParameters.push(it)
+      }
+    });
+  };
+
+  const available = rest.available ? `Да` : `Нет`;
+  const restParameters = [];
+  const serviceParameters = [];
+  const oldPrice = parameters.filter((it) => {
+    if(it.indexOf(`Старая цена`) > -1) {
+      return true;
+    }
+  });
+
+  getClearParameters(parameters);
 
   return (
     `<section class="card-page">
@@ -22,10 +66,13 @@ const createCardPage = (card) => {
             <span>Цена:</span> ${rest.price} ₽
           </p>
           <p class="card-page__info-text">
-            <span>Наличие:</span>  ${rest.available}
+            ${oldPrice}
+          </p>
+          <p class="card-page__info-text">
+            <span>Наличие:</span>  ${available}
           </p>
           <div class="card-page__box">
-            ${getParameterMarkup(parameters)}
+            ${getParameterMarkup(restParameters)}
           </div>
           <a class="card-page__buy-btn" href="">Купить</a>
         </div>

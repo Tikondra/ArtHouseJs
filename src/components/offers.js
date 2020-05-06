@@ -25,7 +25,7 @@ const getCategoryId = (category) => {
 
 const isTrue = (it) => it ? it : ``;
 
-const getParam = (param) => param._text ? `<span>${param._attributes.name}</span>` + `: ` + param._text : ``;
+const getParam = (param) => param._text ? `<span>${param._attributes.name}:</span> ${param._text}` : ``;
 
 export const getOffers = (data) => {
   return data.reduce((cardList, card) => {
