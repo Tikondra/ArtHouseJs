@@ -70,11 +70,11 @@ export const renderCategory = (container, category, categories, offers, componen
   const categoryComponent = new CategoryComponent(category);
 
   categoryComponent.getElement()
-    .addEventListener(`click`, onSortByCategory.bind(this, container, category, categories, offers, component));
+    .addEventListener(`click`, onSortByCategory.bind({}, container, category, categories, offers, component));
 
   if (parentCategory) {
     categoryComponent.getElement()
-      .addEventListener(`click`, onBack.bind(this, container, categories, offers, component));
+      .addEventListener(`click`, onBack.bind({}, container, categories, offers, component));
 
     categoryComponent.getElement()
       .querySelector(`.sort__link`)

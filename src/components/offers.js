@@ -25,7 +25,36 @@ const getCategoryId = (category) => {
 
 const isTrue = (it) => it ? it : ``;
 
-const getParam = (param) => param._text ? `<span>${param._attributes.name}:</span> ${param._text}` : ``;
+const sortingParameters = (parameters) => {
+  const a = {};
+  const b = [];
+  const c = [];
+
+  parameters.map((parameter) => {
+    if (parameter._attributes.name === `Старая цена`) {
+      a.oldPrice = parameter._text;
+    } else if (parameter._attributes.name === `Бренд`) {
+      a.brend = parameter._text;
+    } else if (parameter._attributes.name === `Страна`) {
+      a.country = parameter._text;
+    } else if (parameter._attributes.name === `Остаток поставщика`) {
+      c.push(parameter);
+    } else if (parameter._attributes.name === `Автоматическая сортировка`) {
+      c.push(parameter);
+    } else if (parameter._attributes.name === `Акция`) {
+      c.push(parameter);
+    } else if (parameter._attributes.name === `Раздел на сайте`) {
+      c.push(parameter);
+    } else if (parameter._attributes.name === `Дата обновления изображений`) {
+      c.push(parameter);
+    } else if (parameter._attributes.name === `Срок окончания акции`) {
+      c.push(parameter);
+    } else {
+      b.push(parameter);
+    }
+  });
+  return [a, b, c];
+};
 
 export const getOffers = (data) => {
   return data.reduce((cardList, card) => {
@@ -48,17 +77,14 @@ export const getOffersLight = (data) => {
 
   return data.reduce((cardList, card) => {
     const product = {
-      parameters: [],
       title: card.name._text,
-      price: card.price._text,
+      activePrice: card.price._text,
       image: getImage(card.picture),
       categoryId: getCategoryId(card.categoryId),
       id: card._attributes.id,
-      available: card._attributes.available
+      available: card._attributes.available,
+      parameters: sortingParameters(card.param)
     };
-    card.param.forEach((parameter) => {
-      product.parameters.push(getParam(parameter));
-    });
     cardList.push(product);
     return cardList;
   }, []);

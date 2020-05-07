@@ -3,73 +3,49 @@ import {createImg} from "./card-page-img";
 
 const createCardPage = (card) => {
 
-  const {parameters, ...rest} = card;
+  const {parameters, title, activePrice, image, available} = card;
 
   const getImages = (pictures) => pictures.map((it) => createImg(it)).join(`\n`);
-  const getParameterMarkup = (params) => params.map((it) => `<p class="card-page__info-text">${it}</p>`).join(`\n`);
-  const getClearParameters = (parameters) => {
-    parameters.map((it, index) => {
-      if(it.indexOf(`Старая цена`) > -1) {
-        serviceParameters.push(it)
-      } else
-
-      if(it.indexOf(`Остаток поставщика`) > -1) {
-        serviceParameters.push(it)
-      } else
-
-      if(it.indexOf(`Автоматическая сортировка`) > -1) {
-        serviceParameters.push(it)
-      } else
-
-      if(it.indexOf(`Акция`) > -1) {
-        serviceParameters.push(it)
-      } else
-
-      if(it.indexOf(`Раздел на сайте`) > -1) {
-        serviceParameters.push(it)
-      } else
-
-      if(it.indexOf(`Дата обновления изображений`) > -1) {
-        serviceParameters.push(it)
-      } else
-
-      if(it.indexOf(`Срок окончания`) > -1) {
-        serviceParameters.push(it)
-      } else {
-        restParameters.push(it)
-      }
-    });
+  const getOldPrice = (price) => {
+    if (price) {
+      return (
+        `<p class="card-page__info-text">
+           Старая цена: ${Math.floor(price)} ₽
+         </p>`
+      );
+    } else {
+      return ``;
+    }
+  };
+  const getParameterMarkup = (params) => {
+    return params.map((it) => {
+      return (
+        `<p class="card-page__info-text"><span>${it._attributes.name}:</span> ${it._text}</p>`
+      );
+    }).join(`\n`);
   };
 
-  const available = rest.available ? `Да` : `Нет`;
-  const restParameters = [];
-  const serviceParameters = [];
-  const oldPrice = parameters.filter((it) => {
-    if(it.indexOf(`Старая цена`) > -1) {
-      return true;
-    }
-  });
-
-  getClearParameters(parameters);
+  const getAvailable = available ? `Да` : `Нет`;
+  const restParameters = parameters[1];
+  // const serviceParameters = parameters[2];
+  const currentParameters = parameters[0];
 
   return (
     `<section class="card-page">
       <h1 class="card-page__title">
-        ${rest.title}
+        ${title}
       </h1>
       <div class="card-page__info-box">
         <ul class="card-page__list owl-carousel">
-          ${getImages(rest.image)}
+          ${getImages(image)}
         </ul>
         <div class="card-page__info">
           <p class="card-page__info-text card-page__info-text--price">
-            <span>Цена:</span> ${rest.price} ₽
+            <span>Цена:</span> ${Math.floor(activePrice)} ₽
           </p>
+          ${getOldPrice(currentParameters.oldPrice)}
           <p class="card-page__info-text">
-            ${oldPrice}
-          </p>
-          <p class="card-page__info-text">
-            <span>Наличие:</span>  ${available}
+            <span>Наличие:</span>  ${getAvailable}
           </p>
           <div class="card-page__box">
             ${getParameterMarkup(restParameters)}

@@ -10,14 +10,19 @@ const createCard = (card) => {
       return `Нет в наличии`;
     }
   };
+  const getOldPrice = (price) => {
+    if (price) {
+      return (
+        `<p class="cards__price cards__price--old">${Math.floor(price)} ₽</p>`
+      )
+    } else {
+      return ``;
+    }
+  };
 
   const regexp = /[а-я А-Я]/iug;
   const title = rest.title.match(regexp).join(``);
-  const oldPrice = parameters.filter((it) => {
-    if(it.indexOf(`Старая цена`) > -1) {
-      return true;
-    }
-  });
+  const currentParameters = parameters[0];
 
   return (
     `<li class="cards__item">
@@ -26,10 +31,10 @@ const createCard = (card) => {
         </a>
         <h3 class="cards__title">${title}</h3>
         <p class="cards__info">${getAvailable(rest.available)}</p>
-        <p class="cards__info">${parameters[1]}</p>
-        <p class="cards__info">${parameters[2]}</p>
-        <p class="cards__price cards__price--old">${oldPrice}</p>
-        <p class="cards__price">${Math.floor(rest.price)} ₽</p>
+        <p class="cards__info">${currentParameters.brend}</p>
+        <p class="cards__info">${currentParameters.country}</p>
+        ${getOldPrice(currentParameters.oldPrice)}
+        <p class="cards__price">${Math.floor(rest.activePrice)} ₽</p>
     </li>`
   );
 };

@@ -5,8 +5,8 @@ import ButtonMoreComponent from "./button-more";
 const buttonMoreBox = document.querySelector(`.store-content__more-box`);
 const loadMoreButton = document.querySelector(`.store-content__btn-more`);
 
-const renderCard = (container, card, component) => {
-  const cardComponent = new component(card);
+const renderCard = (container, card, Component) => {
+  const cardComponent = new Component(card);
 
   render(container, cardComponent.getElement(card), Place.BEFOREEND);
 };
