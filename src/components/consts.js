@@ -13,3 +13,10 @@ export const TypeCard = {
   DECOR: `decor`,
   LIGHT: `light`
 };
+
+export const Filter = {
+  COUNTRY: `Страна`,
+  VENDOR: `Бренд`
+};
+
+export const FILTERS = Object.values(Filter);

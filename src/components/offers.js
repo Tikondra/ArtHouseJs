@@ -25,35 +25,40 @@ const getCategoryId = (category) => {
 
 const isTrue = (it) => it ? it : ``;
 
-const sortingParameters = (parameters) => {
-  const a = {};
-  const b = [];
-  const c = [];
+export const sortingParameters = (parameters) => {
+  const current = {};
+  const rest = [];
+  const service = [];
+  const allParameters = {
+    service,
+    current,
+    rest,
+  };
 
   parameters.map((parameter) => {
     if (parameter._attributes.name === `Старая цена`) {
-      a.oldPrice = parameter._text;
+      current.oldPrice = parameter._text;
     } else if (parameter._attributes.name === `Бренд`) {
-      a.brend = parameter._text;
+      current.brend = parameter._text;
     } else if (parameter._attributes.name === `Страна`) {
-      a.country = parameter._text;
+      current.country = parameter._text;
     } else if (parameter._attributes.name === `Остаток поставщика`) {
-      c.push(parameter);
+      service.push(parameter);
     } else if (parameter._attributes.name === `Автоматическая сортировка`) {
-      c.push(parameter);
+      service.push(parameter);
     } else if (parameter._attributes.name === `Акция`) {
-      c.push(parameter);
+      service.push(parameter);
     } else if (parameter._attributes.name === `Раздел на сайте`) {
-      c.push(parameter);
+      service.push(parameter);
     } else if (parameter._attributes.name === `Дата обновления изображений`) {
-      c.push(parameter);
+      service.push(parameter);
     } else if (parameter._attributes.name === `Срок окончания акции`) {
-      c.push(parameter);
+      service.push(parameter);
     } else {
-      b.push(parameter);
+      rest.push(parameter);
     }
   });
-  return [a, b, c];
+  return allParameters;
 };
 
 export const getOffers = (data) => {

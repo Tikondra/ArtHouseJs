@@ -26,9 +26,6 @@ const createCardPage = (card) => {
   };
 
   const getAvailable = available ? `Да` : `Нет`;
-  const restParameters = parameters[1];
-  // const serviceParameters = parameters[2];
-  const currentParameters = parameters[0];
 
   return (
     `<section class="card-page">
@@ -43,12 +40,12 @@ const createCardPage = (card) => {
           <p class="card-page__info-text card-page__info-text--price">
             <span>Цена:</span> ${Math.floor(activePrice)} ₽
           </p>
-          ${getOldPrice(currentParameters.oldPrice)}
+          ${getOldPrice(parameters.current.oldPrice)}
           <p class="card-page__info-text">
             <span>Наличие:</span>  ${getAvailable}
           </p>
           <div class="card-page__box">
-            ${getParameterMarkup(restParameters)}
+            ${getParameterMarkup(parameters.rest)}
           </div>
           <a class="card-page__buy-btn" href="">Купить</a>
         </div>

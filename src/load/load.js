@@ -7,6 +7,7 @@ import {getCategory} from "../components/categories";
 import {getCard} from "./load-card";
 import {renderCategory} from "../components/render-category";
 import {renderCards} from "../components/render-cards";
+import {getFilters, getParameters, onCheckedData, renderFilters} from "../utils/filters";
 
 import CardComponent from "../components/card";
 import CardLightComponent from "../components/light-card";
@@ -84,19 +85,24 @@ const loadDataToProduct = (data, type) => {
 };
 
 const loadDataToLight = (data) => {
+  const filterForm = document.querySelector(`.filter__form`);
   const dataOffers = data.yml_catalog.shop.offers.offer;
   const dataCategory = data.yml_catalog.shop.categories.category;
 
   const lightCategory = getCategory(dataCategory);
   const lightOffers = getOffersLight(dataOffers);
+  const lightParameters = getParameters(dataOffers);
+  const lightFilters = getFilters(lightParameters);
   const offersCopy = lightOffers.slice();
   const someCategory = lightCategory.filter((it) => {
     return it.parentId === ``;
   });
 
   someCategory.forEach((category) => renderCategory(categoryList, category, lightCategory, lightOffers, CardLightComponent));
-
+  lightFilters.forEach((filter) => renderFilters(filter));
   renderCards(cardBox, offersCopy, isSort, CardLightComponent);
+
+  filterForm.addEventListener(`submit`, onCheckedData);
 };
 
 export {load, loadData, loadDataToProduct, loadDataToLight};

@@ -22,7 +22,6 @@ const createCard = (card) => {
 
   const regexp = /[а-я А-Я]/iug;
   const title = rest.title.match(regexp).join(``);
-  const currentParameters = parameters[0];
 
   return (
     `<li class="cards__item">
@@ -31,9 +30,9 @@ const createCard = (card) => {
         </a>
         <h3 class="cards__title">${title}</h3>
         <p class="cards__info">${getAvailable(rest.available)}</p>
-        <p class="cards__info">${currentParameters.brend}</p>
-        <p class="cards__info">${currentParameters.country}</p>
-        ${getOldPrice(currentParameters.oldPrice)}
+        <p class="cards__info">Бренд: ${parameters.current.brend}</p>
+        <p class="cards__info">Страна: ${parameters.current.country}</p>
+        ${getOldPrice(parameters.current.oldPrice)}
         <p class="cards__price">${Math.floor(rest.activePrice)} ₽</p>
     </li>`
   );
