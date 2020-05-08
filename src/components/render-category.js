@@ -62,7 +62,7 @@ const onSortByCategory = (container, category, categories, offers, component, ev
       renderSubCategory(category, categories, offers, component);
     }
 
-    renderCards(cardBox, someCards, isSort, component);
+    renderCards(cardBox, someCards, component, isSort);
   }
 };
 
@@ -104,7 +104,7 @@ export const renderCategory = (container, category, categories, offers, componen
           btnMore.remove();
         }
 
-        renderCards(cardBox, copyOffers, isSort, component);
+        renderCards(cardBox, copyOffers, component, isSort);
 
         isSort = null;
       }

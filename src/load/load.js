@@ -7,10 +7,12 @@ import {getCategory} from "../components/categories";
 import {getCard} from "./load-card";
 import {renderCategory} from "../components/render-category";
 import {renderCards} from "../components/render-cards";
-import {getFilters, getParameters, onCheckedData, renderFilters} from "../utils/filters";
 
 import CardComponent from "../components/card";
 import CardLightComponent from "../components/light-card";
+import FilterController from "../controllers/filters-controller";
+import CategoriesController from "../controllers/categories-controller";
+import OffersModel from "../models/offers";
 
 const cardBox = document.querySelector(`.cards`);
 const categoryList = document.querySelector(`.sort__list--category`);
@@ -54,7 +56,7 @@ const loadData = (data) => {
   });
 
   someCategory.forEach((category) => renderCategory(categoryList, category, categoriesDecor, offersDecor, CardComponent));
-  renderCards(cardBox, offersCopy, isSort, CardComponent);
+  renderCards(cardBox, offersCopy, CardComponent, isSort);
 };
 
 const loadDataToProduct = (data, type) => {
@@ -85,24 +87,29 @@ const loadDataToProduct = (data, type) => {
 };
 
 const loadDataToLight = (data) => {
-  const filterForm = document.querySelector(`.filter__form`);
   const dataOffers = data.yml_catalog.shop.offers.offer;
   const dataCategory = data.yml_catalog.shop.categories.category;
 
   const lightCategory = getCategory(dataCategory);
   const lightOffers = getOffersLight(dataOffers);
-  const lightParameters = getParameters(dataOffers);
-  const lightFilters = getFilters(lightParameters);
+
+  const offersModel = new OffersModel();
+  offersModel.setOffers(lightOffers);
+
+  const filterController = new FilterController(offersModel, dataOffers);
+  filterController.render();
+
   const offersCopy = lightOffers.slice();
   const someCategory = lightCategory.filter((it) => {
     return it.parentId === ``;
   });
 
-  someCategory.forEach((category) => renderCategory(categoryList, category, lightCategory, lightOffers, CardLightComponent));
-  lightFilters.forEach((filter) => renderFilters(filter));
-  renderCards(cardBox, offersCopy, isSort, CardLightComponent);
+  someCategory.forEach((category) => {
+    const categoriesController = new CategoriesController(offersModel, lightCategory);
+    categoriesController.render(category, lightOffers, CardLightComponent);
+  });
 
-  filterForm.addEventListener(`submit`, onCheckedData);
+  renderCards(cardBox, offersCopy, CardLightComponent, isSort);
 };
 
 export {load, loadData, loadDataToProduct, loadDataToLight};

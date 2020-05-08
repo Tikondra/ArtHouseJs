@@ -1,9 +1,4 @@
 import {sortingParameters} from "../components/offers";
-import FilterComponent from "../components/filters";
-import {render} from "../components/utils";
-import {Place} from "../components/consts";
-
-const filterBox = document.querySelector(`.filter__box`);
 
 export const getParameters = (data) => {
   return data.reduce((filterList, card) => {
@@ -21,10 +16,12 @@ export const getFilters = (parameters) => {
 
   const allFilters = [
     {
+      type: `brand`,
       title: `Бренд`,
       items: vendors
     },
     {
+      type: `country`,
       title: `Страна`,
       items: countries
     }
@@ -42,23 +39,10 @@ export const getFilters = (parameters) => {
   return allFilters;
 };
 
-export const renderFilters = (filter) => {
-  const filterComponent = new FilterComponent(filter);
-  const filterElement = filterComponent.getElement();
-  const title = filterElement.querySelector(`.filter__title`);
-
-  title.addEventListener(`click`, function () {
-    filterElement.classList.toggle(`filter__item--open`);
-  });
-
-  render(filterBox, filterComponent.getElement(), Place.BEFOREEND);
-};
-
-export const getSomeCards = (offers) => {
-
-};
-
-export const onCheckedData = (evt) => {
-  evt.preventDefault();
-  alert(`В разработке!¯\\_(ツ)_/¯ `);
+export const getChecked = (container, type) => {
+  const checked = [...container.querySelectorAll(`[data-type="${type}"] input[type="checkbox"]:checked`)];
+  return checked.reduce((checkedList, it) => {
+    checkedList.push(it.value);
+    return checkedList;
+  }, []);
 };

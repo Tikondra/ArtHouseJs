@@ -11,7 +11,7 @@ const renderCard = (container, card, Component) => {
   render(container, cardComponent.getElement(card), Place.BEFOREEND);
 };
 
-export const renderCards = (container, cards, isSort, component) => {
+export const renderCards = (container, cards, component, isSort) => {
   cards.splice(0, START_SHOW_TASK)
     .forEach((card) => {
       renderCard(container, card, component);
