@@ -12,6 +12,8 @@ const renderCard = (container, card, Component) => {
 };
 
 export const renderCards = (container, cards, component, isSort) => {
+  console.log(cards.length)
+  const cardsCopy = cards.slice();
   cards.splice(0, START_SHOW_TASK)
     .forEach((card) => {
       renderCard(container, card, component);
@@ -26,7 +28,7 @@ export const renderCards = (container, cards, component, isSort) => {
     }
   };
 
-  if (isSort && cards.length > START_SHOW_TASK) {
+  if (isSort && cardsCopy.length > START_SHOW_TASK) {
     const buttonMoreComponent = new ButtonMoreComponent();
 
     render(buttonMoreBox, buttonMoreComponent.getElement(), Place.BEFOREEND);

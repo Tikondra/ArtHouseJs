@@ -6,13 +6,13 @@ class Offers {
 
   getOffersByFilter() {
     if (this._sorterOffers.length > 0) {
-      return this._sorterOffers;
+      return this._sorterOffers.slice();
     }
     return this._offers.slice();
   }
 
   getAllOffers() {
-    return this._offers;
+    return this._offers.slice();
   }
 
   setOffers(offers) {
@@ -20,7 +20,7 @@ class Offers {
   }
 
   setOfferByFilter(offers) {
-    this._offers = offers;
+    this._sorterOffers = offers;
   }
 }
 

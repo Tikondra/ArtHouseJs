@@ -44,7 +44,7 @@ class CategoriesController {
     if (!this._isAddListener) {
       this._allCategoryBtn.addEventListener(`click`, (evt) => {
         evt.preventDefault();
-        const copyOffers = offers.slice();
+        const copyOffers = this._offersModel.getAllOffers();
         const categoryButtons = this._categoryList.querySelectorAll(`.sort__link`);
 
         categoryButtons.forEach((link) => {
@@ -111,7 +111,8 @@ class CategoriesController {
       evt.target.classList.add(`sort__link--active`);
 
       const someCards = getSomeCards(category, categories, offers);
-      this._offersModel.setOfferByFilter(someCards);
+
+      this._offersModel.setOfferByFilter(getSomeCards(category, categories, offers));
 
       cleanContainer(this._cardBox);
 
