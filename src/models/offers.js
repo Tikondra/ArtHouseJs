@@ -8,7 +8,7 @@ class Offers {
     if (this._sorterOffers.length > 0) {
       return this._sorterOffers;
     }
-    return this._offers;
+    return this._offers.slice();
   }
 
   getAllOffers() {

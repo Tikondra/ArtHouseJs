@@ -12,6 +12,7 @@ class CategoriesController {
     this._cardBox = document.querySelector(`.cards`);
     this._allCategoryBtn = document.querySelector(`.sort__link--category`);
     this._categoryList = document.querySelector(`.sort__list--category`);
+    this._form = document.querySelector(`.filter__form`);
     this._isSort = null;
     this._isAddListener = null;
     this._isSubView = null;
@@ -97,9 +98,14 @@ class CategoriesController {
     evt.preventDefault();
     if (!evt.target.classList.contains(`sort__link--active`)) {
       const categoryButtons = container.querySelectorAll(`.sort__link`);
+      const filters = this._form.querySelectorAll(`.filter__input input`);
 
       categoryButtons.forEach((link) => {
         link.classList.remove(`sort__link--active`);
+      });
+
+      filters.forEach((filter) => {
+        filter.checked = false;
       });
 
       evt.target.classList.add(`sort__link--active`);

@@ -67,8 +67,8 @@ class FilterController {
     }
 
     renderCards(this._cardBox, sortedOffers, CardLightComponent, true);
-    console.log(checkedByBrand, checkedByCountry);
-    console.log(sortedOffers)
+    // console.log(checkedByBrand, checkedByCountry);
+    // console.log(sortedOffers);
     // alert(`В разработке!¯\\_(ツ)_/¯ `);
   }
 }
