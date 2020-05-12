@@ -26,6 +26,11 @@ const createCardPage = (card) => {
   };
 
   const getAvailable = available ? `Да` : `Нет`;
+  const country = parameters.current.country ? `<p class="card-page__info-text"><span>Страна:</span> ${parameters.current.country}</p>` : ``;
+  const brand = parameters.current.brend ? `<p class="card-page__info-text"><span>Бренд:</span> ${parameters.current.brend}</p>` : ``;
+  const style = parameters.current.style ? `<p class="card-page__info-text"><span>Стиль:</span> ${parameters.current.style}</p>` : ``;
+  const color = parameters.current.color ? `<p class="card-page__info-text"><span>Цвет:</span> ${parameters.current.color}</p>` : ``;
+  const setup = parameters.current.setup ? `<p class="card-page__info-text"><span>Место установки:</span> ${parameters.current.setup}</p>` : ``;
 
   return (
     `<section class="card-page">
@@ -44,6 +49,11 @@ const createCardPage = (card) => {
           <p class="card-page__info-text">
             <span>Наличие:</span>  ${getAvailable}
           </p>
+           ${country}
+           ${brand}
+           ${style}
+           ${color}
+           ${setup}
           <div class="card-page__box">
             ${getParameterMarkup(parameters.rest)}
           </div>

@@ -42,6 +42,12 @@ export const sortingParameters = (parameters) => {
       current.brend = parameter._text;
     } else if (parameter._attributes.name === `Страна`) {
       current.country = parameter._text;
+    } else if (parameter._attributes.name === `Стиль`) {
+      current.style = parameter._text;
+    } else if (parameter._attributes.name === `Место установки`) {
+      current.setup = parameter._text;
+    } else if (parameter._attributes.name === `Цвет`) {
+      current.color = parameter._text;
     } else if (parameter._attributes.name === `Остаток поставщика`) {
       service.push(parameter);
     } else if (parameter._attributes.name === `Автоматическая сортировка`) {
@@ -53,6 +59,8 @@ export const sortingParameters = (parameters) => {
     } else if (parameter._attributes.name === `Дата обновления изображений`) {
       service.push(parameter);
     } else if (parameter._attributes.name === `Срок окончания акции`) {
+      service.push(parameter);
+    } else if (parameter._attributes.name === `ШтрихКод`) {
       service.push(parameter);
     } else {
       rest.push(parameter);

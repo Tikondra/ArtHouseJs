@@ -40,7 +40,10 @@ class FilterController {
     evt.preventDefault();
     const checkedByBrand = getChecked(this._filterBox, `brand`);
     const checkedByCountry = getChecked(this._filterBox, `country`);
-    const checked = [...checkedByBrand, ...checkedByCountry];
+    const checkedByStyle = getChecked(this._filterBox, `style`);
+    const checkedByColor = getChecked(this._filterBox, `color`);
+    const checkedBySetup = getChecked(this._filterBox, `setup`);
+    const checked = [...checkedByBrand, ...checkedByCountry, ...checkedByStyle, ...checkedByColor, ...checkedBySetup];
     const offers = this._offersModel.getOffersByFilter();
     let sortedOffers = offers;
 
@@ -55,6 +58,21 @@ class FilterController {
           return true;
         }
         return checkedByCountry.includes(it.parameters.current.country);
+      }).filter((it) => {
+        if (checkedByStyle.length === 0) {
+          return true;
+        }
+        return checkedByStyle.includes(it.parameters.current.style);
+      }).filter((it) => {
+        if (checkedByColor.length === 0) {
+          return true;
+        }
+        return checkedByColor.includes(it.parameters.current.color);
+      }).filter((it) => {
+        if (checkedBySetup.length === 0) {
+          return true;
+        }
+        return checkedBySetup.includes(it.parameters.current.setup);
       });
     }
 
@@ -67,9 +85,6 @@ class FilterController {
     }
 
     renderCards(this._cardBox, sortedOffers, CardLightComponent, true);
-    // console.log(checkedByBrand, checkedByCountry);
-    // console.log(sortedOffers);
-    // alert(`В разработке!¯\\_(ツ)_/¯ `);
   }
 }
 

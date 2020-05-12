@@ -13,6 +13,9 @@ export const getParameters = (data) => {
 export const getFilters = (parameters) => {
   const vendors = [];
   const countries = [];
+  const styles = [];
+  const setups = [];
+  const colors = [];
 
   const allFilters = [
     {
@@ -24,7 +27,22 @@ export const getFilters = (parameters) => {
       type: `country`,
       title: `Страна`,
       items: countries
-    }
+    },
+    {
+      type: `style`,
+      title: `Стиль`,
+      items: styles
+    },
+    {
+      type: `color`,
+      title: `Цвет`,
+      items: colors
+    },
+    {
+      type: `setup`,
+      title: `Место установки`,
+      items: setups
+    },
   ];
 
   parameters.map((parameter) => {
@@ -33,6 +51,12 @@ export const getFilters = (parameters) => {
       vendors.push(parameter.parameters.current.brend);
     } else if (!countries.includes(parameter.parameters.current.country) && parameter.parameters.current.country) {
       countries.push(parameter.parameters.current.country);
+    } else if (!styles.includes(parameter.parameters.current.style) && parameter.parameters.current.style) {
+      styles.push(parameter.parameters.current.style);
+    } else if (!colors.includes(parameter.parameters.current.color) && parameter.parameters.current.color) {
+      colors.push(parameter.parameters.current.color);
+    } else if (!setups.includes(parameter.parameters.current.setup) && parameter.parameters.current.setup) {
+      setups.push(parameter.parameters.current.setup);
     }
   });
 
