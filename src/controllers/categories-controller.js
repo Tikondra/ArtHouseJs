@@ -10,7 +10,7 @@ class CategoriesController {
     this._data = dataCategories;
 
     this._cardBox = document.querySelector(`.cards`);
-    this._allCategoryBtn = document.querySelector(`.sort__link--category`);
+    this._allCategoryBtn = document.querySelector(`.sort__category-view`);
     this._categoryList = document.querySelector(`.sort__list--category`);
     this._form = document.querySelector(`.filter__form`);
     this._isSort = null;
@@ -33,37 +33,27 @@ class CategoriesController {
       const element = this._categoryComponent.getElement();
       const link = element.querySelector(`.sort__link`);
       element.addEventListener(`click`, this._onBack.bind({}, this._categoryList, this._data, offers, component));
-      link.textContent = `Назад`;
-      link.classList.add(`sort__link--active`);
+
+      link.classList.add(`sort__link--parent`);
+      link.innerHTML = `${link.textContent}<span class="sort__link--back">назад</span>`;
     }
 
     if (getSomeCards(category, this._data, offers).length !== 0) {
       render(this._categoryList, this._categoryComponent.getElement(category), Place.BEFOREEND);
     }
 
-    if (!this._isAddListener) {
+    if (!this._isAddListener && this._allCategoryBtn) {
       this._allCategoryBtn.addEventListener(`click`, (evt) => {
         evt.preventDefault();
-        const copyOffers = this._offersModel.getAllOffers();
-        const categoryButtons = this._categoryList.querySelectorAll(`.sort__link`);
+        this._allCategoryBtn.classList.toggle(`sort__category-view--open`);
 
-        categoryButtons.forEach((link) => {
-          link.classList.remove(`sort__link--active`);
-        });
-
-        if (this._isSort) {
-          cleanContainer(this._cardBox);
-
-          const btnMore = document.querySelector(`.store-content__btn-more`);
-
-          if (btnMore) {
-            btnMore.remove();
-          }
-
-          renderCards(this._cardBox, copyOffers, component, this._isSort);
-
-          this._isSort = null;
+        if (this._allCategoryBtn.textContent === `Показать все категории`) {
+          this._allCategoryBtn.textContent = `Скрыть категории`;
+        } else {
+          this._allCategoryBtn.textContent = `Показать все категории`;
         }
+
+        this._categoryList.classList.toggle(`sort__list--show-all`);
       });
 
       this._isAddListener = true;
@@ -79,19 +69,47 @@ class CategoriesController {
     this.render(category, offers, component, true);
     someCategoryRender.forEach((it) => this.render(it, offers, component));
     this._isSubView = true;
-    this._allCategoryBtn.classList.add(`sort__link--hide`);
+
+    if (this._allCategoryBtn) {
+      this._allCategoryBtn.classList.add(`sort__link--hide`);
+    }
+
+    this._categoryList.querySelectorAll(`.sort__link`)
+      .forEach((link) => {
+        link.classList.add(`sort__link--child`);
+      });
   }
 
   _onBack(container, categories, offers, component) {
+    const copyOffers = this._offersModel.getAllOffers();
+
     const someCategory = categories.filter((it) => {
       return it.parentId === ``;
     });
+
     cleanContainer(container);
 
     someCategory.forEach((it) => this.render(it, offers, component));
 
     this._isSubView = null;
-    this._allCategoryBtn.classList.remove(`sort__link--hide`);
+
+    if (this._allCategoryBtn) {
+      this._allCategoryBtn.classList.remove(`sort__link--hide`);
+    }
+
+    if (this._isSort) {
+      cleanContainer(this._cardBox);
+
+      const btnMore = document.querySelector(`.store-content__btn-more`);
+
+      if (btnMore) {
+        btnMore.remove();
+      }
+
+      renderCards(this._cardBox, copyOffers, component, this._isSort);
+
+      this._isSort = null;
+    }
   }
 
   _onSortByCategory(container, category, categories, offers, component, evt) {

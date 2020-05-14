@@ -5,7 +5,6 @@ const convert = require(`xml-js`);
 import {getOffers, getOffersLight} from "../components/offers";
 import {getCategory} from "../components/categories";
 import {getCard} from "./load-card";
-import {renderCategory} from "../components/render-category";
 import {renderCards} from "../components/render-cards";
 
 import CardComponent from "../components/card";
@@ -15,7 +14,6 @@ import CategoriesController from "../controllers/categories-controller";
 import OffersModel from "../models/offers";
 
 const cardBox = document.querySelector(`.cards`);
-const categoryList = document.querySelector(`.sort__list--category`);
 let isSort = null;
 
 const preloader = () => {
@@ -49,13 +47,20 @@ const loadData = (data) => {
   const offersDecor = getOffers(dataOffers);
   const categoriesDecor = getCategory(dataCategory);
 
+  const offersModel = new OffersModel();
+  offersModel.setOffers(offersDecor);
+
   const offersCopy = offersDecor.slice();
 
   const someCategory = categoriesDecor.filter((it) => {
     return it.parentId === ``;
   });
 
-  someCategory.forEach((category) => renderCategory(categoryList, category, categoriesDecor, offersDecor, CardComponent));
+  someCategory.forEach((category) => {
+    const categoriesController = new CategoriesController(offersModel, categoriesDecor);
+    categoriesController.render(category, offersDecor, CardComponent);
+  });
+
   renderCards(cardBox, offersCopy, CardComponent, isSort);
 };
 

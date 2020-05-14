@@ -26,3 +26,7 @@ export const createElement = (template) => {
 };
 
 export const regexp = /[а-я А-Я \d ( )]/iug;
+
+export const getPercent = (value, percent) => {
+  return value * (1 - (percent / 100));
+};

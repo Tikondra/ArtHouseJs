@@ -1,3 +1,5 @@
+import {getPercent} from "./utils";
+
 const getImage = (img) => {
   if (img._text) {
     return [img._text];
@@ -10,7 +12,7 @@ const getImage = (img) => {
   }
 };
 
-const getSale = (sale) => sale ? sale._text : ``;
+// const getSale = (sale) => sale ? sale._text : ``;
 
 const getCategoryId = (category) => {
   if (category._text) {
@@ -70,11 +72,15 @@ export const sortingParameters = (parameters) => {
 };
 
 export const getOffers = (data) => {
+
   return data.reduce((cardList, card) => {
+    const price = card.price._text;
+    const sale = Math.floor(getPercent(price, 20));
+
     const product = {
       title: card.name._text,
-      price: card.price._text,
-      sale: getSale(card.wholesalePrice),
+      price,
+      sale,
       image: getImage(card.picture),
       categoryId: getCategoryId(card.categoryId),
       id: card._attributes.id,
