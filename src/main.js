@@ -1,5 +1,5 @@
-import {load, loadData, loadDataToLight, loadDataToProduct} from "./load/load";
-import {LOCAL_DECOR, LOCAL_LIGHT} from "./components/consts";
+import {load, loadData, loadDataToFurniture, loadDataToLight, loadDataToProduct} from "./load/load";
+import {LOCAL_DECOR, LOCAL_FURNITURE, LOCAL_LIGHT} from "./components/consts";
 
 if (document.querySelector(`.decor-js`)) {
   load(loadData, LOCAL_DECOR);
@@ -15,4 +15,8 @@ if (document.querySelector(`.light-js`)) {
 
 if (document.querySelector(`.product-light`)) {
   load(loadDataToProduct, LOCAL_LIGHT, `light`);
+}
+
+if (document.querySelector(`.furniture-js`)) {
+  load(loadDataToFurniture, LOCAL_FURNITURE);
 }

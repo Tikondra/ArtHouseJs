@@ -2,13 +2,14 @@ import {TypeCard} from "../components/consts";
 
 const convert = require(`xml-js`);
 
-import {getOffers, getOffersLight} from "../components/offers";
-import {getCategory} from "../components/categories";
+import {getOffers, getOffersFurniture, getOffersLight} from "../components/offers";
+import {getCategory, getFurnitureParameters} from "../components/categories";
 import {getCard} from "./load-card";
 import {renderCards} from "../components/render-cards";
 
 import CardComponent from "../components/card";
 import CardLightComponent from "../components/light-card";
+import CardFurnitureComponent from "../components/furniture-card";
 import FilterController from "../controllers/filters-controller";
 import CategoriesController from "../controllers/categories-controller";
 import OffersModel from "../models/offers";
@@ -16,7 +17,7 @@ import OffersModel from "../models/offers";
 const cardBox = document.querySelector(`.cards`);
 let isSort = null;
 
-const preloader = () => {
+export const preloader = () => {
   document.body.classList.add(`loaded_hiding`);
   window.setTimeout(function () {
     document.body.classList.add(`loaded`);
@@ -117,4 +118,18 @@ const loadDataToLight = (data) => {
   renderCards(cardBox, offersCopy, CardLightComponent, isSort);
 };
 
-export {load, loadData, loadDataToProduct, loadDataToLight};
+const loadDataToFurniture = (data) => {
+  const dataOffers = data.КоммерческаяИнформация.Каталог.Товары.Товар;
+  const dataParameters = data.КоммерческаяИнформация.Классификатор.Свойства.Свойство;
+
+  const parametersFurniture = getFurnitureParameters(dataParameters);
+  const offersFurniture = getOffersFurniture(dataOffers, parametersFurniture);
+
+  console.log(offersFurniture)
+  const offersModel = new OffersModel();
+  offersModel.setOffers(offersFurniture);
+
+  renderCards(cardBox, offersModel.getAllOffers(), CardFurnitureComponent, isSort);
+};
+
+export {load, loadData, loadDataToProduct, loadDataToLight, loadDataToFurniture};

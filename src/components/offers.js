@@ -71,6 +71,82 @@ export const sortingParameters = (parameters) => {
   return allParameters;
 };
 
+export const sortingParametersFurniture = (parameters) => {
+  const current = {};
+  const rest = [];
+  const service = [];
+  const allParameters = {
+    service,
+    current,
+    rest,
+  };
+
+  parameters.map((parameter) => {
+    if (parameter.title === `Материал каркаса`) {
+      current.materialKarkas = parameter.value;
+    } else if (parameter.title === `Розничная цена со скидкой `) {
+      current.price = parameter.value;
+    } else if (parameter.title === `Материал столешницы`) {
+      current.materialUp = parameter.value;
+    } else if (parameter.title === `Производитель`) {
+      current.brand = parameter.value;
+    } else if (parameter.title === `Страна происхождения`) {
+      current.country = parameter.value;
+    } else if (parameter.title === `Стиль`) {
+      current.style = parameter.value;
+    } else if (parameter.title === `Цвет`) {
+      current.color = parameter.value;
+    } else if (parameter.title === `Цвет каркаса`) {
+      service.push(parameter);
+    } else if (parameter.title === `Размер`) {
+      service.push(parameter);
+    } else if (parameter.title === `В какую комнату`) {
+      service.push(parameter);
+    } else if (parameter.title === `Цвет столешницы`) {
+      service.push(parameter);
+    } else if (parameter.title === `Форма`) {
+      service.push(parameter);
+    } else if (parameter.title === `По раскладке`) {
+      service.push(parameter);
+    } else if (parameter.title === `Срок службы`) {
+      service.push(parameter);
+    } else if (parameter.title === `Гарантия`) {
+      service.push(parameter);
+    } else if (parameter.title === `Материал`) {
+      service.push(parameter);
+    } else {
+      rest.push(parameter);
+    }
+  });
+  return allParameters;
+};
+
+const getClearParameter = (parameters) => {
+  const parametersList = [];
+  parameters.map((it) => {
+    if (it.Значение._text) {
+      parametersList.push(it);
+    }
+  });
+
+  return parametersList;
+};
+
+export const getFurnitureParameters = (parameters, parametersMap) => {
+  const someParameters = getClearParameter(parameters);
+
+  return someParameters.reduce((parametersList, parameter) => {
+
+    const data = {
+      title: parametersMap[parameter.Ид._text],
+      value: parameter.Значение._text,
+    };
+
+    parametersList.push(data);
+    return parametersList;
+  }, []);
+};
+
 export const getOffers = (data) => {
 
   return data.reduce((cardList, card) => {
@@ -103,6 +179,21 @@ export const getOffersLight = (data) => {
       id: card._attributes.id,
       available: card._attributes.available,
       parameters: sortingParameters(card.param)
+    };
+    cardList.push(product);
+    return cardList;
+  }, []);
+};
+
+export const getOffersFurniture = (data, parametersMap) => {
+  return data.reduce((cardList, card) => {
+    const allParameters = getFurnitureParameters(card.ЗначенияСвойств.ЗначенияСвойства, parametersMap);
+
+    const product = {
+      title: card.Наименование._text,
+      image: card.Картинка._text,
+      description: card.Описание._text,
+      parameters: sortingParametersFurniture(allParameters),
     };
     cardList.push(product);
     return cardList;
