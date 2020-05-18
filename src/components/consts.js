@@ -12,7 +12,8 @@ export const Place = {
 
 export const TypeCard = {
   DECOR: `decor`,
-  LIGHT: `light`
+  LIGHT: `light`,
+  FURNITURE: `furniture`
 };
 
 export const Filter = {

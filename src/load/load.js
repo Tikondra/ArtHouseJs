@@ -25,15 +25,23 @@ export const preloader = () => {
   }, 500);
 };
 
-const load = (onload, url, type) => {
+export const onErrImg = (evt) => {
+  evt.target.setAttribute(`src`, `img/no-img.jpg`);
+};
+
+const load = (onload, url, type, parameters) => {
   const xhr = new XMLHttpRequest();
 
   xhr.addEventListener(`load`, () => {
     if (xhr.status === 200) {
 
       const result = convert.xml2json(xhr.response, {compact: true});
-      onload(JSON.parse(result), type);
+      onload(JSON.parse(result), type, parameters);
       preloader();
+      const allImg = document.querySelectorAll(`img`);
+      allImg.forEach((it) => {
+        it.addEventListener(`error`, onErrImg);
+      });
     }
   });
 
@@ -65,8 +73,12 @@ const loadData = (data) => {
   renderCards(cardBox, offersCopy, CardComponent, isSort);
 };
 
-const loadDataToProduct = (data, type) => {
-  const dataOffers = data.yml_catalog.shop.offers.offer;
+const loadDataToProduct = (data, type, parameters) => {
+  const dataOffers = type === TypeCard.FURNITURE ? data.КоммерческаяИнформация.Каталог.Товары.Товар : data.yml_catalog.shop.offers.offer;
+  let dataParameters = parameters;
+  if (parameters) {
+    dataParameters = getFurnitureParameters(data.КоммерческаяИнформация.Классификатор.Свойства.Свойство);
+  }
   let strGET = window.location.search.replace(`?`, ``);
   let offersProduct;
 
@@ -76,6 +88,9 @@ const loadDataToProduct = (data, type) => {
       break;
     case TypeCard.LIGHT:
       offersProduct = getOffersLight(dataOffers);
+      break;
+    case TypeCard.FURNITURE:
+      offersProduct = getOffersFurniture(dataOffers, dataParameters);
       break;
   }
 

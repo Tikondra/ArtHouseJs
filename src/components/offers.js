@@ -1,4 +1,4 @@
-import {getPercent} from "./utils";
+import {getPercent, makeCounter} from "./utils";
 
 const getImage = (img) => {
   if (img._text) {
@@ -12,8 +12,6 @@ const getImage = (img) => {
   }
 };
 
-// const getSale = (sale) => sale ? sale._text : ``;
-
 const getCategoryId = (category) => {
   if (category._text) {
     return category._text;
@@ -26,6 +24,8 @@ const getCategoryId = (category) => {
 };
 
 const isTrue = (it) => it ? it : ``;
+
+const getId = makeCounter();
 
 export const sortingParameters = (parameters) => {
   const current = {};
@@ -190,6 +190,7 @@ export const getOffersFurniture = (data, parametersMap) => {
     const allParameters = getFurnitureParameters(card.ЗначенияСвойств.ЗначенияСвойства, parametersMap);
 
     const product = {
+      id: getId() + 1,
       title: card.Наименование._text,
       image: card.Картинка._text,
       description: card.Описание._text,

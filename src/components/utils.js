@@ -30,3 +30,12 @@ export const regexp = /[а-я А-Я \d ( )]/iug;
 export const getPercent = (value, percent) => {
   return value * (1 - (percent / 100));
 };
+
+export const makeCounter = () => {
+  function counter() {
+    return counter.currentCount++;
+  }
+  counter.currentCount = 0;
+
+  return counter;
+};

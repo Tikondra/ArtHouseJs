@@ -1,11 +1,11 @@
 import AbstractComponent from "./AbstractComponent";
 
 const createCard = (card) => {
-  const {title, image, parameters} = card;
+  const {title, image, parameters, id} = card;
 
   return (
     `<li class="cards__item">
-        <a class="cards__link" href="">
+        <a class="cards__link" href="card-furniture.html?${id}">
             <img src=${image} width="213" height="213" alt="${title}">
         </a>
         <h3 class="cards__title">${title}</h3>

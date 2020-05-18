@@ -20,3 +20,7 @@ if (document.querySelector(`.product-light`)) {
 if (document.querySelector(`.furniture-js`)) {
   load(loadDataToFurniture, LOCAL_FURNITURE);
 }
+
+if (document.querySelector(`.product-furniture`)) {
+  load(loadDataToProduct, LOCAL_FURNITURE, `furniture`, true);
+}

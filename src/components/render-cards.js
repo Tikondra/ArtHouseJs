@@ -1,6 +1,7 @@
 import {Place, START_SHOW_TASK, MORE_SHOW_TASK} from "./consts";
 import {render} from "./utils";
 import ButtonMoreComponent from "./button-more";
+import {onErrImg} from "../load/load";
 
 const buttonMoreBox = document.querySelector(`.store-content__more-box`);
 const loadMoreButton = document.querySelector(`.store-content__btn-more`);
@@ -12,7 +13,7 @@ const renderCard = (container, card, Component) => {
 };
 
 export const renderCards = (container, cards, component, isSort) => {
-  console.log(cards.length)
+  console.log(cards.length);
   const cardsCopy = cards.slice();
   cards.splice(0, START_SHOW_TASK)
     .forEach((card) => {
@@ -26,6 +27,12 @@ export const renderCards = (container, cards, component, isSort) => {
     if (cards.length === 0) {
       evt.target.remove();
     }
+
+    const allImg = document.querySelectorAll(`img`);
+    allImg.forEach((it) => {
+      it.removeEventListener(`error`, onErrImg);
+      it.addEventListener(`error`, onErrImg);
+    });
   };
 
   if (isSort && cardsCopy.length > START_SHOW_TASK) {

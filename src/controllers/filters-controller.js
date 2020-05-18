@@ -34,7 +34,7 @@ class FilterController {
     });
 
     render(this._filterBox, filterComponent.getElement(), Place.BEFOREEND);
-  };
+  }
 
   _onSomeCards(evt) {
     evt.preventDefault();
