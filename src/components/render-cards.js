@@ -1,10 +1,13 @@
 import {Place, START_SHOW_TASK, MORE_SHOW_TASK} from "./consts";
 import {render} from "./utils";
 import ButtonMoreComponent from "./button-more";
-import {onErrImg} from "../load/load";
 
 const buttonMoreBox = document.querySelector(`.store-content__more-box`);
 const loadMoreButton = document.querySelector(`.store-content__btn-more`);
+
+const onErrImg = (evt) => {
+  evt.target.setAttribute(`src`, `img/no-img.jpg`);
+};
 
 const renderCard = (container, card, Component) => {
   const cardComponent = new Component(card);
@@ -44,4 +47,9 @@ export const renderCards = (container, cards, component, isSort) => {
   } else {
     loadMoreButton.addEventListener(`click`, onMoreView);
   }
+
+  const allImg = document.querySelectorAll(`img`);
+  allImg.forEach((it) => {
+    it.addEventListener(`error`, onErrImg);
+  });
 };

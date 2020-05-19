@@ -1,25 +1,30 @@
-import {getFilters, getParameters, getSortedOffersByFurniture, getSortedOffersByLight, getParametersForFurniture} from "../utils/filters";
+import {getFilters, getParameters, getSortedOffersByFurniture, getSortedOffersByLight, getParametersForFurniture, getFiltersByFurniture} from "../utils/filters";
 import FilterComponent from "../components/filters";
-import CardLightComponent from "../components/light-card";
 import {render} from "../components/utils";
 import {Place} from "../components/consts";
 import {renderCards} from "../components/render-cards";
 
-const filterMap = {
+const sortedMap = {
   light: getSortedOffersByLight,
   furniture: getSortedOffersByFurniture,
 };
 
-const toParametersrMap = {
+const toParametersMap = {
   light: getParameters,
   furniture: getParametersForFurniture,
 };
 
+const filtersMap = {
+  light: getFilters,
+  furniture: getFiltersByFurniture,
+};
+
 class FilterController {
-  constructor(offersModel, data, type, paramMap) {
+  constructor(offersModel, data, type, component, paramMap) {
     this._offersModel = offersModel;
     this._data = data;
     this._type = type;
+    this._component = component;
     this._parametersMap = paramMap;
     this._filterForm = document.querySelector(`.filter__form`);
     this._filterBox = this._filterForm.querySelector(`.filter__box`);
@@ -29,10 +34,10 @@ class FilterController {
   }
 
   render() {
-    const parameters = toParametersrMap[this._type](this._data, this._parametersMap);
-    const lightFilters = getFilters(parameters);
+    const parameters = toParametersMap[this._type](this._data, this._parametersMap);
+    const filters = filtersMap[this._type](parameters);
 
-    lightFilters.forEach((filter) => this.renderFilters(filter));
+    filters.forEach((filter) => this.renderFilters(filter));
     this._filterForm.addEventListener(`submit`, this._onSomeCards);
   }
 
@@ -52,7 +57,7 @@ class FilterController {
     evt.preventDefault();
     const offers = this._offersModel.getOffersByFilter();
 
-    const sortedOffers = filterMap[this._type](this._filterBox, offers);
+    const sortedOffers = sortedMap[this._type](this._filterBox, offers);
 
     this._cardBox.innerHTML = ``;
 
@@ -62,7 +67,7 @@ class FilterController {
       btnMore.remove();
     }
 
-    renderCards(this._cardBox, sortedOffers, CardLightComponent, true);
+    renderCards(this._cardBox, sortedOffers, this._component, true);
   }
 }
 

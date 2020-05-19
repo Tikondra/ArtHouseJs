@@ -75,6 +75,36 @@ export const getFilters = (parameters) => {
   return allFilters;
 };
 
+export const getFiltersByFurniture = (parameters) => {
+  console.log(parameters)
+  const countries = [];
+  const styles = [];
+
+  const allFilters = [
+    {
+      type: `country`,
+      title: `Страна`,
+      items: countries
+    },
+    {
+      type: `style`,
+      title: `Стиль`,
+      items: styles
+    },
+  ];
+
+  parameters.map((parameter) => {
+
+    if (!countries.includes(parameter.parameters.current.country) && parameter.parameters.current.country) {
+      countries.push(parameter.parameters.current.country);
+    } else if (!styles.includes(parameter.parameters.current.style) && parameter.parameters.current.style) {
+      styles.push(parameter.parameters.current.style);
+    }
+  });
+
+  return allFilters;
+};
+
 export const getChecked = (container, type) => {
   const checked = [...container.querySelectorAll(`[data-type="${type}"] input[type="checkbox"]:checked`)];
   return checked.reduce((checkedList, it) => {
@@ -126,22 +156,15 @@ export const getSortedOffersByLight = (container, offers) => {
 };
 
 export const getSortedOffersByFurniture = (container, offers) => {
-  const checkedByBrand = getChecked(container, `brand`);
   const checkedByCountry = getChecked(container, `country`);
   const checkedByStyle = getChecked(container, `style`);
-  const checkedByColor = getChecked(container, `color`);
-  const checkedBySetup = getChecked(container, `setup`);
-  const checked = [...checkedByBrand, ...checkedByCountry, ...checkedByStyle, ...checkedByColor, ...checkedBySetup];
+
+  const checked = [...checkedByCountry, ...checkedByStyle];
 
   let sortedOffers = offers;
 
   if (checked.length > 0) {
     sortedOffers = offers.filter((it) => {
-      if (checkedByBrand.length === 0) {
-        return true;
-      }
-      return checkedByBrand.includes(it.parameters.current.brend);
-    }).filter((it) => {
       if (checkedByCountry.length === 0) {
         return true;
       }
@@ -151,16 +174,6 @@ export const getSortedOffersByFurniture = (container, offers) => {
         return true;
       }
       return checkedByStyle.includes(it.parameters.current.style);
-    }).filter((it) => {
-      if (checkedByColor.length === 0) {
-        return true;
-      }
-      return checkedByColor.includes(it.parameters.current.color);
-    }).filter((it) => {
-      if (checkedBySetup.length === 0) {
-        return true;
-      }
-      return checkedBySetup.includes(it.parameters.current.setup);
     });
   }
 

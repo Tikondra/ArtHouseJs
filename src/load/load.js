@@ -1,18 +1,16 @@
-import {FilterType, TypeCard} from "../components/consts";
-
-const convert = require(`xml-js`);
-
 import {getOffers, getOffersFurniture, getOffersLight} from "../components/offers";
 import {getCategory, getFurnitureParameters} from "../components/categories";
 import {getCard} from "./load-card";
 import {renderCards} from "../components/render-cards";
-
+import {FilterType, TypeCard} from "../components/consts";
 import CardComponent from "../components/card";
 import CardLightComponent from "../components/light-card";
 import CardFurnitureComponent from "../components/furniture-card";
 import FilterController from "../controllers/filters-controller";
 import CategoriesController from "../controllers/categories-controller";
 import OffersModel from "../models/offers";
+
+const convert = require(`xml-js`);
 
 const cardBox = document.querySelector(`.cards`);
 let isSort = null;
@@ -25,10 +23,6 @@ export const preloader = () => {
   }, 500);
 };
 
-export const onErrImg = (evt) => {
-  evt.target.setAttribute(`src`, `img/no-img.jpg`);
-};
-
 const load = (onload, url, type, parameters) => {
   const xhr = new XMLHttpRequest();
 
@@ -38,10 +32,6 @@ const load = (onload, url, type, parameters) => {
       const result = convert.xml2json(xhr.response, {compact: true});
       onload(JSON.parse(result), type, parameters);
       preloader();
-      const allImg = document.querySelectorAll(`img`);
-      allImg.forEach((it) => {
-        it.addEventListener(`error`, onErrImg);
-      });
     }
   });
 
@@ -117,7 +107,7 @@ const loadDataToLight = (data) => {
   const offersModel = new OffersModel();
   offersModel.setOffers(lightOffers);
 
-  const filterController = new FilterController(offersModel, dataOffers, FilterType.LIGHT);
+  const filterController = new FilterController(offersModel, dataOffers, FilterType.LIGHT, CardLightComponent);
   filterController.render();
 
   const offersCopy = lightOffers.slice();
@@ -140,12 +130,11 @@ const loadDataToFurniture = (data) => {
   const parametersFurniture = getFurnitureParameters(dataParameters);
   const offersFurniture = getOffersFurniture(dataOffers, parametersFurniture);
 
-  console.log(offersFurniture)
   const offersModel = new OffersModel();
   offersModel.setOffers(offersFurniture);
 
-  // const filterController = new FilterController(offersModel, dataOffers, FilterType.FURNITURE, parametersFurniture);
-  // filterController.render();
+  const filterController = new FilterController(offersModel, dataOffers, FilterType.FURNITURE, CardFurnitureComponent, parametersFurniture);
+  filterController.render();
 
   renderCards(cardBox, offersModel.getAllOffers(), CardFurnitureComponent, isSort);
 };
