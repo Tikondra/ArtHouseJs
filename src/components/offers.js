@@ -192,7 +192,7 @@ export const getOffersFurniture = (data, parametersMap) => {
     const product = {
       id: getId() + 1,
       title: card.Наименование._text,
-      image: card.Картинка._text,
+      image: [card.Картинка._text],
       description: card.Описание._text,
       parameters: sortingParametersFurniture(allParameters),
     };

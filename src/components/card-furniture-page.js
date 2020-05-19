@@ -1,8 +1,11 @@
 import AbstractComponent from "./AbstractComponent";
+import {createImg} from "./card-page-img";
 
 const createCardPage = (card) => {
 
   const {parameters, title, description, image} = card;
+
+  const getImages = (pictures) => pictures.map((it) => createImg(it)).join(`\n`);
 
   const getParameterMarkup = (params) => {
     return params.map((it) => {
@@ -25,7 +28,9 @@ const createCardPage = (card) => {
         ${title}
       </h1>
       <div class="card-page__info-box">
-        <img src="${image}">
+        <ul class="card-page__list owl-carousel">
+          ${getImages(image)}
+        </ul>
         <div class="card-page__info">
           <p class="card-page__info-text card-page__info-text--price">
             <span>Цена:</span> ${Math.floor(parameters.current.price)} ₽
