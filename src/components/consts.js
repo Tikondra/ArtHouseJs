@@ -22,3 +22,8 @@ export const Filter = {
 };
 
 export const FILTERS = Object.values(Filter);
+
+export const FilterType = {
+  LIGHT: `light`,
+  FURNITURE: `furniture`,
+};

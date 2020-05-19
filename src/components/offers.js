@@ -190,7 +190,7 @@ export const getOffersFurniture = (data, parametersMap) => {
     const allParameters = getFurnitureParameters(card.ЗначенияСвойств.ЗначенияСвойства, parametersMap);
 
     const product = {
-      id: getId() + 1,
+      id: `card-${getId() + 1}`,
       title: card.Наименование._text,
       image: [card.Картинка._text],
       description: card.Описание._text,

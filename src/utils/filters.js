@@ -1,9 +1,21 @@
-import {sortingParameters} from "../components/offers";
+import {getFurnitureParameters, sortingParameters, sortingParametersFurniture} from "../components/offers";
 
 export const getParameters = (data) => {
   return data.reduce((filterList, card) => {
     const product = {
       parameters: sortingParameters(card.param)
+    };
+    filterList.push(product);
+    return filterList;
+  }, []);
+};
+
+export const getParametersForFurniture = (data, parametersMap) => {
+
+  return data.reduce((filterList, card) => {
+    const allParameters = getFurnitureParameters(card.ЗначенияСвойств.ЗначенияСвойства, parametersMap);
+    const product = {
+      parameters: sortingParametersFurniture(allParameters)
     };
     filterList.push(product);
     return filterList;
@@ -69,4 +81,88 @@ export const getChecked = (container, type) => {
     checkedList.push(it.value);
     return checkedList;
   }, []);
+};
+
+export const getSortedOffersByLight = (container, offers) => {
+  const checkedByBrand = getChecked(container, `brand`);
+  const checkedByCountry = getChecked(container, `country`);
+  const checkedByStyle = getChecked(container, `style`);
+  const checkedByColor = getChecked(container, `color`);
+  const checkedBySetup = getChecked(container, `setup`);
+  const checked = [...checkedByBrand, ...checkedByCountry, ...checkedByStyle, ...checkedByColor, ...checkedBySetup];
+
+  let sortedOffers = offers;
+
+  if (checked.length > 0) {
+    sortedOffers = offers.filter((it) => {
+      if (checkedByBrand.length === 0) {
+        return true;
+      }
+      return checkedByBrand.includes(it.parameters.current.brend);
+    }).filter((it) => {
+      if (checkedByCountry.length === 0) {
+        return true;
+      }
+      return checkedByCountry.includes(it.parameters.current.country);
+    }).filter((it) => {
+      if (checkedByStyle.length === 0) {
+        return true;
+      }
+      return checkedByStyle.includes(it.parameters.current.style);
+    }).filter((it) => {
+      if (checkedByColor.length === 0) {
+        return true;
+      }
+      return checkedByColor.includes(it.parameters.current.color);
+    }).filter((it) => {
+      if (checkedBySetup.length === 0) {
+        return true;
+      }
+      return checkedBySetup.includes(it.parameters.current.setup);
+    });
+  }
+
+  return sortedOffers;
+};
+
+export const getSortedOffersByFurniture = (container, offers) => {
+  const checkedByBrand = getChecked(container, `brand`);
+  const checkedByCountry = getChecked(container, `country`);
+  const checkedByStyle = getChecked(container, `style`);
+  const checkedByColor = getChecked(container, `color`);
+  const checkedBySetup = getChecked(container, `setup`);
+  const checked = [...checkedByBrand, ...checkedByCountry, ...checkedByStyle, ...checkedByColor, ...checkedBySetup];
+
+  let sortedOffers = offers;
+
+  if (checked.length > 0) {
+    sortedOffers = offers.filter((it) => {
+      if (checkedByBrand.length === 0) {
+        return true;
+      }
+      return checkedByBrand.includes(it.parameters.current.brend);
+    }).filter((it) => {
+      if (checkedByCountry.length === 0) {
+        return true;
+      }
+      return checkedByCountry.includes(it.parameters.current.country);
+    }).filter((it) => {
+      if (checkedByStyle.length === 0) {
+        return true;
+      }
+      return checkedByStyle.includes(it.parameters.current.style);
+    }).filter((it) => {
+      if (checkedByColor.length === 0) {
+        return true;
+      }
+      return checkedByColor.includes(it.parameters.current.color);
+    }).filter((it) => {
+      if (checkedBySetup.length === 0) {
+        return true;
+      }
+      return checkedBySetup.includes(it.parameters.current.setup);
+    });
+  }
+
+  return sortedOffers;
 };

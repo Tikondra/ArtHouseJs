@@ -8,7 +8,7 @@ const main = document.querySelector(`main`);
 
 export const getCard = (offs, id, type) => {
   offs.forEach((card) => {
-    if (card.id === Number(id)) {
+    if (card.id === id) {
       if (type === TypeCard.DECOR) {
         const cardPageComponent = new CardPageComponent(card);
         render(main, cardPageComponent.getElement(card), Place.BEFOREEND);

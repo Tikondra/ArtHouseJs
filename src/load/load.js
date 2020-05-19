@@ -1,4 +1,4 @@
-import {TypeCard} from "../components/consts";
+import {FilterType, TypeCard} from "../components/consts";
 
 const convert = require(`xml-js`);
 
@@ -117,7 +117,7 @@ const loadDataToLight = (data) => {
   const offersModel = new OffersModel();
   offersModel.setOffers(lightOffers);
 
-  const filterController = new FilterController(offersModel, dataOffers);
+  const filterController = new FilterController(offersModel, dataOffers, FilterType.LIGHT);
   filterController.render();
 
   const offersCopy = lightOffers.slice();
@@ -143,6 +143,9 @@ const loadDataToFurniture = (data) => {
   console.log(offersFurniture)
   const offersModel = new OffersModel();
   offersModel.setOffers(offersFurniture);
+
+  // const filterController = new FilterController(offersModel, dataOffers, FilterType.FURNITURE, parametersFurniture);
+  // filterController.render();
 
   renderCards(cardBox, offersModel.getAllOffers(), CardFurnitureComponent, isSort);
 };

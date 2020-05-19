@@ -1,14 +1,26 @@
-import {getFilters, getParameters, getChecked} from "../utils/filters";
+import {getFilters, getParameters, getSortedOffersByFurniture, getSortedOffersByLight, getParametersForFurniture} from "../utils/filters";
 import FilterComponent from "../components/filters";
 import CardLightComponent from "../components/light-card";
 import {render} from "../components/utils";
 import {Place} from "../components/consts";
 import {renderCards} from "../components/render-cards";
 
+const filterMap = {
+  light: getSortedOffersByLight,
+  furniture: getSortedOffersByFurniture,
+};
+
+const toParametersrMap = {
+  light: getParameters,
+  furniture: getParametersForFurniture,
+};
+
 class FilterController {
-  constructor(offersModel, data) {
+  constructor(offersModel, data, type, paramMap) {
     this._offersModel = offersModel;
     this._data = data;
+    this._type = type;
+    this._parametersMap = paramMap;
     this._filterForm = document.querySelector(`.filter__form`);
     this._filterBox = this._filterForm.querySelector(`.filter__box`);
     this._cardBox = document.querySelector(`.cards`);
@@ -17,8 +29,8 @@ class FilterController {
   }
 
   render() {
-    const lightParameters = getParameters(this._data);
-    const lightFilters = getFilters(lightParameters);
+    const parameters = toParametersrMap[this._type](this._data, this._parametersMap);
+    const lightFilters = getFilters(parameters);
 
     lightFilters.forEach((filter) => this.renderFilters(filter));
     this._filterForm.addEventListener(`submit`, this._onSomeCards);
@@ -38,43 +50,9 @@ class FilterController {
 
   _onSomeCards(evt) {
     evt.preventDefault();
-    const checkedByBrand = getChecked(this._filterBox, `brand`);
-    const checkedByCountry = getChecked(this._filterBox, `country`);
-    const checkedByStyle = getChecked(this._filterBox, `style`);
-    const checkedByColor = getChecked(this._filterBox, `color`);
-    const checkedBySetup = getChecked(this._filterBox, `setup`);
-    const checked = [...checkedByBrand, ...checkedByCountry, ...checkedByStyle, ...checkedByColor, ...checkedBySetup];
     const offers = this._offersModel.getOffersByFilter();
-    let sortedOffers = offers;
 
-    if (checked.length > 0) {
-      sortedOffers = offers.filter((it) => {
-        if (checkedByBrand.length === 0) {
-          return true;
-        }
-        return checkedByBrand.includes(it.parameters.current.brend);
-      }).filter((it) => {
-        if (checkedByCountry.length === 0) {
-          return true;
-        }
-        return checkedByCountry.includes(it.parameters.current.country);
-      }).filter((it) => {
-        if (checkedByStyle.length === 0) {
-          return true;
-        }
-        return checkedByStyle.includes(it.parameters.current.style);
-      }).filter((it) => {
-        if (checkedByColor.length === 0) {
-          return true;
-        }
-        return checkedByColor.includes(it.parameters.current.color);
-      }).filter((it) => {
-        if (checkedBySetup.length === 0) {
-          return true;
-        }
-        return checkedBySetup.includes(it.parameters.current.setup);
-      });
-    }
+    const sortedOffers = filterMap[this._type](this._filterBox, offers);
 
     this._cardBox.innerHTML = ``;
 
