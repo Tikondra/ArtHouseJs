@@ -76,9 +76,14 @@ export const getFilters = (parameters) => {
 };
 
 export const getFiltersByFurniture = (parameters) => {
-  console.log(parameters)
   const countries = [];
   const styles = [];
+  const materials = [];
+  const materialsUp = [];
+  const sizes = [];
+  const rooms = [];
+  const types = [];
+  const forms = [];
 
   const allFilters = [
     {
@@ -91,6 +96,36 @@ export const getFiltersByFurniture = (parameters) => {
       title: `Стиль`,
       items: styles
     },
+    {
+      type: `materialKarkas`,
+      title: `Материал каркаса`,
+      items: materials
+    },
+    {
+      type: `materialUp`,
+      title: `Материал столешницы`,
+      items: materialsUp
+    },
+    {
+      type: `size`,
+      title: `Размер`,
+      items: sizes
+    },
+    {
+      type: `rooms`,
+      title: `В какую комнату`,
+      items: rooms
+    },
+    {
+      type: `form`,
+      title: `Форма`,
+      items: forms
+    },
+    {
+      type: `type`,
+      title: `По раскладке`,
+      items: types
+    },
   ];
 
   parameters.map((parameter) => {
@@ -99,6 +134,18 @@ export const getFiltersByFurniture = (parameters) => {
       countries.push(parameter.parameters.current.country);
     } else if (!styles.includes(parameter.parameters.current.style) && parameter.parameters.current.style) {
       styles.push(parameter.parameters.current.style);
+    } else if (!materials.includes(parameter.parameters.current.materialKarkas) && parameter.parameters.current.materialKarkas) {
+      materials.push(parameter.parameters.current.materialKarkas);
+    } else if (!materialsUp.includes(parameter.parameters.current.materialUp) && parameter.parameters.current.materialUp) {
+      materialsUp.push(parameter.parameters.current.materialUp);
+    } else if (!sizes.includes(parameter.parameters.current.size) && parameter.parameters.current.size) {
+      sizes.push(parameter.parameters.current.size);
+    } else if (!rooms.includes(parameter.parameters.current.room) && parameter.parameters.current.room) {
+      rooms.push(parameter.parameters.current.room);
+    } else if (!forms.includes(parameter.parameters.current.form) && parameter.parameters.current.form) {
+      forms.push(parameter.parameters.current.form);
+    } else if (!types.includes(parameter.parameters.current.type) && parameter.parameters.current.type) {
+      types.push(parameter.parameters.current.type);
     }
   });
 
@@ -158,8 +205,23 @@ export const getSortedOffersByLight = (container, offers) => {
 export const getSortedOffersByFurniture = (container, offers) => {
   const checkedByCountry = getChecked(container, `country`);
   const checkedByStyle = getChecked(container, `style`);
+  const checkedByMaterialBase = getChecked(container, `materialKarkas`);
+  const checkedByMaterialUp = getChecked(container, `materialUp`);
+  const checkedBySize = getChecked(container, `size`);
+  const checkedByRoom = getChecked(container, `rooms`);
+  const checkedByForm = getChecked(container, `form`);
+  const checkedByType = getChecked(container, `type`);
 
-  const checked = [...checkedByCountry, ...checkedByStyle];
+  const checked = [
+    ...checkedByCountry,
+    ...checkedByStyle,
+    ...checkedByMaterialBase,
+    ...checkedByMaterialUp,
+    ...checkedBySize,
+    ...checkedByRoom,
+    ...checkedByForm,
+    ...checkedByType,
+  ];
 
   let sortedOffers = offers;
 
@@ -174,6 +236,36 @@ export const getSortedOffersByFurniture = (container, offers) => {
         return true;
       }
       return checkedByStyle.includes(it.parameters.current.style);
+    }).filter((it) => {
+      if (checkedByMaterialBase.length === 0) {
+        return true;
+      }
+      return checkedByMaterialBase.includes(it.parameters.current.materialKarkas);
+    }).filter((it) => {
+      if (checkedByMaterialUp.length === 0) {
+        return true;
+      }
+      return checkedByMaterialUp.includes(it.parameters.current.materialUp);
+    }).filter((it) => {
+      if (checkedBySize.length === 0) {
+        return true;
+      }
+      return checkedBySize.includes(it.parameters.current.size);
+    }).filter((it) => {
+      if (checkedByRoom.length === 0) {
+        return true;
+      }
+      return checkedByRoom.includes(it.parameters.current.room);
+    }).filter((it) => {
+      if (checkedByForm.length === 0) {
+        return true;
+      }
+      return checkedByForm.includes(it.parameters.current.form);
+    }).filter((it) => {
+      if (checkedByType.length === 0) {
+        return true;
+      }
+      return checkedByType.includes(it.parameters.current.type);
     });
   }
 

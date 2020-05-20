@@ -18,9 +18,14 @@ const createCardPage = (card) => {
   const country = parameters.current.country ? `<p class="card-page__info-text"><span>Страна:</span> ${parameters.current.country}</p>` : ``;
   const brand = parameters.current.brand ? `<p class="card-page__info-text"><span>Бренд:</span> ${parameters.current.brand}</p>` : ``;
   const style = parameters.current.style ? `<p class="card-page__info-text"><span>Стиль:</span> ${parameters.current.style}</p>` : ``;
-  const color = parameters.current.color ? `<p class="card-page__info-text"><span>Цвет:</span> ${parameters.current.color}</p>` : ``;
   const material = parameters.current.materialKarkas ? `<p class="card-page__info-text"><span>Материал каркаса:</span> ${parameters.current.materialKarkas}</p>` : ``;
   const materialUp = parameters.current.materialUp ? `<p class="card-page__info-text"><span>Материал столешницы:</span> ${parameters.current.materialUp}</p>` : ``;
+  const size = parameters.current.size ? `<p class="card-page__info-text"><span>Размер:</span> ${parameters.current.size}</p>` : ``;
+  const form = parameters.current.form ? `<p class="card-page__info-text"><span>Форма:</span> ${parameters.current.form}</p>` : ``;
+  const colorBase = parameters.current.colorBase ? `<p class="card-page__info-text"><span>Цвет каркаса:</span> ${parameters.current.colorBase}</p>` : ``;
+  const colorUp = parameters.current.colorUp ? `<p class="card-page__info-text"><span>Цвет столешницы:</span> ${parameters.current.colorUp}</p>` : ``;
+  const room = parameters.current.room ? `<p class="card-page__info-text"><span>В какую комнату:</span> ${parameters.current.room}</p>` : ``;
+  const type = parameters.current.type ? `<p class="card-page__info-text"><span>По раскладке:</span> ${parameters.current.type}</p>` : ``;
 
   return (
     `<section class="card-page">
@@ -35,12 +40,17 @@ const createCardPage = (card) => {
           <p class="card-page__info-text card-page__info-text--price">
             <span>Цена:</span> ${Math.floor(parameters.current.price)} ₽
           </p>
-           ${country}
-           ${brand}
-           ${style}
-           ${color}
-           ${material}
-           ${materialUp}
+            ${brand}
+            ${country}
+            ${material}
+            ${materialUp}
+            ${style}
+            ${size}
+            ${form}
+            ${colorBase}
+            ${colorUp}
+            ${room}
+            ${type}
           <div class="card-page__box">
             ${getParameterMarkup(parameters.service)}
           </div>

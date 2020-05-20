@@ -94,25 +94,21 @@ export const sortingParametersFurniture = (parameters) => {
       current.country = parameter.value;
     } else if (parameter.title === `Стиль`) {
       current.style = parameter.value;
-    } else if (parameter.title === `Цвет`) {
-      current.color = parameter.value;
-    } else if (parameter.title === `Цвет каркаса`) {
-      service.push(parameter);
     } else if (parameter.title === `Размер`) {
-      service.push(parameter);
-    } else if (parameter.title === `В какую комнату`) {
-      service.push(parameter);
-    } else if (parameter.title === `Цвет столешницы`) {
-      service.push(parameter);
+      current.size = parameter.value;
     } else if (parameter.title === `Форма`) {
-      service.push(parameter);
+      current.form = parameter.value;
     } else if (parameter.title === `По раскладке`) {
-      service.push(parameter);
+      current.type = parameter.value;
+    } else if (parameter.title === `В какую комнату`) {
+      current.room = parameter.value;
+    } else if (parameter.title === `Цвет каркаса`) {
+      current.colorBase = parameter.value;
+    } else if (parameter.title === `Цвет столешницы`) {
+      current.colorUp = parameter.value;
     } else if (parameter.title === `Срок службы`) {
       service.push(parameter);
     } else if (parameter.title === `Гарантия`) {
-      service.push(parameter);
-    } else if (parameter.title === `Материал`) {
       service.push(parameter);
     } else {
       rest.push(parameter);
