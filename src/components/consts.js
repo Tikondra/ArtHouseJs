@@ -4,6 +4,7 @@ export const API_DECOR = `https://garda-opt.ru/bitrix/catalog_export/garda_decor
 export const LOCAL_DECOR = `./data/decor.xml`;
 export const LOCAL_LIGHT = `./data/test.xml`;
 export const LOCAL_FURNITURE = `./data/stoly.xml`;
+export const LOCAL_CHAIRS = `./data/stulya.xml`;
 
 export const Place = {
   AFTERBEGIN: `afterbegin`,
@@ -26,4 +27,5 @@ export const FILTERS = Object.values(Filter);
 export const FilterType = {
   LIGHT: `light`,
   FURNITURE: `furniture`,
+  CHAIRS: `chairs`
 };

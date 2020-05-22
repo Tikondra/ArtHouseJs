@@ -1,4 +1,12 @@
-import {getFilters, getParameters, getSortedOffersByFurniture, getSortedOffersByLight, getParametersForFurniture, getFiltersByFurniture} from "../utils/filters";
+import {
+  getFilters,
+  getParameters,
+  getSortedOffersByFurniture,
+  getSortedOffersByLight,
+  getParametersForFurniture,
+  getFiltersByFurniture,
+  getParametersForChair, getFiltersByChair, getSortedOffersByChair
+} from "../utils/filters";
 import FilterComponent from "../components/filters";
 import {render} from "../components/utils";
 import {Place} from "../components/consts";
@@ -7,16 +15,19 @@ import {renderCards} from "../components/render-cards";
 const sortedMap = {
   light: getSortedOffersByLight,
   furniture: getSortedOffersByFurniture,
+  chairs: getSortedOffersByChair,
 };
 
 const toParametersMap = {
   light: getParameters,
   furniture: getParametersForFurniture,
+  chairs: getParametersForChair,
 };
 
 const filtersMap = {
   light: getFilters,
   furniture: getFiltersByFurniture,
+  chairs: getFiltersByChair,
 };
 
 class FilterController {

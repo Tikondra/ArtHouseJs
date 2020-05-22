@@ -1,5 +1,5 @@
-import {load, loadData, loadDataToFurniture, loadDataToLight, loadDataToProduct} from "./load/load";
-import {LOCAL_DECOR, LOCAL_FURNITURE, LOCAL_LIGHT} from "./components/consts";
+import {load, loadData, loadDataToFurniture, loadDataToLight, loadDataToProduct, loadDataToChairs} from "./load/load";
+import {LOCAL_CHAIRS, LOCAL_DECOR, LOCAL_FURNITURE, LOCAL_LIGHT} from "./components/consts";
 
 if (document.querySelector(`.decor-js`)) {
   load(loadData, LOCAL_DECOR);
@@ -23,4 +23,8 @@ if (document.querySelector(`.furniture-js`)) {
 
 if (document.querySelector(`.product-furniture`)) {
   load(loadDataToProduct, LOCAL_FURNITURE, `furniture`, true);
+}
+
+if (document.querySelector(`.chairs-js`)) {
+  load(loadDataToChairs, LOCAL_CHAIRS);
 }

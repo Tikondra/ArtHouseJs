@@ -6,6 +6,7 @@ import {FilterType, TypeCard} from "../components/consts";
 import CardComponent from "../components/card";
 import CardLightComponent from "../components/light-card";
 import CardFurnitureComponent from "../components/furniture-card";
+import CardChairComponent from "../components/chair-card";
 import FilterController from "../controllers/filters-controller";
 import CategoriesController from "../controllers/categories-controller";
 import OffersModel from "../models/offers";
@@ -80,7 +81,7 @@ const loadDataToProduct = (data, type, parameters) => {
       offersProduct = getOffersLight(dataOffers);
       break;
     case TypeCard.FURNITURE:
-      offersProduct = getOffersFurniture(dataOffers, dataParameters);
+      offersProduct = getOffersFurniture(dataOffers, dataParameters, FilterType.FURNITURE);
       break;
   }
 
@@ -128,7 +129,7 @@ const loadDataToFurniture = (data) => {
   const dataParameters = data.КоммерческаяИнформация.Классификатор.Свойства.Свойство;
 
   const parametersFurniture = getFurnitureParameters(dataParameters);
-  const offersFurniture = getOffersFurniture(dataOffers, parametersFurniture);
+  const offersFurniture = getOffersFurniture(dataOffers, parametersFurniture, FilterType.FURNITURE);
 
   const offersModel = new OffersModel();
   offersModel.setOffers(offersFurniture);
@@ -137,6 +138,22 @@ const loadDataToFurniture = (data) => {
   filterController.render();
 
   renderCards(cardBox, offersModel.getAllOffers(), CardFurnitureComponent, isSort);
+};
+
+export const loadDataToChairs = (data) => {
+  const dataOffers = data.КоммерческаяИнформация.Каталог.Товары.Товар;
+  const dataParameters = data.КоммерческаяИнформация.Классификатор.Свойства.Свойство;
+
+  const parametersFurniture = getFurnitureParameters(dataParameters);
+  const offersFurniture = getOffersFurniture(dataOffers, parametersFurniture, FilterType.CHAIRS);
+
+  const offersModel = new OffersModel();
+  offersModel.setOffers(offersFurniture);
+
+  // const filterController = new FilterController(offersModel, dataOffers, FilterType.CHAIRS, CardChairComponent, parametersFurniture);
+  // filterController.render();
+
+  renderCards(cardBox, offersModel.getAllOffers(), CardChairComponent, isSort);
 };
 
 export {load, loadData, loadDataToProduct, loadDataToLight, loadDataToFurniture};
