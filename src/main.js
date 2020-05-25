@@ -28,3 +28,7 @@ if (document.querySelector(`.product-furniture`)) {
 if (document.querySelector(`.chairs-js`)) {
   load(loadDataToChairs, LOCAL_CHAIRS);
 }
+
+if (document.querySelector(`.product-chair`)) {
+  load(loadDataToProduct, LOCAL_CHAIRS, `chair`, true);
+}

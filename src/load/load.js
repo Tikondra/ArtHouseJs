@@ -65,7 +65,7 @@ const loadData = (data) => {
 };
 
 const loadDataToProduct = (data, type, parameters) => {
-  const dataOffers = type === TypeCard.FURNITURE ? data.КоммерческаяИнформация.Каталог.Товары.Товар : data.yml_catalog.shop.offers.offer;
+  const dataOffers = type === TypeCard.LIGHT ? data.yml_catalog.shop.offers.offer : data.КоммерческаяИнформация.Каталог.Товары.Товар;
   let dataParameters = parameters;
   if (parameters) {
     dataParameters = getFurnitureParameters(data.КоммерческаяИнформация.Классификатор.Свойства.Свойство);
@@ -82,6 +82,9 @@ const loadDataToProduct = (data, type, parameters) => {
       break;
     case TypeCard.FURNITURE:
       offersProduct = getOffersFurniture(dataOffers, dataParameters, FilterType.FURNITURE);
+      break;
+    case TypeCard.CHAIR:
+      offersProduct = getOffersFurniture(dataOffers, dataParameters, FilterType.CHAIRS);
       break;
   }
 
@@ -150,8 +153,8 @@ export const loadDataToChairs = (data) => {
   const offersModel = new OffersModel();
   offersModel.setOffers(offersFurniture);
 
-  // const filterController = new FilterController(offersModel, dataOffers, FilterType.CHAIRS, CardChairComponent, parametersFurniture);
-  // filterController.render();
+  const filterController = new FilterController(offersModel, dataOffers, FilterType.CHAIRS, CardChairComponent, parametersFurniture);
+  filterController.render();
 
   renderCards(cardBox, offersModel.getAllOffers(), CardChairComponent, isSort);
 };
