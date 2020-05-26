@@ -1,7 +1,9 @@
 import AbstractComponent from "./AbstractComponent";
+import {getPrice} from "./utils";
 
 const createCard = (card) => {
   const {title, image, parameters, id} = card;
+  const price = Math.floor(parameters.current.price);
 
   return (
     `<li class="cards__item">
@@ -11,7 +13,7 @@ const createCard = (card) => {
         <h3 class="cards__title">${title}</h3>
         <p class="cards__info">Бренд: ${parameters.current.brand}</p>
         <p class="cards__info">Страна: ${parameters.current.country}</p>
-        <p class="cards__price">${Math.floor(parameters.current.price)} ₽</p>
+        <p class="cards__price">${getPrice(price)} ₽</p>
     </li>`
   );
 };

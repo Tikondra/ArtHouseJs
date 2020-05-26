@@ -1,4 +1,4 @@
-import {regexp} from "./utils";
+import {getPrice, regexp} from "./utils";
 import AbstractComponent from "./AbstractComponent";
 
 const createCard = (card) => {
@@ -15,8 +15,8 @@ const createCard = (card) => {
         <h3 class="cards__title">${getTitle()}</h3>
         <p class="cards__material">${material}</p>
         <div class="cards__prices">
-            <p class="cards__price">${sale} ₽</p>
-            <p class="cards__price cards__price--sale">${price} ₽</p>
+            <p class="cards__price">${getPrice(sale)} ₽</p>
+            <p class="cards__price cards__price--sale">${getPrice(price)} ₽</p>
         </div>
         <div class="cards__sale-value">-20%</div>
     </li>`

@@ -1,5 +1,6 @@
 import AbstractComponent from "./AbstractComponent";
 import {createImg} from "./card-page-img";
+import {getPrice} from "./utils";
 
 const createCardPage = (card) => {
 
@@ -15,6 +16,7 @@ const createCardPage = (card) => {
     }).join(`\n`);
   };
 
+  const price = Math.floor(parameters.current.price);
   const country = parameters.current.country ? `<p class="card-page__info-text"><span>Страна:</span> ${parameters.current.country}</p>` : ``;
   const brand = parameters.current.brand ? `<p class="card-page__info-text"><span>Бренд:</span> ${parameters.current.brand}</p>` : ``;
   const style = parameters.current.style ? `<p class="card-page__info-text"><span>Стиль:</span> ${parameters.current.style}</p>` : ``;
@@ -38,7 +40,7 @@ const createCardPage = (card) => {
         </ul>
         <div class="card-page__info">
           <p class="card-page__info-text card-page__info-text--price">
-            <span>Цена:</span> ${Math.floor(parameters.current.price)} ₽
+            <span>Цена:</span> ${getPrice(price)} ₽
           </p>
             ${brand}
             ${country}

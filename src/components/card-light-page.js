@@ -1,16 +1,19 @@
 import AbstractComponent from "./AbstractComponent";
 import {createImg} from "./card-page-img";
+import {getPrice} from "./utils";
 
 const createCardPage = (card) => {
 
   const {parameters, title, activePrice, image, available} = card;
+  const price = getPrice(Math.floor(activePrice));
+  const oldPrice = getPrice(Math.floor(parameters.current.oldPrice));
 
   const getImages = (pictures) => pictures.map((it) => createImg(it)).join(`\n`);
-  const getOldPrice = (price) => {
-    if (price) {
+  const getOldPrice = (val) => {
+    if (val) {
       return (
         `<p class="card-page__info-text">
-           Старая цена: ${Math.floor(price)} ₽
+           Старая цена: ${val} ₽
          </p>`
       );
     } else {
@@ -43,9 +46,9 @@ const createCardPage = (card) => {
         </ul>
         <div class="card-page__info">
           <p class="card-page__info-text card-page__info-text--price">
-            <span>Цена:</span> ${Math.floor(activePrice)} ₽
+            <span>Цена:</span> ${price} ₽
           </p>
-          ${getOldPrice(parameters.current.oldPrice)}
+          ${getOldPrice(oldPrice)}
           <p class="card-page__info-text">
             <span>Наличие:</span>  ${getAvailable}
           </p>

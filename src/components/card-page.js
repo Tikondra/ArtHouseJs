@@ -1,5 +1,6 @@
 import AbstractComponent from "./AbstractComponent";
 import {createImg} from "./card-page-img";
+import {getPrice} from "./utils";
 
 const createCardPage = (card) => {
   const {title, price, sale, image, material, article} = card;
@@ -17,10 +18,10 @@ const createCardPage = (card) => {
         </ul>
         <div class="card-page__info">
           <p class="card-page__info-text card-page__info-text--price">
-            <span>Цена:</span> ${sale} ₽
+            <span>Цена:</span> ${getPrice(sale)} ₽
           </p>
           <p class="card-page__info-text card-page__info-text--old-price">
-            <span>Цена без скидки:</span> ${price} ₽
+            <span>Цена без скидки:</span> ${getPrice(price)} ₽
           </p>
           <p class="card-page__info-text">
             <span>Артикул:</span>  ${article}

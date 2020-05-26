@@ -1,7 +1,10 @@
 import AbstractComponent from "./AbstractComponent";
+import {getPrice} from "./utils";
 
 const createCard = (card) => {
   const {parameters, ...rest} = card;
+  const price = Math.floor(rest.activePrice);
+  const oldPrice = Math.floor(parameters.current.oldPrice);
 
   const getAvailable = (param) => {
     if (param === `true`) {
@@ -13,7 +16,7 @@ const createCard = (card) => {
   const getOldPrice = (price) => {
     if (price) {
       return (
-        `<p class="cards__price cards__price--old">${Math.floor(price)} ₽</p>`
+        `<p class="cards__price cards__price--old">${getPrice(price)} ₽</p>`
       )
     } else {
       return ``;
@@ -32,8 +35,8 @@ const createCard = (card) => {
         <p class="cards__info">${getAvailable(rest.available)}</p>
         <p class="cards__info">Бренд: ${parameters.current.brend}</p>
         <p class="cards__info">Страна: ${parameters.current.country}</p>
-        ${getOldPrice(parameters.current.oldPrice)}
-        <p class="cards__price">${Math.floor(rest.activePrice)} ₽</p>
+        ${getOldPrice(oldPrice)}
+        <p class="cards__price">${getPrice(price)} ₽</p>
     </li>`
   );
 };
