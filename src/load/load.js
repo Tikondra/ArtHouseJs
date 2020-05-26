@@ -65,7 +65,13 @@ const loadData = (data) => {
 };
 
 const loadDataToProduct = (data, type, parameters) => {
-  const dataOffers = type === TypeCard.LIGHT ? data.yml_catalog.shop.offers.offer : data.КоммерческаяИнформация.Каталог.Товары.Товар;
+  let dataOffers;
+  if (type === TypeCard.DECOR || type === TypeCard.LIGHT) {
+    dataOffers = data.yml_catalog.shop.offers.offer;
+  } else {
+    dataOffers = data.КоммерческаяИнформация.Каталог.Товары.Товар;
+  }
+
   let dataParameters = parameters;
   if (parameters) {
     dataParameters = getFurnitureParameters(data.КоммерческаяИнформация.Классификатор.Свойства.Свойство);

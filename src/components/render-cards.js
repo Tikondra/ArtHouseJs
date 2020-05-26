@@ -5,10 +5,6 @@ import ButtonMoreComponent from "./button-more";
 const buttonMoreBox = document.querySelector(`.store-content__more-box`);
 const loadMoreButton = document.querySelector(`.store-content__btn-more`);
 
-const onErrImg = (evt) => {
-  evt.target.setAttribute(`src`, `img/no-img.jpg`);
-};
-
 const renderCard = (container, card, Component) => {
   const cardComponent = new Component(card);
 
@@ -36,6 +32,14 @@ export const renderCards = (container, cards, component, isSort) => {
       it.removeEventListener(`error`, onErrImg);
       it.addEventListener(`error`, onErrImg);
     });
+  };
+
+  const onErrImg = (evt) => {
+    evt.target.parentElement.parentElement.remove();
+    // evt.target.setAttribute(`src`, `img/no-img.jpg`);
+    if (document.querySelectorAll(`.cards__item`).length < 6) {
+      onMoreView();
+    }
   };
 
   if (isSort && cardsCopy.length > START_SHOW_TASK) {

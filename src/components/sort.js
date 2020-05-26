@@ -16,10 +16,16 @@ export const getSomeCards = (category, categories, offers) => {
   const getTrue = (card) => card.categoryId.some((n) => someCategory.includes(n));
 
   return offers.filter((card) => {
+
     if (typeof card.categoryId === `string`) {
       return card.categoryId === category.id || someCategory.includes(card.categoryId);
     } else {
-      return getTrue(card);
+      if (someCategory.length === 0) {
+
+        return card.categoryId.includes(category.id);
+      } else {
+        return getTrue(card);
+      }
     }
   });
 };

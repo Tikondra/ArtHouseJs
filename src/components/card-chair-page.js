@@ -4,16 +4,7 @@ import {createImg} from "./card-page-img";
 const createCardPage = (card) => {
 
   const {parameters, title, description, image} = card;
-  console.log(parameters)
   const getImages = (pictures) => pictures.map((it) => createImg(it)).join(`\n`);
-
-  const getParameterMarkup = (params) => {
-    return params.map((it) => {
-      return (
-        `<p class="card-page__info-text"><span>${it.title}:</span> ${it.value}</p>`
-      );
-    }).join(`\n`);
-  };
 
   const brand = parameters.current.brand ? `<p class="card-page__info-text"><span>Бренд:</span> ${parameters.current.brand}</p>` : ``;
   const country = parameters.current.country ? `<p class="card-page__info-text"><span>Страна:</span> ${parameters.current.country}</p>` : ``;

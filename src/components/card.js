@@ -10,7 +10,7 @@ const createCard = (card) => {
   return (
     `<li class="cards__item">
         <a class="cards__link" href="card.html?${id}">
-            <img src=${image[0]} width="213" height="213" alt="Название товара">
+            <img src=${image[0]} width="213" height="213" alt="${title}">
         </a>
         <h3 class="cards__title">${getTitle()}</h3>
         <p class="cards__material">${material}</p>
@@ -18,7 +18,7 @@ const createCard = (card) => {
             <p class="cards__price">${sale} ₽</p>
             <p class="cards__price cards__price--sale">${price} ₽</p>
         </div>
-        <div class="cards__sale-value">-10%</div>
+        <div class="cards__sale-value">-20%</div>
     </li>`
   );
 };
