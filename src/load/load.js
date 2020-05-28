@@ -105,6 +105,14 @@ const loadDataToProduct = (data, type, parameters) => {
       nav: true
     });
   });
+
+  // eslint-disable-next-line no-undef
+  $(`.gallery-item`).magnificPopup({
+    type: `image`,
+    gallery: {
+      enabled: true
+    }
+  });
 };
 
 const loadDataToLight = (data) => {

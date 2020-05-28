@@ -1,5 +1,5 @@
 import AbstractComponent from "./AbstractComponent";
-import {createImg} from "./card-page-img";
+import {createImg, createPreview} from "./card-page-img";
 import {getPrice} from "./utils";
 
 const createCardPage = (card) => {
@@ -7,6 +7,7 @@ const createCardPage = (card) => {
   const {parameters, title, description, image} = card;
 
   const getImages = (pictures) => pictures.map((it) => createImg(it)).join(`\n`);
+  const getPreview = (pictures) => pictures.map((it) => createPreview(it)).join(`\n`);
 
   const getParameterMarkup = (params) => {
     return params.map((it) => {
@@ -35,9 +36,14 @@ const createCardPage = (card) => {
         ${title}
       </h1>
       <div class="card-page__info-box">
-        <ul class="card-page__list owl-carousel">
-          ${getImages(image)}
-        </ul>
+        <div class="card-page__images">
+          <ul class="card-page__list owl-carousel">
+            ${getImages(image)}
+          </ul>
+          <ul class="card-page__gallery">
+            ${getPreview(image)}
+          </ul>
+        </div>
         <div class="card-page__info">
           <p class="card-page__info-text card-page__info-text--price">
             <span>Цена:</span> ${getPrice(price)} ₽

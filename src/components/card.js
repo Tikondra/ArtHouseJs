@@ -2,7 +2,7 @@ import {getPrice, regexp} from "./utils";
 import AbstractComponent from "./AbstractComponent";
 
 const createCard = (card) => {
-  const {title, price, sale, image, id, material} = card;
+  const {title, price, image, id, material} = card;
   const getTitle = () => {
     return title.match(regexp).join(``);
   };
@@ -15,10 +15,8 @@ const createCard = (card) => {
         <h3 class="cards__title">${getTitle()}</h3>
         <p class="cards__material">${material}</p>
         <div class="cards__prices">
-            <p class="cards__price">${getPrice(sale)} ₽</p>
-            <p class="cards__price cards__price--sale">${getPrice(price)} ₽</p>
+            <p class="cards__price">${getPrice(price)} ₽</p>
         </div>
-        <div class="cards__sale-value">-20%</div>
     </li>`
   );
 };

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="windows-1251"?><!DOCTYPE yml_catalog SYSTEM "shops.dtd">
-<yml_catalog date="2020-05-26 09:00">
+<yml_catalog date="2020-05-28 09:00">
 <shop>
 <name>DELUXE</name>
 <company>DELUXE</company>
@@ -686,7 +686,7 @@
 <vendor>Garda Decor</vendor>
 <material>Цветы- пластик, внутри железная проволока, основание-пенопласт,горшок- керамика</material>
 <dimensions>-/31/-</dimensions>
-<stock>366</stock>
+<stock>365</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002440" available="true">
@@ -1055,7 +1055,7 @@
 <vendor>Garda Decor</vendor>
 <material>Полирезина</material>
 <dimensions>25/54/11</dimensions>
-<stock>5</stock>
+<stock>4</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002042" available="true">
@@ -1126,7 +1126,7 @@
 <vendor>Garda Decor</vendor>
 <material>Полирезина</material>
 <dimensions>25/28/13</dimensions>
-<stock>19</stock>
+<stock>18</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002045" available="true">
@@ -1142,7 +1142,7 @@
 <vendor>Garda Decor</vendor>
 <material>Полирезина</material>
 <dimensions>15/40/22</dimensions>
-<stock>29</stock>
+<stock>27</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002537" available="true">
@@ -1209,7 +1209,7 @@
 <vendor>Garda Decor</vendor>
 <material>Полирезина</material>
 <dimensions>23/41/20</dimensions>
-<stock>55</stock>
+<stock>54</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002049" available="true">
@@ -1383,7 +1383,7 @@
 <vendor>Garda Decor</vendor>
 <material></material>
 <dimensions>7/9/7</dimensions>
-<stock>1</stock>
+<stock>0</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002568" available="true">
@@ -1401,7 +1401,7 @@
 <vendor>Garda Decor</vendor>
 <material>стекло</material>
 <dimensions>21/13,5/6</dimensions>
-<stock>42</stock>
+<stock>41</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002566" available="true">
@@ -1419,7 +1419,7 @@
 <vendor>Garda Decor</vendor>
 <material>стекло</material>
 <dimensions>18/11/10</dimensions>
-<stock>172</stock>
+<stock>170</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002569" available="true">
@@ -1437,7 +1437,7 @@
 <vendor>Garda Decor</vendor>
 <material>стекло</material>
 <dimensions>23/23,5/4</dimensions>
-<stock>67</stock>
+<stock>66</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002628" available="true">
@@ -1665,7 +1665,7 @@
 <vendor>Garda Decor</vendor>
 <material>ткань, металл, хрусталь</material>
 <dimensions>28/67/41</dimensions>
-<stock>40</stock>
+<stock>42</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002193" available="true">
@@ -1682,7 +1682,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, МДФ</material>
 <dimensions>66/76/66</dimensions>
-<stock>14</stock>
+<stock>12</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002020" available="true">
@@ -1698,7 +1698,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, МДФ</material>
 <dimensions>73/106,4/-</dimensions>
-<stock>74</stock>
+<stock>73</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002021" available="true">
@@ -1731,7 +1731,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, МДФ</material>
 <dimensions>153/90/-</dimensions>
-<stock>69</stock>
+<stock>70</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002018" available="true">
@@ -1796,7 +1796,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, МДФ</material>
 <dimensions>116/57,5/-</dimensions>
-<stock>35</stock>
+<stock>34</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00000978" available="true">
@@ -1926,7 +1926,7 @@
 <vendor>Garda Decor</vendor>
 <material>стекло</material>
 <dimensions>21/34/21</dimensions>
-<stock>9</stock>
+<stock>8</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002199" available="true">
@@ -2059,7 +2059,7 @@
 <vendor>Garda Decor</vendor>
 <material>обивка - велюр, каркас и ножки - дерево</material>
 <dimensions>52/89/48</dimensions>
-<stock>60</stock>
+<stock>59</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00001028" available="true">
@@ -2078,7 +2078,7 @@
 <vendor>Garda Decor</vendor>
 <material>каркас и ножки дерево (береза), ткань 97% ПЭ + 3% нейлон</material>
 <dimensions>52/89/48</dimensions>
-<stock>203</stock>
+<stock>209</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002001" available="true">
@@ -2096,7 +2096,7 @@
 <vendor>Garda Decor</vendor>
 <material>каркас и ножки дерево (берёза), ткань 100% лён</material>
 <dimensions>47/98/52</dimensions>
-<stock>59</stock>
+<stock>58</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00001032" available="true">
@@ -2166,7 +2166,7 @@
 <vendor>Garda Decor</vendor>
 <material>коричневый велюр, берёза</material>
 <dimensions>170/77/90</dimensions>
-<stock>3</stock>
+<stock>2</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002056" available="true">
@@ -2263,7 +2263,7 @@
 <vendor>Garda Decor</vendor>
 <material>натуральная овчина</material>
 <dimensions>95/55/-</dimensions>
-<stock>92</stock>
+<stock>91</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00000276" available="true">
@@ -2280,7 +2280,7 @@
 <vendor>Garda Decor</vendor>
 <material>овчина натуральная</material>
 <dimensions>55/95/-</dimensions>
-<stock>26</stock>
+<stock>22</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00000292" available="true">
@@ -2636,7 +2636,7 @@
 <vendor>Garda Decor</vendor>
 <material>хрусталь</material>
 <dimensions>6/24/6</dimensions>
-<stock>62</stock>
+<stock>61</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00001011" available="true">
@@ -3034,7 +3034,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл, дерево</material>
 <dimensions>45/170/31</dimensions>
-<stock>23</stock>
+<stock>22</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002533" available="true">
@@ -3101,7 +3101,7 @@
 <vendor>Garda Decor</vendor>
 <material>стекло</material>
 <dimensions>11/24,5/6</dimensions>
-<stock>15</stock>
+<stock>13</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002120" available="true">
@@ -3195,7 +3195,7 @@
 <vendor>Garda Decor</vendor>
 <material>стекло</material>
 <dimensions>8/22,5/6</dimensions>
-<stock>27</stock>
+<stock>25</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002876" available="true">
@@ -3213,7 +3213,7 @@
 <vendor>Garda Decor</vendor>
 <material>стекло</material>
 <dimensions>15/18/7</dimensions>
-<stock>63</stock>
+<stock>62</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002875" available="true">
@@ -3628,7 +3628,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, МДФ</material>
 <dimensions>58/50/42</dimensions>
-<stock>38</stock>
+<stock>37</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002918" available="true">
@@ -3890,7 +3890,7 @@
 <vendor>Garda Decor</vendor>
 <material>пластик, металл, стекло</material>
 <dimensions>50/50/5</dimensions>
-<stock>154</stock>
+<stock>151</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002149" available="true">
@@ -3907,7 +3907,7 @@
 <vendor>Garda Decor</vendor>
 <material>пластик и зеркало</material>
 <dimensions>55/55,5/5</dimensions>
-<stock>522</stock>
+<stock>521</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002413" available="true">
@@ -3988,7 +3988,7 @@
 <vendor>Garda Decor</vendor>
 <material>МДФ, полимер</material>
 <dimensions>91/89/36</dimensions>
-<stock>8</stock>
+<stock>7</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002542" available="true">
@@ -4004,7 +4004,7 @@
 <vendor>Garda Decor</vendor>
 <material>Полирезина</material>
 <dimensions>17/45/15</dimensions>
-<stock>43</stock>
+<stock>44</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002157" available="true">
@@ -4038,7 +4038,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, МДФ</material>
 <dimensions>100/138/2</dimensions>
-<stock>10</stock>
+<stock>9</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002528" available="true">
@@ -4107,7 +4107,7 @@
 <vendor>Garda Decor</vendor>
 <material>сталь, стекло</material>
 <dimensions>40/45/44</dimensions>
-<stock>18</stock>
+<stock>19</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002972" available="true">
@@ -4198,7 +4198,7 @@
 <vendor>Garda Decor</vendor>
 <material>столешница - черное стекло, каркас - хромированная нержавеющая сталь</material>
 <dimensions>40/45/44</dimensions>
-<stock>135</stock>
+<stock>133</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002604" available="true">
@@ -4906,7 +4906,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, МДФ</material>
 <dimensions>51/66/43</dimensions>
-<stock>14</stock>
+<stock>16</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002609" available="true">
@@ -4922,7 +4922,7 @@
 <vendor>Garda Decor</vendor>
 <material>МДФ, зеркало</material>
 <dimensions>55/58/42</dimensions>
-<stock>10</stock>
+<stock>8</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00003058" available="true">
@@ -4939,7 +4939,7 @@
 <vendor>Garda Decor</vendor>
 <material>столешница - стекло, каркас -  нержавеющая сталь золотого цвета</material>
 <dimensions>30/79/115</dimensions>
-<stock>44</stock>
+<stock>42</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00003008" available="true">
@@ -5440,7 +5440,7 @@
 <vendor>Garda Decor</vendor>
 <material>ткань полиэстер, пластик, проволока</material>
 <dimensions>-/30/-</dimensions>
-<stock>587</stock>
+<stock>586</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000029" available="true">
@@ -5597,7 +5597,7 @@
 <vendor>Garda Decor</vendor>
 <material>Керамика</material>
 <dimensions>12/28/8</dimensions>
-<stock>437</stock>
+<stock>436</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000044" available="true">
@@ -5613,7 +5613,7 @@
 <vendor>Garda Decor</vendor>
 <material>Керамика</material>
 <dimensions>8/20,5/7</dimensions>
-<stock>263</stock>
+<stock>262</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000045" available="true">
@@ -5795,7 +5795,7 @@
 <vendor>Garda Decor</vendor>
 <material>Стекло бежевое, МДФ, каркас-нерж. сталь цвет золото</material>
 <dimensions>120/79/40</dimensions>
-<stock>7</stock>
+<stock>6</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00003046" available="true">
@@ -5830,7 +5830,7 @@
 <vendor>Garda Decor</vendor>
 <material>Стекло бежевое, МДФ, каркас-нерж. сталь цвет золото</material>
 <dimensions>45/51/40</dimensions>
-<stock>3</stock>
+<stock>1</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00002979" available="true">
@@ -5861,7 +5861,7 @@
 <vendor>Garda Decor</vendor>
 <material>Стекло бежевое, МДФ, каркас-нерж. сталь цвет золото</material>
 <dimensions>101/80,5/45</dimensions>
-<stock>14</stock>
+<stock>13</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00003045" available="true">
@@ -5877,7 +5877,7 @@
 <vendor>Garda Decor</vendor>
 <material>мдф</material>
 <dimensions>81/142/5</dimensions>
-<stock>3</stock>
+<stock>2</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00003041" available="true">
@@ -5997,7 +5997,7 @@
 <vendor>Garda Decor</vendor>
 <material>ножки - береза; обивка - велюр 100% полиэстер фиолетовый</material>
 <dimensions>127/56/50</dimensions>
-<stock>3</stock>
+<stock>2</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000068" available="true">
@@ -6043,7 +6043,7 @@
 <vendor>Garda Decor</vendor>
 <material>Зеркало, отделка - МДФ цвет золотистый</material>
 <dimensions>60/70/51</dimensions>
-<stock>38</stock>
+<stock>36</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000078" available="true">
@@ -6062,6 +6062,22 @@
 <stock>7</stock>
 <cargo_places>1</cargo_places>
 </offer>
+<offer id="TT-00000082" available="true">
+<url>http://garda-opt.ru/catalog/stoly-obedennye/kfc1152e7b-stol-obedennyy-stoleshnitsa-mramor-zerkaln-160-90-78-5</url>
+<price>108100</price>
+<wholesalePrice>66010</wholesalePrice>
+<currencyId>RUB</currencyId>
+<categoryId>291</categoryId>
+<categoryId>300</categoryId>
+<name>KFC1152E7B Стол обеденный столешница мрамор,зеркальн.160*90*78,5</name>
+<picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00000082/white/TT-00000082_1.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00000082/white/TT-00000082_2.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00000082/white/TT-00000082_3.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00000082/white/TT-00000082_4.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00000082/white/Thumbs.db</picture>
+<vendorCode>KFC1152E7B</vendorCode>
+<vendor>Garda Decor</vendor>
+<material>Столешница - марамор, ножки - МДФ с зеркальными вставками</material>
+<dimensions>160/78/90</dimensions>
+<stock>1</stock>
+<cargo_places>1</cargo_places>
+</offer>
 <offer id="TT-00000084" available="true">
 <url>http://garda-opt.ru/catalog/pryamougolnye-zerkala/kfh1872e7-zerkalo-1200-800-44</url>
 <price>25000</price>
@@ -6075,7 +6091,7 @@
 <vendor>Garda Decor</vendor>
 <material>Зеркало, отделка - МДФ цвет золотистый</material>
 <dimensions>120/80/4</dimensions>
-<stock>17</stock>
+<stock>16</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000085" available="true">
@@ -6092,21 +6108,6 @@
 <material>зеркало, МДФ</material>
 <dimensions>105/78/105</dimensions>
 <stock>17</stock>
-<cargo_places>1</cargo_places>
-</offer>
-<offer id="TT-00000086" available="true">
-<url>http://garda-opt.ru/catalog/nastolnye-svetilniki/kfe001-lampa-nastolnaya-s-zerk-vstavkami-380-380-610mm-plaf-ser</url>
-<price>15000</price>
-<wholesalePrice>6900</wholesalePrice>
-<currencyId>RUB</currencyId>
-<categoryId>357</categoryId>
-<name>KFE001 Лампа настольная с зерк.вставками 380*380*610мм плаф.сер.</name>
-<picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00000086/white/TT-00000086_1.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00000086/white/TT-00000086_2.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00000086/white/Thumbs.db</picture>
-<vendorCode>KFE001</vendorCode>
-<vendor>Garda Decor</vendor>
-<material>зеркало, МДФ, плафон - ткань натуральный шелк цвет синий</material>
-<dimensions>38/61/38</dimensions>
-<stock>0</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000088" available="true">
@@ -6232,7 +6233,7 @@
 <vendor>Garda Decor</vendor>
 <material>пластик, металл, стекло</material>
 <dimensions>45/45,7/4</dimensions>
-<stock>231</stock>
+<stock>230</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000169" available="true">
@@ -6398,7 +6399,7 @@
 <vendor>Garda Decor</vendor>
 <material>стекло</material>
 <dimensions>19/30/19</dimensions>
-<stock>25</stock>
+<stock>24</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000199" available="true">
@@ -6416,7 +6417,7 @@
 <vendor>Garda Decor</vendor>
 <material>стекло</material>
 <dimensions>8/12/6</dimensions>
-<stock>131</stock>
+<stock>130</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000203" available="true">
@@ -6595,7 +6596,7 @@
 <vendor>Garda Decor</vendor>
 <material>обивка - велюр, каркас и ножки - дерево</material>
 <dimensions>77/105/92</dimensions>
-<stock>2</stock>
+<stock>4</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000159" available="true">
@@ -6631,7 +6632,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, металл цвет золото, МДФ</material>
 <dimensions>100/100/-</dimensions>
-<stock>252</stock>
+<stock>250</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000162" available="true">
@@ -6647,7 +6648,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл, зеркальные элементы</material>
 <dimensions>89/76/38</dimensions>
-<stock>7</stock>
+<stock>6</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000164" available="true">
@@ -6738,7 +6739,7 @@
 <vendor>Garda Decor</vendor>
 <material>Стекло, нерж. сталь</material>
 <dimensions>50/61/50</dimensions>
-<stock>27</stock>
+<stock>26</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00003068" available="true">
@@ -6852,7 +6853,7 @@
 <vendor>Garda Decor</vendor>
 <material>керамика</material>
 <dimensions>13/6/42</dimensions>
-<stock>76</stock>
+<stock>75</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000108" available="true">
@@ -6869,7 +6870,7 @@
 <vendor>Garda Decor</vendor>
 <material>керамика</material>
 <dimensions>9/24/14</dimensions>
-<stock>291</stock>
+<stock>290</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000109" available="true">
@@ -6969,7 +6970,7 @@
 <vendor>Garda Decor</vendor>
 <material>керамика</material>
 <dimensions>17/8/36</dimensions>
-<stock>81</stock>
+<stock>80</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000121" available="true">
@@ -6987,7 +6988,7 @@
 <vendor>Garda Decor</vendor>
 <material>керамика</material>
 <dimensions>29/31,8/8</dimensions>
-<stock>87</stock>
+<stock>86</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000122" available="true">
@@ -7006,7 +7007,7 @@
 <vendor>Garda Decor</vendor>
 <material>керамика</material>
 <dimensions>24/26,3/8</dimensions>
-<stock>192</stock>
+<stock>191</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000123" available="true">
@@ -7112,7 +7113,7 @@
 <vendor>Garda Decor</vendor>
 <material>керамика</material>
 <dimensions>21/33/7</dimensions>
-<stock>377</stock>
+<stock>375</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000129" available="true">
@@ -7131,7 +7132,7 @@
 <vendor>Garda Decor</vendor>
 <material>керамика</material>
 <dimensions>20/30,5/8</dimensions>
-<stock>280</stock>
+<stock>279</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000110" available="true">
@@ -7233,7 +7234,7 @@
 <vendor>Garda Decor</vendor>
 <material>основание из серого стекла, плафон - натуральный лен бежевый</material>
 <dimensions>33/33/60</dimensions>
-<stock>24</stock>
+<stock>22</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000221" available="true">
@@ -7250,7 +7251,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл с никелированным покрытием цвет хром, стекло прозрачное</material>
 <dimensions>20/25/-</dimensions>
-<stock>11</stock>
+<stock>10</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000225" available="true">
@@ -7265,7 +7266,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл с никелированным покрытием цвет хром, стекло прозрачное</material>
 <dimensions>54/64/54</dimensions>
-<stock>41</stock>
+<stock>39</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000228" available="true">
@@ -7385,7 +7386,7 @@
 <vendor>Garda Decor</vendor>
 <material>Стекло, картон, велюр</material>
 <dimensions>12/6,8/12</dimensions>
-<stock>80</stock>
+<stock>79</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000266" available="true">
@@ -7470,7 +7471,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл, декоративные стразы</material>
 <dimensions>11/18/1</dimensions>
-<stock>41</stock>
+<stock>40</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000276" available="true">
@@ -7488,7 +7489,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл, декоративные стразы</material>
 <dimensions>11/18/1</dimensions>
-<stock>78</stock>
+<stock>77</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000277" available="true">
@@ -7543,7 +7544,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл, декоративные стразы</material>
 <dimensions>10/5,5/8</dimensions>
-<stock>62</stock>
+<stock>61</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000280" available="true">
@@ -7578,7 +7579,7 @@
 <vendor>Garda Decor</vendor>
 <material>искуссвенный камень</material>
 <dimensions>7/36,5/21</dimensions>
-<stock>123</stock>
+<stock>121</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000283" available="true">
@@ -7596,7 +7597,7 @@
 <vendor>Garda Decor</vendor>
 <material>искуссвенный камень</material>
 <dimensions>16/24/16</dimensions>
-<stock>38</stock>
+<stock>36</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000284" available="true">
@@ -7614,7 +7615,7 @@
 <vendor>Garda Decor</vendor>
 <material>искуссвенный камень</material>
 <dimensions>13/19,5/13</dimensions>
-<stock>252</stock>
+<stock>249</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000285" available="true">
@@ -7633,7 +7634,7 @@
 <vendor>Garda Decor</vendor>
 <material>искуссвенный камень</material>
 <dimensions>11/14,5/11</dimensions>
-<stock>240</stock>
+<stock>237</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000286" available="true">
@@ -7776,7 +7777,7 @@
 <vendor>Garda Decor</vendor>
 <material>полисмола</material>
 <dimensions>19/61/19</dimensions>
-<stock>2</stock>
+<stock>0</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000358" available="true">
@@ -7846,7 +7847,7 @@
 <vendor>Garda Decor</vendor>
 <material>фарфор</material>
 <dimensions>12/18/12</dimensions>
-<stock>8</stock>
+<stock>7</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000315" available="true">
@@ -8143,7 +8144,7 @@
 <vendor>Garda Decor</vendor>
 <material>Столешница - стекло черного цвета, основание - хромированная нержавеющая сталь</material>
 <dimensions>50/50,8/50</dimensions>
-<stock>46</stock>
+<stock>45</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000417" available="true">
@@ -8256,7 +8257,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, МДФ</material>
 <dimensions>115/115/-</dimensions>
-<stock>51</stock>
+<stock>49</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000375" available="true">
@@ -8272,7 +8273,7 @@
 <vendor>Garda Decor</vendor>
 <material>Зеркало, отделка - МДФ цвет золотистый</material>
 <dimensions>74/102/-</dimensions>
-<stock>38</stock>
+<stock>37</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000436" available="true">
@@ -8335,7 +8336,7 @@
 <vendor>Garda Decor</vendor>
 <material>велюр черный, нержав.сталь цвета золото</material>
 <dimensions>110/46/42</dimensions>
-<stock>55</stock>
+<stock>57</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000572" available="true">
@@ -8352,7 +8353,7 @@
 <vendor>Garda Decor</vendor>
 <material>велюр серый, нержав.сталь цвета хром</material>
 <dimensions>110/46/42</dimensions>
-<stock>205</stock>
+<stock>202</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000574" available="true">
@@ -8448,6 +8449,21 @@
 <stock>0</stock>
 <cargo_places>1</cargo_places>
 </offer>
+<offer id="TT-00000487" available="true">
+<url>http://garda-opt.ru/catalog/potolochnye-svetilniki/15-d8819-8grey-svetilnik-potolochnyy-92kh92sm</url>
+<price>36800</price>
+<wholesalePrice>20250</wholesalePrice>
+<currencyId>RUB</currencyId>
+<categoryId>358</categoryId>
+<name>15-D8819-8GREY Светильник потолочный 92х92см</name>
+<picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00000487/white/TT-00000487_1.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00000487/white/TT-00000487_2.jpg</picture>
+<vendorCode>15-D8819-8GREY</vendorCode>
+<vendor>Garda Decor</vendor>
+<material>металл цвета хром, стекло дымчатого цвета</material>
+<dimensions>92/76/92</dimensions>
+<stock>0</stock>
+<cargo_places>1</cargo_places>
+</offer>
 <offer id="TT-00000496" available="true">
 <url>http://garda-opt.ru/catalog/statuetki-i-skulptury/f6771-statuetka-pavlin-yantarnyy-17kh10kh26-sm</url>
 <price>2700</price>
@@ -8530,7 +8546,7 @@
 <vendor>Garda Decor</vendor>
 <material>стекло</material>
 <dimensions>18/26/18</dimensions>
-<stock>3</stock>
+<stock>0</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000546" available="true">
@@ -8580,7 +8596,7 @@
 <vendor>Garda Decor</vendor>
 <material>основа - МДФ, металл. Цвет металла - розовое золото. Столешница - стекло закаленное 10 мм.</material>
 <dimensions>122/76/122</dimensions>
-<stock>8</stock>
+<stock>7</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000468" available="true">
@@ -8596,7 +8612,7 @@
 <vendor>Garda Decor</vendor>
 <material>основа - МДФ, металл. Цвет металла - розовое золото. Столешница - стекло закаленное 10 мм.</material>
 <dimensions>46/75/127</dimensions>
-<stock>17</stock>
+<stock>16</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000472" available="true">
@@ -8615,7 +8631,7 @@
 <vendor>Garda Decor</vendor>
 <material>Каркас - металл, МДФ, обивка - искусственная кожа (100% PU)</material>
 <dimensions>44/90/58</dimensions>
-<stock>43</stock>
+<stock>37</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000473" available="true">
@@ -8756,7 +8772,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл, стекло, пластик</material>
 <dimensions>50/50,8/5</dimensions>
-<stock>247</stock>
+<stock>246</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000675" available="true">
@@ -9136,7 +9152,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл (железо)</material>
 <dimensions>45/43,8/7</dimensions>
-<stock>66</stock>
+<stock>68</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000746" available="true">
@@ -9153,7 +9169,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл (железо)</material>
 <dimensions>29/29,2/5</dimensions>
-<stock>96</stock>
+<stock>97</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000747" available="true">
@@ -9255,7 +9271,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл с никелированным покрытием цвет хром, стекло матовое</material>
 <dimensions>65/65/65</dimensions>
-<stock>3</stock>
+<stock>10</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000518" available="true">
@@ -9424,7 +9440,7 @@
 <vendor>Garda Decor</vendor>
 <material>пластик и зеркало</material>
 <dimensions>45/45,7/4</dimensions>
-<stock>142</stock>
+<stock>141</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000602" available="true">
@@ -9573,7 +9589,7 @@
 <vendor>Garda Decor</vendor>
 <material>обивка - велюр, каркас и ножки - дерево</material>
 <dimensions>77/105/92</dimensions>
-<stock>6</stock>
+<stock>5</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000647" available="true">
@@ -9673,7 +9689,7 @@
 <vendor>Garda Decor</vendor>
 <material>стекло</material>
 <dimensions>13/28/13</dimensions>
-<stock>28</stock>
+<stock>27</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000695" available="true">
@@ -9692,7 +9708,7 @@
 <vendor>Garda Decor</vendor>
 <material>стекло</material>
 <dimensions>16/41/16</dimensions>
-<stock>69</stock>
+<stock>67</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000697" available="true">
@@ -9866,7 +9882,7 @@
 <vendor>Garda Decor</vendor>
 <material>Стекло, картон, велюр</material>
 <dimensions>22/5,2/15</dimensions>
-<stock>113</stock>
+<stock>112</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000599" available="true">
@@ -9997,7 +10013,7 @@
 <vendor>Garda Decor</vendor>
 <material>столешница - черное стекло, основание - нержавеющая сталь серебро</material>
 <dimensions>50/60/50</dimensions>
-<stock>25</stock>
+<stock>24</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000826" available="true">
@@ -10014,7 +10030,7 @@
 <vendor>Garda Decor</vendor>
 <material>столешница - коричневое стекло, основание - нержавеющая сталь розовое золото</material>
 <dimensions>50/60/50</dimensions>
-<stock>1</stock>
+<stock>0</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000827" available="true">
@@ -10044,7 +10060,7 @@
 <vendor>Garda Decor</vendor>
 <material>столешница - коричневое стекло, основание - нержавеющая сталь розовое золото</material>
 <dimensions>120/80/40</dimensions>
-<stock>26</stock>
+<stock>25</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000829" available="true">
@@ -10091,7 +10107,7 @@
 <vendor>Garda Decor</vendor>
 <material>железная проволока, ткань полиэстер, пластик</material>
 <dimensions>-/76/-</dimensions>
-<stock>81</stock>
+<stock>76</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000836" available="true">
@@ -10138,7 +10154,7 @@
 <vendor>Garda Decor</vendor>
 <material>железная проволока, ткань полиэстер, пластик</material>
 <dimensions>-/52/-</dimensions>
-<stock>95</stock>
+<stock>89</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000531" available="true">
@@ -10348,7 +10364,7 @@
 <vendor>Garda Decor</vendor>
 <material>керамика</material>
 <dimensions>16/39/10</dimensions>
-<stock>113</stock>
+<stock>111</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000845" available="true">
@@ -10438,7 +10454,7 @@
 <vendor>Garda Decor</vendor>
 <material>Корпус- металл с никелированным покрытием цвет хром, стекло прозрачное</material>
 <dimensions>15/42/13</dimensions>
-<stock>139</stock>
+<stock>135</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000592" available="true">
@@ -10469,7 +10485,7 @@
 <vendor>Garda Decor</vendor>
 <material>каркас и ножки дерево (берёза), ткань велюр 100% ПЭ</material>
 <dimensions>50/49/65</dimensions>
-<stock>12</stock>
+<stock>11</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000872" available="true">
@@ -10604,7 +10620,7 @@
 <vendor>Garda Decor</vendor>
 <material>Полирезина</material>
 <dimensions>20/15/19</dimensions>
-<stock>28</stock>
+<stock>24</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000861" available="true">
@@ -10619,7 +10635,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл с никелированным покрытием цвет хром, стекло прозрачное</material>
 <dimensions>33/32/17</dimensions>
-<stock>29</stock>
+<stock>28</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001073" available="true">
@@ -10739,7 +10755,7 @@
 <vendor>Garda Decor</vendor>
 <material>стекло, металл</material>
 <dimensions>120/45/120</dimensions>
-<stock>1</stock>
+<stock>0</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001105" available="true">
@@ -10754,7 +10770,7 @@
 <vendor>Garda Decor</vendor>
 <material>стекло, металл</material>
 <dimensions>18/40/10</dimensions>
-<stock>68</stock>
+<stock>66</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001106" available="true">
@@ -10802,7 +10818,7 @@
 <vendor>Garda Decor</vendor>
 <material>Керамика</material>
 <dimensions>16/32,5/9</dimensions>
-<stock>251</stock>
+<stock>250</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000905" available="true">
@@ -10838,7 +10854,7 @@
 <vendor>Garda Decor</vendor>
 <material>чехол из натур.овчины, наполнитель - холофайбер</material>
 <dimensions>40/40/-</dimensions>
-<stock>0</stock>
+<stock>2</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001108" available="true">
@@ -10856,6 +10872,40 @@
 <material>чехол из натур.овчины, наполнитель - холофайбер</material>
 <dimensions>40/40/-</dimensions>
 <stock>2</stock>
+<cargo_places>1</cargo_places>
+</offer>
+<offer id="TT-00001110" available="true">
+<url>http://garda-opt.ru/catalog/mekhovye-podushki/podushka-nz-seraya-odnostoronnyaya-40kh40</url>
+<price>3400</price>
+<wholesalePrice>1500</wholesalePrice>
+<currencyId>RUB</currencyId>
+<categoryId>383</categoryId>
+<categoryId>424</categoryId>
+<categoryId>515</categoryId>
+<name>Подушка НЗ серая односторонняя 40х40</name>
+<picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00001110/white/TT-00001110_1.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00001110/white/Thumbs.db</picture>
+<vendorCode></vendorCode>
+<vendor>Garda Decor</vendor>
+<material>чехол из натур.овчины, наполнитель - холофайбер</material>
+<dimensions>40/40/-</dimensions>
+<stock>4</stock>
+<cargo_places>1</cargo_places>
+</offer>
+<offer id="TT-00001113" available="true">
+<url>http://garda-opt.ru/catalog/mekhovye-podushki/podushka-ovchina-tibetskaya-krasno-chernaya-odnostoronnyaya-40kh40</url>
+<price>1900</price>
+<wholesalePrice>1215</wholesalePrice>
+<currencyId>RUB</currencyId>
+<categoryId>383</categoryId>
+<categoryId>424</categoryId>
+<categoryId>515</categoryId>
+<name>Подушка овчина &quot;Тибетская&quot; красно-черная односторонняя 40х40</name>
+<picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00001113/white/TT-00001113_1.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00001113/white/Thumbs.db</picture>
+<vendorCode></vendorCode>
+<vendor>Garda Decor</vendor>
+<material>чехол из натур.овчины, наполнитель - холофайбер</material>
+<dimensions>40/40/-</dimensions>
+<stock>3</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00001430" available="true">
@@ -11077,7 +11127,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, металл цвет золото, МДФ</material>
 <dimensions>65/152/10</dimensions>
-<stock>36</stock>
+<stock>33</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000934" available="true">
@@ -11388,7 +11438,7 @@
 <vendor>Garda Decor</vendor>
 <material>столешница - искус.мрамор(МДФ+пленка, цвет черный); основание - нержавеющая сталь, матовое серебро</material>
 <dimensions>55/57,2/55</dimensions>
-<stock>24</stock>
+<stock>23</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001027" available="true">
@@ -11439,7 +11489,7 @@
 <vendor>Garda Decor</vendor>
 <material>столешница - искус.мрамор(МДФ+пленка); основание - стеклопластик с полиуретановым покрытием, черный</material>
 <dimensions>110/76,2/170</dimensions>
-<stock>0</stock>
+<stock>1</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001332" available="true">
@@ -11456,7 +11506,7 @@
 <vendor>Garda Decor</vendor>
 <material>столешница - искус.мрамор(МДФ+пленка, цвет черный); основание - нержавеющая сталь, матовое серебро</material>
 <dimensions>100/40,6/100</dimensions>
-<stock>57</stock>
+<stock>56</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000966" available="true">
@@ -11525,7 +11575,7 @@
 <vendor>Garda Decor</vendor>
 <material>обивка - велюр пэ, каркас - дерево, основание - нержавеющая сталь</material>
 <dimensions>58/76/52</dimensions>
-<stock>11</stock>
+<stock>9</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000971" available="true">
@@ -11544,7 +11594,7 @@
 <vendor>Garda Decor</vendor>
 <material>обивка - велюр пэ, каркас - дерево, основание - нержавеющая сталь</material>
 <dimensions>54/102/49</dimensions>
-<stock>4</stock>
+<stock>3</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001058" available="true">
@@ -11615,7 +11665,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл (железо)</material>
 <dimensions>132/69,2/10</dimensions>
-<stock>34</stock>
+<stock>35</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001063" available="true">
@@ -11667,7 +11717,7 @@
 <vendor>Garda Decor</vendor>
 <material>обивка - велюр, каркас и ножки - дерево</material>
 <dimensions>72/83/69</dimensions>
-<stock>13</stock>
+<stock>12</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001368" available="true">
@@ -11768,7 +11818,7 @@
 <vendor>Garda Decor</vendor>
 <material>Основание - металл никелированный со стеклянными вставками, плафон - ткань бежевая</material>
 <dimensions>45/165/45</dimensions>
-<stock>55</stock>
+<stock>54</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000890" available="true">
@@ -11825,7 +11875,7 @@
 <vendor>Garda Decor</vendor>
 <material>Основание - металл никелированный, ножка стеклянная; плафон - ткань белая</material>
 <dimensions>24/60/24</dimensions>
-<stock>49</stock>
+<stock>50</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000893" available="true">
@@ -11842,7 +11892,7 @@
 <vendor>Garda Decor</vendor>
 <material>Основание - металл никелированный цвет золото, стекло дымчатое; плафон - ткань светло-серая</material>
 <dimensions>20/55/20</dimensions>
-<stock>12</stock>
+<stock>10</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000894" available="true">
@@ -11860,7 +11910,7 @@
 <vendor>Garda Decor</vendor>
 <material>Основание - металл никелированный цвет хром, ножка стеклянная; плафон - ткань светло-серого цвета</material>
 <dimensions>40/73/40</dimensions>
-<stock>12</stock>
+<stock>10</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000895" available="true">
@@ -11890,7 +11940,7 @@
 <vendor>Garda Decor</vendor>
 <material>Основание - металл никелированный цвет хром, ножка стеклянная голубая; плафон - ткань серого цвета</material>
 <dimensions>40/66/40</dimensions>
-<stock>0</stock>
+<stock>1</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000897" available="true">
@@ -11940,7 +11990,7 @@
 <vendor>Garda Decor</vendor>
 <material>пластик, металл, зеркало</material>
 <dimensions>62/62,2/2</dimensions>
-<stock>273</stock>
+<stock>269</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001168" available="true">
@@ -11973,7 +12023,7 @@
 <vendor>Garda Decor</vendor>
 <material>основание - нерж.сталь, цвет хром; обивка - велюр (100% полиэстер), цвет серый</material>
 <dimensions>99/46/45</dimensions>
-<stock>105</stock>
+<stock>106</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001336" available="true">
@@ -12007,7 +12057,7 @@
 <vendor>Garda Decor</vendor>
 <material>основание - нерж.сталь, цвет хром; обивка - велюр (100% полиэстер), цвет дымчато-сиреневый</material>
 <dimensions>99/46/43</dimensions>
-<stock>72</stock>
+<stock>71</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001338" available="true">
@@ -12024,7 +12074,7 @@
 <vendor>Garda Decor</vendor>
 <material>основание - нерж.сталь, цвет хром; обивка - велюр (100% полиэстер), цвет сиреневый</material>
 <dimensions>50/44/50</dimensions>
-<stock>51</stock>
+<stock>48</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001339" available="true">
@@ -12041,7 +12091,7 @@
 <vendor>Garda Decor</vendor>
 <material>основание - нерж.сталь, цвет золото; обивка - велюр (100% полиэстер), цвет бирюзовый</material>
 <dimensions>50/44/50</dimensions>
-<stock>61</stock>
+<stock>60</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001341" available="true">
@@ -12110,7 +12160,7 @@
 <vendor>Garda Decor</vendor>
 <material>основание - нерж.сталь, цвет хром; столешница - стекло прозрачное</material>
 <dimensions>120/40/60</dimensions>
-<stock>11</stock>
+<stock>9</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001347" available="true">
@@ -12147,7 +12197,7 @@
 <vendor>Garda Decor</vendor>
 <material>основание - нерж.сталь, цвет хром; столешница - стекло прозрачное</material>
 <dimensions>120/78/40</dimensions>
-<stock>178</stock>
+<stock>176</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001358" available="true">
@@ -12363,7 +12413,7 @@
 <vendor>Garda Decor</vendor>
 <material>обивка - велюр пэ, каркас - дерево</material>
 <dimensions>72/78/70</dimensions>
-<stock>9</stock>
+<stock>6</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001403" available="true">
@@ -12414,7 +12464,7 @@
 <vendor>Garda Decor</vendor>
 <material>обивка - полиэстер, каркас - дерево, основание - нержавеющая сталь</material>
 <dimensions>40/46/40</dimensions>
-<stock>8</stock>
+<stock>7</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001410" available="true">
@@ -12658,7 +12708,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл (железо), зеркало</material>
 <dimensions>60/60,3/3</dimensions>
-<stock>27</stock>
+<stock>26</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001438" available="true">
@@ -12761,7 +12811,7 @@
 <vendor>Garda Decor</vendor>
 <material>Керамика</material>
 <dimensions>11/21,5/9</dimensions>
-<stock>263</stock>
+<stock>262</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000885" available="true">
@@ -12778,7 +12828,7 @@
 <vendor>Garda Decor</vendor>
 <material>обивка - велюр, каркас и ножки - дерево</material>
 <dimensions>46/70/61</dimensions>
-<stock>23</stock>
+<stock>22</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000886" available="true">
@@ -12899,7 +12949,7 @@
 <vendor>Garda Decor</vendor>
 <material>стекло</material>
 <dimensions>10/40/10</dimensions>
-<stock>118</stock>
+<stock>117</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001455" available="true">
@@ -12916,7 +12966,7 @@
 <vendor>Garda Decor</vendor>
 <material>стекло</material>
 <dimensions>23/29/23</dimensions>
-<stock>126</stock>
+<stock>125</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001459" available="true">
@@ -12980,7 +13030,7 @@
 <vendor>Garda Decor</vendor>
 <material>стекло</material>
 <dimensions>19/10/19</dimensions>
-<stock>136</stock>
+<stock>135</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000939" available="true">
@@ -13030,7 +13080,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл, пластик</material>
 <dimensions>91/91/-</dimensions>
-<stock>94</stock>
+<stock>92</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001365" available="true">
@@ -13306,7 +13356,7 @@
 <vendor>Garda Decor</vendor>
 <material>обивка - велюр пэ, каркас - дерево, основание - нержавеющая сталь</material>
 <dimensions>90/94/73</dimensions>
-<stock>15</stock>
+<stock>16</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001488" available="true">
@@ -13388,7 +13438,7 @@
 <vendor>Garda Decor</vendor>
 <material>железная проволока, ткань полиэстер, пластик</material>
 <dimensions>-/88/-</dimensions>
-<stock>102</stock>
+<stock>101</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001350" available="true">
@@ -13403,7 +13453,7 @@
 <vendor>Garda Decor</vendor>
 <material>железная проволока, ткань полиэстер, пластик</material>
 <dimensions>-/113/-</dimensions>
-<stock>23</stock>
+<stock>21</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001378" available="true">
@@ -13822,7 +13872,7 @@
 <vendor>Garda Decor</vendor>
 <material></material>
 <dimensions>6/13/6</dimensions>
-<stock>5</stock>
+<stock>4</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001525" available="true">
@@ -14045,7 +14095,7 @@
 <vendor>Garda Decor</vendor>
 <material>наполнители: пенополиуретан, кокосовая койра, пружинный блок, спанбонд; чехол: трикотаж</material>
 <dimensions>160/23/200</dimensions>
-<stock>7</stock>
+<stock>6</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001551" available="true">
@@ -14120,7 +14170,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл никелированный цвет золото, вертикальные трубки - стекло прозрачное</material>
 <dimensions>58/34/58</dimensions>
-<stock>9</stock>
+<stock>6</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001544" available="true">
@@ -14577,7 +14627,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, МДФ</material>
 <dimensions>120/75/-</dimensions>
-<stock>11</stock>
+<stock>10</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001694" available="true">
@@ -14609,7 +14659,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, МДФ</material>
 <dimensions>60/80/-</dimensions>
-<stock>40</stock>
+<stock>39</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001696" available="true">
@@ -14626,7 +14676,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, МДФ, вставки стеклянные</material>
 <dimensions>80/60/-</dimensions>
-<stock>47</stock>
+<stock>45</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001697" available="true">
@@ -14660,7 +14710,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, МДФ, вставки стеклянные</material>
 <dimensions>60/60/-</dimensions>
-<stock>108</stock>
+<stock>107</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001699" available="true">
@@ -15517,7 +15567,7 @@
 <vendor>Garda Decor</vendor>
 <material>чехол - полиэстер, наполнитель - П/Э волокно</material>
 <dimensions>45/45/-</dimensions>
-<stock>7</stock>
+<stock>6</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001764" available="true">
@@ -15569,7 +15619,7 @@
 <vendor>Garda Decor</vendor>
 <material>никелированный металл</material>
 <dimensions>16/52/16</dimensions>
-<stock>60</stock>
+<stock>62</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001126" available="true">
@@ -15658,7 +15708,7 @@
 <vendor>Garda Decor</vendor>
 <material>плафон - пластик белый, основание- металл с никелированным покрытием, цвет - хром</material>
 <dimensions>18/52/18</dimensions>
-<stock>1</stock>
+<stock>2</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001593" available="true">
@@ -15745,7 +15795,7 @@
 <vendor>Garda Decor</vendor>
 <material>крашеный металл (железо), зеркало</material>
 <dimensions>43/85,1/5</dimensions>
-<stock>24</stock>
+<stock>23</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001762" available="true">
@@ -15814,7 +15864,7 @@
 <vendor>Garda Decor</vendor>
 <material>искусственный мрамор (МДФ+пленка ПВХ), металл</material>
 <dimensions>90/27,5/90</dimensions>
-<stock>15</stock>
+<stock>12</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001810" available="true">
@@ -15831,7 +15881,7 @@
 <vendor>Garda Decor</vendor>
 <material>искусственный мрамор (МДФ+пленка ПВХ), металл</material>
 <dimensions>50/48/50</dimensions>
-<stock>13</stock>
+<stock>14</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001811" available="true">
@@ -15848,7 +15898,7 @@
 <vendor>Garda Decor</vendor>
 <material>искусственный мрамор (МДФ+пленка ПВХ), металл</material>
 <dimensions>50/38/50</dimensions>
-<stock>26</stock>
+<stock>25</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001812" available="true">
@@ -15866,7 +15916,7 @@
 <vendor>Garda Decor</vendor>
 <material>столешница - искус.мрамор(МДФ+пленка, цвет коричневый), основание - нержавеющая сталь, золото</material>
 <dimensions>120/80/40</dimensions>
-<stock>15</stock>
+<stock>14</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001813" available="true">
@@ -15992,7 +16042,7 @@
 <vendor>Garda Decor</vendor>
 <material>нерж.сталь, обивка - велюр (100% полиэстер)</material>
 <dimensions>87/80/75</dimensions>
-<stock>7</stock>
+<stock>5</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="00001795" available="true">
@@ -16439,7 +16489,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл, стекло</material>
 <dimensions>21/25,5/21</dimensions>
-<stock>8</stock>
+<stock>6</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001878" available="true">
@@ -16745,7 +16795,7 @@
 <vendor>Garda Decor</vendor>
 <material>керамика</material>
 <dimensions>10/21,5/7</dimensions>
-<stock>789</stock>
+<stock>787</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001787" available="true">
@@ -16929,24 +16979,6 @@
 <stock>0</stock>
 <cargo_places>1</cargo_places>
 </offer>
-<offer id="TT-00001840" available="true">
-<url>http://garda-opt.ru/catalog/metallicheskie-stoliki/57el-et101v-stol-zhurnalnyy-nabor-iz-2-sht-d60-63-d47-55sm</url>
-<price>58800</price>
-<wholesalePrice>35900</wholesalePrice>
-<currencyId>RUB</currencyId>
-<categoryId>286</categoryId>
-<categoryId>296</categoryId>
-<categoryId>447</categoryId>
-<categoryId>520</categoryId>
-<name>57EL-ET101В Стол журнальный(набор из 2 шт) d60*63/d47*55см</name>
-<picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00001840/white/TT-00001840_1.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00001840/white/TT-00001840_2.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00001840/white/TT-00001840_3.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00001840/white/TT-00001840_4.jpg</picture>
-<vendorCode>57EL-ET101В</vendorCode>
-<vendor>Garda Decor</vendor>
-<material>нержавеющая сталь, искусственный мрамор (камень+пленка ПВХ)</material>
-<dimensions>60/63/60</dimensions>
-<stock>0</stock>
-<cargo_places>1</cargo_places>
-</offer>
 <offer id="TT-00001842" available="true">
 <url>http://garda-opt.ru/catalog/metallicheskie-stoliki/57el-et379b-stol-zhurnalnyy-55-50-50sm</url>
 <price>28200</price>
@@ -17049,25 +17081,6 @@
 <stock>22</stock>
 <cargo_places>1</cargo_places>
 </offer>
-<offer id="TT-00001851" available="true">
-<url>http://garda-opt.ru/catalog/steklyannaya-stoleshnitsa/57el-et399b-stol-zhurnalnyy-d55-50sm</url>
-<price>17800</price>
-<wholesalePrice>10900</wholesalePrice>
-<currencyId>RUB</currencyId>
-<categoryId>286</categoryId>
-<categoryId>287</categoryId>
-<categoryId>296</categoryId>
-<categoryId>298</categoryId>
-<categoryId>424</categoryId>
-<name>57EL-ET399B Стол журнальный d55*50см</name>
-<picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00001851/white/TT-00001851_1.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00001851/white/TT-00001851_2.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00001851/white/TT-00001851_3.jpg</picture>
-<vendorCode>57EL-ET399B</vendorCode>
-<vendor>Garda Decor</vendor>
-<material>Металл, стекло</material>
-<dimensions>55/50/55</dimensions>
-<stock>0</stock>
-<cargo_places>1</cargo_places>
-</offer>
 <offer id="TT-00001914" available="true">
 <url>http://garda-opt.ru/catalog/iskusstvennye-rasteniya/29bj-759-30-list-monstery-58sm</url>
 <price>100</price>
@@ -17110,7 +17123,7 @@
 <vendor>Garda Decor</vendor>
 <material>железная проволока, ткань полиэстер, пластик</material>
 <dimensions>-/50/50</dimensions>
-<stock>108</stock>
+<stock>105</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001939" available="true">
@@ -17143,7 +17156,7 @@
 <vendor>Garda Decor</vendor>
 <material>столешница - закаленное стекло, основание - нержавеющая сталь</material>
 <dimensions>50/55/50</dimensions>
-<stock>38</stock>
+<stock>36</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001828" available="true">
@@ -17161,7 +17174,7 @@
 <vendor>Garda Decor</vendor>
 <material>столешница - закаленное стекло, основание - нержавеющая сталь</material>
 <dimensions>50/55/50</dimensions>
-<stock>20</stock>
+<stock>19</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001829" available="true">
@@ -17178,7 +17191,7 @@
 <vendor>Garda Decor</vendor>
 <material>столешница - закаленное стекло, основание - нержавеющая сталь</material>
 <dimensions>90/45/90</dimensions>
-<stock>20</stock>
+<stock>19</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001830" available="true">
@@ -17306,7 +17319,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл (железо)</material>
 <dimensions>22/24,1/7</dimensions>
-<stock>2</stock>
+<stock>0</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001944" available="true">
@@ -17336,7 +17349,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл (железо)</material>
 <dimensions>23/23,5/6</dimensions>
-<stock>62</stock>
+<stock>63</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001946" available="true">
@@ -17351,7 +17364,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл (железо)</material>
 <dimensions>23/23,5/6</dimensions>
-<stock>0</stock>
+<stock>1</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001949" available="true">
@@ -17403,7 +17416,7 @@
 <vendor>Garda Decor</vendor>
 <material>столешница - стекло, каркас -  нержавеющая сталь золотого цвета</material>
 <dimensions>60/55/60</dimensions>
-<stock>2</stock>
+<stock>1</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001952" available="true">
@@ -17438,7 +17451,7 @@
 <vendor>Garda Decor</vendor>
 <material>столешница - стекло, основание - нержавеющая сталь цвета хром</material>
 <dimensions>130/45/60</dimensions>
-<stock>20</stock>
+<stock>19</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001954" available="true">
@@ -17491,7 +17504,7 @@
 <vendor>Garda Decor</vendor>
 <material>полки - стекло, каркас основание - нержавеющая сталь</material>
 <dimensions>140/180/38</dimensions>
-<stock>2</stock>
+<stock>1</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001961" available="true">
@@ -17659,7 +17672,7 @@
 <vendor>Garda Decor</vendor>
 <material>обивка - велюр, каркас и ножки - дерево</material>
 <dimensions>77/105/92</dimensions>
-<stock>15</stock>
+<stock>14</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001933" available="true">
@@ -17745,7 +17758,7 @@
 <vendor>Garda Decor</vendor>
 <material>каркас - нержавеющий металл, столешница МДФ</material>
 <dimensions>120/76/40</dimensions>
-<stock>9</stock>
+<stock>8</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001972" available="true">
@@ -17762,7 +17775,7 @@
 <vendor>Garda Decor</vendor>
 <material>каркас - нержавеющий металл, столешница МДФ</material>
 <dimensions>120/41/65</dimensions>
-<stock>3</stock>
+<stock>0</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001975" available="true">
@@ -17865,7 +17878,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, МДФ</material>
 <dimensions>152/92/51</dimensions>
-<stock>9</stock>
+<stock>8</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000902" available="true">
@@ -17933,7 +17946,7 @@
 <vendor>Garda Decor</vendor>
 <material>обивка - велюр пэ, каркас и ножки - дерево, наконечники - нержавеющая сталь</material>
 <dimensions>65/101/56</dimensions>
-<stock>1</stock>
+<stock>2</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002008" available="true">
@@ -17951,7 +17964,7 @@
 <vendor>Garda Decor</vendor>
 <material>обивка - велюр, каркас- дерево, основание - нержавеющая сталь</material>
 <dimensions>72/82/73</dimensions>
-<stock>19</stock>
+<stock>15</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002009" available="true">
@@ -17969,7 +17982,24 @@
 <vendor>Garda Decor</vendor>
 <material>обивка - велюр пэ, каркас - дерево, перекладины - нержавеющая сталь</material>
 <dimensions>54/102/52</dimensions>
-<stock>0</stock>
+<stock>1</stock>
+<cargo_places>1</cargo_places>
+</offer>
+<offer id="TT-00002010" available="true">
+<url>http://garda-opt.ru/catalog/velyurovye-kresla/48my-1245-1-gre-kreslo-velyur-seryy-113-103-72sm</url>
+<price>60400</price>
+<wholesalePrice>34020</wholesalePrice>
+<currencyId>RUB</currencyId>
+<categoryId>296</categoryId>
+<categoryId>297</categoryId>
+<categoryId>547</categoryId>
+<name>48MY-1245-1 GRE Кресло велюр серый 113*103*72см</name>
+<picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00002010/white/.DS_Store</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00002010/white/TT-00002010_1.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00002010/white/TT-00002010_2.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00002010/white/TT-00002010_3.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00002010/white/TT-00002010_4.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00002010/white/TT-00002010_5.jpg</picture>
+<vendorCode>48MY-1245-1 GRE</vendorCode>
+<vendor>Garda Decor</vendor>
+<material>обивка - велюр пэ, каркас- дерево</material>
+<dimensions>113/72/103</dimensions>
+<stock>1</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002014" available="true">
@@ -18022,7 +18052,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, МДФ</material>
 <dimensions>150/46/45</dimensions>
-<stock>15</stock>
+<stock>14</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002017" available="true">
@@ -18076,7 +18106,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, МДФ</material>
 <dimensions>120/80/35</dimensions>
-<stock>23</stock>
+<stock>21</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002021" available="true">
@@ -18305,7 +18335,7 @@
 <vendor>Garda Decor</vendor>
 <material>МДФ, сверху столешница покрыта 5мм серым матовым стеклом, основание - металл, цвет желтая медь матов</material>
 <dimensions>240/76/100</dimensions>
-<stock>7</stock>
+<stock>8</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002080" available="true">
@@ -18417,7 +18447,7 @@
 <vendor>Garda Decor</vendor>
 <material>МДФ, столешница покрыта 5мм матовым стеклом, ножки металл цвет красная медь матовая</material>
 <dimensions>240/76/100</dimensions>
-<stock>6</stock>
+<stock>5</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002088" available="true">
@@ -18499,7 +18529,7 @@
 <vendor>Garda Decor</vendor>
 <material>ножки - металл цвет красная медь матовая, обивка - иск. кожа</material>
 <dimensions>62/76/61</dimensions>
-<stock>25</stock>
+<stock>19</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002096" available="true">
@@ -18533,7 +18563,7 @@
 <vendor>Garda Decor</vendor>
 <material>столешница - МДФ цвет черный глянцевый, основание - металл цвет желтая медь</material>
 <dimensions>65/35/65</dimensions>
-<stock>2</stock>
+<stock>1</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002098" available="true">
@@ -18629,7 +18659,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл никелированный цвет хром, стекло прозрачное</material>
 <dimensions>57/33/53</dimensions>
-<stock>6</stock>
+<stock>5</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002110" available="true">
@@ -18644,7 +18674,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл никелированный цвет хром, стекло прозрачное</material>
 <dimensions>22/51/25</dimensions>
-<stock>29</stock>
+<stock>27</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002111" available="true">
@@ -18705,7 +18735,7 @@
 <vendor>Garda Decor</vendor>
 <material>стекло</material>
 <dimensions>8/21,5/6</dimensions>
-<stock>13</stock>
+<stock>12</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002106" available="true">
@@ -18827,7 +18857,7 @@
 <vendor>Garda Decor</vendor>
 <material>Стекло, картон, велюр</material>
 <dimensions>18/22/1</dimensions>
-<stock>70</stock>
+<stock>68</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000408" available="true">
@@ -18893,7 +18923,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, пластик</material>
 <dimensions>56/56/5</dimensions>
-<stock>39</stock>
+<stock>37</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001788" available="true">
@@ -18912,7 +18942,7 @@
 <vendor>Garda Decor</vendor>
 <material>керамика</material>
 <dimensions>15/29/6</dimensions>
-<stock>551</stock>
+<stock>549</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001789" available="true">
@@ -18931,7 +18961,7 @@
 <vendor>Garda Decor</vendor>
 <material>керамика</material>
 <dimensions>12/22/5</dimensions>
-<stock>920</stock>
+<stock>917</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001790" available="true">
@@ -19040,7 +19070,7 @@
 <vendor>Garda Decor</vendor>
 <material>столешница - закаленное стекло, основание - сталь цвета золото</material>
 <dimensions>50/60/50</dimensions>
-<stock>15</stock>
+<stock>14</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002126" available="true">
@@ -19147,7 +19177,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, металл цвет золото, МДФ</material>
 <dimensions>75/100/-</dimensions>
-<stock>13</stock>
+<stock>14</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002257" available="true">
@@ -19200,7 +19230,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, МДФ</material>
 <dimensions>100/100/-</dimensions>
-<stock>45</stock>
+<stock>44</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002261" available="true">
@@ -19249,7 +19279,7 @@
 <vendor>Garda Decor</vendor>
 <material>Зеркало, МДФ, рама - полиуретан</material>
 <dimensions>87/87/-</dimensions>
-<stock>1</stock>
+<stock>0</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002133" available="true">
@@ -19285,7 +19315,7 @@
 <vendor>Garda Decor</vendor>
 <material>основание - нерж.сталь, цвет золото матовое; столешница - иск.мрамор белый матовый</material>
 <dimensions>120/78/40</dimensions>
-<stock>50</stock>
+<stock>49</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002135" available="true">
@@ -19338,7 +19368,7 @@
 <vendor>Garda Decor</vendor>
 <material>нерж.сталь, МДФ, пленка ПВХ.</material>
 <dimensions>110/76/110</dimensions>
-<stock>16</stock>
+<stock>14</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002464" available="true">
@@ -19368,7 +19398,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл (железо)</material>
 <dimensions>92/51/7</dimensions>
-<stock>57</stock>
+<stock>56</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002475" available="true">
@@ -19400,7 +19430,7 @@
 <vendor>Garda Decor</vendor>
 <material>основание - нерж.сталь, цвет золото; столешница - стекло прозрачное</material>
 <dimensions>120/40/60</dimensions>
-<stock>16</stock>
+<stock>15</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002529" available="true">
@@ -19517,7 +19547,7 @@
 <vendor>Garda Decor</vendor>
 <material>Полирезина</material>
 <dimensions>12/37/10</dimensions>
-<stock>15</stock>
+<stock>14</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002327" available="true">
@@ -19552,7 +19582,7 @@
 <vendor>Garda Decor</vendor>
 <material>керамика</material>
 <dimensions>13/19,5/13</dimensions>
-<stock>88</stock>
+<stock>86</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002330" available="true">
@@ -19571,7 +19601,7 @@
 <vendor>Garda Decor</vendor>
 <material>керамика</material>
 <dimensions>11/14,5/11</dimensions>
-<stock>69</stock>
+<stock>67</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002531" available="true">
@@ -19621,7 +19651,7 @@
 <vendor>Garda Decor</vendor>
 <material>основание - нерж.сталь цвет хром, столешница - закаленное стекло прозрачное</material>
 <dimensions>120/78/40</dimensions>
-<stock>36</stock>
+<stock>35</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002544" available="true">
@@ -19749,7 +19779,7 @@
 <vendor>Garda Decor</vendor>
 <material>алюминий</material>
 <dimensions>16/45/11</dimensions>
-<stock>32</stock>
+<stock>30</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002600" available="true">
@@ -19767,7 +19797,7 @@
 <vendor>Garda Decor</vendor>
 <material>алюминий</material>
 <dimensions>18/50/11</dimensions>
-<stock>49</stock>
+<stock>47</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002603" available="true">
@@ -19865,7 +19895,7 @@
 <vendor>Garda Decor</vendor>
 <material>обивка - велюр, каркас и ножки - дерево, наполнитель HR ППУ</material>
 <dimensions>103/94/226</dimensions>
-<stock>5</stock>
+<stock>4</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002642" available="true">
@@ -20377,7 +20407,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, МДФ</material>
 <dimensions>80/80/-</dimensions>
-<stock>27</stock>
+<stock>26</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002788" available="true">
@@ -20431,7 +20461,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл - медь, мрамор</material>
 <dimensions>20/25/20</dimensions>
-<stock>0</stock>
+<stock>1</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002791" available="true">
@@ -20595,7 +20625,7 @@
 <vendor>Garda Decor</vendor>
 <material>столешница - природный камень, МДФ</material>
 <dimensions>193/60/45</dimensions>
-<stock>5</stock>
+<stock>6</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002694" available="true">
@@ -20613,7 +20643,7 @@
 <vendor>Garda Decor</vendor>
 <material>МДФ</material>
 <dimensions>90/165/46</dimensions>
-<stock>9</stock>
+<stock>8</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002695" available="true">
@@ -20683,7 +20713,7 @@
 <vendor>Garda Decor</vendor>
 <material>вискоза, хлопок, полиэстер</material>
 <dimensions>45/-/45</dimensions>
-<stock>5</stock>
+<stock>10</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002441" available="true">
@@ -20719,7 +20749,7 @@
 <vendor>Garda Decor</vendor>
 <material>вискоза, хлопок, полиэстер</material>
 <dimensions>45/-/45</dimensions>
-<stock>0</stock>
+<stock>10</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002445" available="true">
@@ -20843,7 +20873,7 @@
 <vendor>Garda Decor</vendor>
 <material>вискоза, хлопок, полиэстер</material>
 <dimensions>45/-/45</dimensions>
-<stock>0</stock>
+<stock>3</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002467" available="true">
@@ -20893,7 +20923,7 @@
 <vendor>Garda Decor</vendor>
 <material>100% вискоза</material>
 <dimensions>160/1,1/230</dimensions>
-<stock>10</stock>
+<stock>8</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002850" available="true">
@@ -20953,7 +20983,7 @@
 <vendor>Garda Decor</vendor>
 <material>80% вискоза, 20% шерсть</material>
 <dimensions>160/1,1/230</dimensions>
-<stock>16</stock>
+<stock>15</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002854" available="true">
@@ -21028,7 +21058,7 @@
 <vendor>Garda Decor</vendor>
 <material>100% вискоза</material>
 <dimensions>200/1,1/300</dimensions>
-<stock>15</stock>
+<stock>16</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002859" available="true">
@@ -21274,21 +21304,6 @@
 <stock>13</stock>
 <cargo_places>1</cargo_places>
 </offer>
-<offer id="TT-00002227" available="true">
-<url>http://garda-opt.ru/catalog/potolochnye-svetilniki/60gd-9137p-s-lampa-potolochnaya-d20sm-h150sm</url>
-<price>8000</price>
-<wholesalePrice>4900</wholesalePrice>
-<currencyId>RUB</currencyId>
-<categoryId>358</categoryId>
-<name>60GD-9137P/S Лампа потолочная d20см h150см</name>
-<picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00002227/white/TT-00002227_1.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00002227/white/TT-00002227_2.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00002227/white/TT-00002227_3.jpg</picture>
-<vendorCode>60GD-9137P/S</vendorCode>
-<vendor>Garda Decor</vendor>
-<material>металл, стекло</material>
-<dimensions>20/150/20</dimensions>
-<stock>2</stock>
-<cargo_places>1</cargo_places>
-</offer>
 <offer id="TT-00002228" available="true">
 <url>http://garda-opt.ru/catalog/potolochnye-svetilniki/60gd-9137p-l-lampa-potolochnaya-d30sm-h150sm</url>
 <price>12600</price>
@@ -21376,7 +21391,7 @@
 <vendor>Garda Decor</vendor>
 <material>керамика</material>
 <dimensions>5/25,5/9</dimensions>
-<stock>331</stock>
+<stock>330</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002826" available="true">
@@ -21461,7 +21476,7 @@
 <vendor>Garda Decor</vendor>
 <material>нержавеющая сталь, стекло</material>
 <dimensions>20/33/20</dimensions>
-<stock>20</stock>
+<stock>16</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002172" available="true">
@@ -21506,7 +21521,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл, стекло</material>
 <dimensions>22/55/-</dimensions>
-<stock>15</stock>
+<stock>24</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002175" available="true">
@@ -21521,7 +21536,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл, бронза</material>
 <dimensions>25/75/-</dimensions>
-<stock>27</stock>
+<stock>24</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002177" available="true">
@@ -21581,22 +21596,7 @@
 <vendor>Garda Decor</vendor>
 <material>нержавеющая сталь, стекло</material>
 <dimensions>15/35/11</dimensions>
-<stock>4</stock>
-<cargo_places>1</cargo_places>
-</offer>
-<offer id="TT-00002181" available="true">
-<url>http://garda-opt.ru/catalog/bra/62gdw-d007k5b-550-bra-lloyd-m-15-11-55-sm</url>
-<price>10600</price>
-<wholesalePrice>6400</wholesalePrice>
-<currencyId>RUB</currencyId>
-<categoryId>354</categoryId>
-<name>62GDW-D007K5B/550 Бра LLOYD M 15*11*55 см</name>
-<picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00002181/white/TT-00002181_1.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00002181/white/TT-00002181_2.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00002181/white/TT-00002181_3.jpg</picture>
-<vendorCode>62GDW-D007K5B/550</vendorCode>
-<vendor>Garda Decor</vendor>
-<material>нержавеющая сталь, стекло</material>
-<dimensions>15/55/11</dimensions>
-<stock>2</stock>
+<stock>0</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002828" available="true">
@@ -21645,7 +21645,7 @@
 <vendor>Garda Decor</vendor>
 <material>нержавеющая сталь, стекло</material>
 <dimensions>20/34/-</dimensions>
-<stock>90</stock>
+<stock>87</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002203" available="true">
@@ -21675,7 +21675,7 @@
 <vendor>Garda Decor</vendor>
 <material>нержавеющая сталь, стекло</material>
 <dimensions>54/65/54</dimensions>
-<stock>4</stock>
+<stock>2</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002205" available="true">
@@ -21705,7 +21705,7 @@
 <vendor>Garda Decor</vendor>
 <material>нержавеющая сталь</material>
 <dimensions>60/30/-</dimensions>
-<stock>125</stock>
+<stock>121</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002209" available="true">
@@ -21754,7 +21754,7 @@
 <vendor>Garda Decor</vendor>
 <material>обивка - велюр, каркас и ножки - дерево</material>
 <dimensions>65/49/50</dimensions>
-<stock>32</stock>
+<stock>31</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002623" available="true">
@@ -22072,6 +22072,25 @@
 <stock>0</stock>
 <cargo_places>1</cargo_places>
 </offer>
+<offer id="TT-00003561" available="true">
+<url>http://garda-opt.ru/catalog/steklyannye-vazy/71pn-51078-flakon-dekorativnyy-steklyannyy-d18-18sm</url>
+<price>3400</price>
+<wholesalePrice>2080</wholesalePrice>
+<currencyId>RUB</currencyId>
+<categoryId>315</categoryId>
+<categoryId>350</categoryId>
+<categoryId>314</categoryId>
+<categoryId>317</categoryId>
+<categoryId>395</categoryId>
+<name>71PN-51078 Флакон декоративный стеклянный d18*18см</name>
+<picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00003561/white/TT-00003561_1.jpg</picture>
+<vendorCode>71PN-51078</vendorCode>
+<vendor>Garda Decor</vendor>
+<material>стекло, металл</material>
+<dimensions>18/18/18</dimensions>
+<stock>0</stock>
+<cargo_places>1</cargo_places>
+</offer>
 <offer id="TT-00003563" available="true">
 <url>http://garda-opt.ru/catalog/steklyannye-vazy/71pn-51082-flakon-dekorativnyy-steklyannyy-22-13-34sm</url>
 <price>5320</price>
@@ -22145,22 +22164,6 @@
 <stock>1</stock>
 <cargo_places>1</cargo_places>
 </offer>
-<offer id="TT-00003615" available="true">
-<url>http://garda-opt.ru/catalog/tkanevaya-obivka_2/76ar-7384gold-grb-kreslo-vrashch-rogozhka-sero-golubaya-72-78-73sm</url>
-<price>34800</price>
-<wholesalePrice>21200</wholesalePrice>
-<currencyId>RUB</currencyId>
-<categoryId>296</categoryId>
-<categoryId>549</categoryId>
-<name>76AR-7384GOLD-GRB Кресло вращ. рогожка серо-голубая 72*78*73см</name>
-<picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00003615/white/.DS_Store</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00003615/white/TT-00003615_1.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00003615/white/TT-00003615_2.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00003615/white/TT-00003615_3.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00003615/white/TT-00003615_4.jpg</picture>
-<vendorCode>76AR-7384GOLD-GRB</vendorCode>
-<vendor>Garda Decor</vendor>
-<material>обивка - рогожка, отделка в основании металлом (нерж.сталь)</material>
-<dimensions>73/78/72</dimensions>
-<stock>0</stock>
-<cargo_places>1</cargo_places>
-</offer>
 <offer id="TT-00002069" available="true">
 <url>http://garda-opt.ru/catalog/konsoli/gd-cst002-konsol-d-oro-garda-decor-chernaya-zoloto-120-30-78sm</url>
 <price>83490</price>
@@ -22175,6 +22178,24 @@
 <vendorCode>GD-CST002</vendorCode>
 <vendor>Garda Decor</vendor>
 <material>МДФ лак цвет черный глянцевый, ножки, отделка - металл, цвет золото</material>
+<dimensions>30/78/120</dimensions>
+<stock>2</stock>
+<cargo_places>1</cargo_places>
+</offer>
+<offer id="TT-00002070" available="true">
+<url>http://garda-opt.ru/catalog/konsoli/gd-cst003-konsol-d-oro-garda-decor-belaya-khrom-120-30-78sm</url>
+<price>83490</price>
+<wholesalePrice>52210</wholesalePrice>
+<currencyId>RUB</currencyId>
+<categoryId>293</categoryId>
+<categoryId>296</categoryId>
+<categoryId>298</categoryId>
+<categoryId>520</categoryId>
+<name>GD-CST003 Консоль D&apos;Oro Garda Decor белая/хром 120*30*78см</name>
+<picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00002070/white/TT-00002070_1.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00002070/white/TT-00002070_2.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00002070/white/TT-00002070_3.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00002070/white/TT-00002070_4.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00002070/white/TT-00002070_5.jpg</picture>
+<vendorCode>GD-CST003</vendorCode>
+<vendor>Garda Decor</vendor>
+<material>МДФ лак цвет белый глянцевый, ножки, отделка - металл, цвет хром</material>
 <dimensions>30/78/120</dimensions>
 <stock>1</stock>
 <cargo_places>1</cargo_places>
@@ -22193,23 +22214,6 @@
 <vendor>Garda Decor</vendor>
 <material>обивка - полиэстер, каркас - дерево, наполнитель ППУ, ножки - металл</material>
 <dimensions>96/78/191</dimensions>
-<stock>0</stock>
-<cargo_places>1</cargo_places>
-</offer>
-<offer id="TT-00002675" available="true">
-<url>http://garda-opt.ru/catalog/tkanevaya-obivka/zw-93003-bg-divan-trekhmestnyy-bezhevyy-na-zol-nozhkakh-96-241-78sm</url>
-<price>140000</price>
-<wholesalePrice>85600</wholesalePrice>
-<currencyId>RUB</currencyId>
-<categoryId>283</categoryId>
-<categoryId>296</categoryId>
-<categoryId>1891</categoryId>
-<name>ZW-93003 BG Диван трехместный бежевый на зол.ножках 96*241*78см</name>
-<picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00002675/white/TT-00002675_1.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00002675/white/TT-00002675_2.jpg</picture>
-<vendorCode>ZW-93003 BG</vendorCode>
-<vendor>Garda Decor</vendor>
-<material>обивка - полиэстер, каркас - дерево, наполнитель ППУ, ножки - металл</material>
-<dimensions>96/78/241</dimensions>
 <stock>0</stock>
 <cargo_places>1</cargo_places>
 </offer>
@@ -22375,7 +22379,7 @@
 <vendor>Garda Decor</vendor>
 <material>стекло</material>
 <dimensions>13/30/13</dimensions>
-<stock>60</stock>
+<stock>59</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00003690" available="true">
@@ -22451,7 +22455,7 @@
 <vendor>Garda Decor</vendor>
 <material>стекло</material>
 <dimensions>16/22/16</dimensions>
-<stock>6</stock>
+<stock>5</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00003694" available="true">
@@ -22470,7 +22474,7 @@
 <vendor>Garda Decor</vendor>
 <material>стекло</material>
 <dimensions>17/27/17</dimensions>
-<stock>52</stock>
+<stock>51</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00003712" available="true">
@@ -22535,7 +22539,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, металл,  МДФ</material>
 <dimensions>90/140/-</dimensions>
-<stock>2</stock>
+<stock>0</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00003621" available="true">
@@ -22552,23 +22556,6 @@
 <material>зеркало, металл,  МДФ</material>
 <dimensions>90/140/-</dimensions>
 <stock>0</stock>
-<cargo_places>1</cargo_places>
-</offer>
-<offer id="TT-00003622" available="true">
-<url>http://garda-opt.ru/catalog/komody/kfg057-komod-chernyy-6-yashchikov-120-42-82sm</url>
-<price>87400</price>
-<wholesalePrice>53475</wholesalePrice>
-<currencyId>RUB</currencyId>
-<categoryId>292</categoryId>
-<categoryId>296</categoryId>
-<categoryId>298</categoryId>
-<name>KFG057 Комод черный 6 ящиков 120*42*82см</name>
-<picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00003622/white/TT-00003622_1.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00003622/white/TT-00003622_2.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00003622/white/TT-00003622_3.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00003622/white/TT-00003622_4.jpg</picture>
-<vendorCode>KFG057</vendorCode>
-<vendor>Garda Decor</vendor>
-<material>зеркало черного цвета, нерж. сталь</material>
-<dimensions>42/82/120</dimensions>
-<stock>1</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00003623" available="true">
@@ -22620,7 +22607,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, нерж. сталь, МДФ</material>
 <dimensions>83/83/-</dimensions>
-<stock>28</stock>
+<stock>27</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00003626" available="true">
@@ -22654,7 +22641,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, нерж. сталь, МДФ</material>
 <dimensions>84/84/-</dimensions>
-<stock>24</stock>
+<stock>23</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00003629" available="true">
@@ -22702,7 +22689,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, нерж. сталь, МДФ</material>
 <dimensions>91/102/-</dimensions>
-<stock>13</stock>
+<stock>11</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00003632" available="true">
@@ -22753,7 +22740,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркальная поверхность, МДФ - цвет шампань</material>
 <dimensions>42/78/120</dimensions>
-<stock>15</stock>
+<stock>14</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00003640" available="true">
@@ -22892,7 +22879,7 @@
 <vendor>Garda Decor</vendor>
 <material>нерж. сталь, зеркало, подвес кожаный</material>
 <dimensions>61/61/-</dimensions>
-<stock>16</stock>
+<stock>15</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00003794" available="true">
@@ -22907,7 +22894,7 @@
 <vendor>Garda Decor</vendor>
 <material>латунь, алюминий, кожа</material>
 <dimensions>31/183/30</dimensions>
-<stock>2</stock>
+<stock>1</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00003795" available="true">
@@ -22923,6 +22910,24 @@
 <material>металл, кожа</material>
 <dimensions>48/110/40</dimensions>
 <stock>0</stock>
+<cargo_places>1</cargo_places>
+</offer>
+<offer id="TT-00003830" available="true">
+<url>http://garda-opt.ru/catalog/tumby/77ip-tv828-tumba-pod-televizor-keram-fasad-200-50-49sm</url>
+<price>104200</price>
+<wholesalePrice>65100</wholesalePrice>
+<currencyId>RUB</currencyId>
+<categoryId>296</categoryId>
+<categoryId>298</categoryId>
+<categoryId>302</categoryId>
+<categoryId>520</categoryId>
+<name>77IP-TV828 Тумба под телевизор, керам.фасад 200*50*49см</name>
+<picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00003830/white/TT-00003830_1.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00003830/white/TT-00003830_2.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00003830/white/TT-00003830_3.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00003830/white/TT-00003830_4.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00003830/white/TT-00003830_5.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00003830/white/TT-00003830_6.jpg</picture>
+<vendorCode>77IP-TV828</vendorCode>
+<vendor>Garda Decor</vendor>
+<material>МДФ, шпон, керамика</material>
+<dimensions>200/50/49</dimensions>
+<stock>1</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00003831" available="true">
@@ -23060,7 +23065,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл с покрытием цвет черный, стекло</material>
 <dimensions>72/63/72</dimensions>
-<stock>9</stock>
+<stock>8</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002753" available="true">
@@ -23252,7 +23257,7 @@
 <vendor>Garda Decor</vendor>
 <material>обивка - велюр, каркас и ножки - дерево, наполнитель HR ППУ</material>
 <dimensions>103/94/226</dimensions>
-<stock>5</stock>
+<stock>4</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002842" available="true">
@@ -23270,7 +23275,7 @@
 <vendor>Garda Decor</vendor>
 <material>обивка - велюр, каркас и ножки - дерево, наполнитель HR ППУ</material>
 <dimensions>103/94/226</dimensions>
-<stock>4</stock>
+<stock>5</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002845" available="true">
@@ -23293,8 +23298,8 @@
 </offer>
 <offer id="TT-00003997" available="true">
 <url>http://garda-opt.ru/catalog/tkanevaya-obivka/komplekt-mebeli-1-divan-lazio</url>
-<price>196900</price>
-<wholesalePrice>119900</wholesalePrice>
+<price>216600</price>
+<wholesalePrice>131900</wholesalePrice>
 <currencyId>RUB</currencyId>
 <categoryId>283</categoryId>
 <categoryId>296</categoryId>
@@ -23311,8 +23316,8 @@
 </offer>
 <offer id="TT-00003999" available="true">
 <url>http://garda-opt.ru/catalog/tkanevaya-obivka/komplekt-mebeli-4-divan-lazio-ugol-trapetsiya-pravyy</url>
-<price>288300</price>
-<wholesalePrice>176200</wholesalePrice>
+<price>317100</price>
+<wholesalePrice>193800</wholesalePrice>
 <currencyId>RUB</currencyId>
 <categoryId>283</categoryId>
 <categoryId>296</categoryId>
@@ -23329,8 +23334,8 @@
 </offer>
 <offer id="TT-00003996" available="true">
 <url>http://garda-opt.ru/catalog/tkanevaya-obivka/komplekt-mebeli-2-divan-lazio-ugol-trapetsiya-levyy</url>
-<price>323800</price>
-<wholesalePrice>197700</wholesalePrice>
+<price>356200</price>
+<wholesalePrice>217500</wholesalePrice>
 <currencyId>RUB</currencyId>
 <categoryId>283</categoryId>
 <categoryId>296</categoryId>
@@ -23347,8 +23352,8 @@
 </offer>
 <offer id="TT-00004009" available="true">
 <url>http://garda-opt.ru/catalog/tkanevaya-obivka/komplekt-mebeli-7-divan-lazio</url>
-<price>196400</price>
-<wholesalePrice>119400</wholesalePrice>
+<price>216000</price>
+<wholesalePrice>131300</wholesalePrice>
 <currencyId>RUB</currencyId>
 <categoryId>283</categoryId>
 <categoryId>296</categoryId>
@@ -23365,8 +23370,8 @@
 </offer>
 <offer id="TT-00004001" available="true">
 <url>http://garda-opt.ru/catalog/modulnye-divany/komplekt-mebeli-6-divan-manchester-uglovoy-s-mekhanizmom</url>
-<price>387100</price>
-<wholesalePrice>235900</wholesalePrice>
+<price>425800</price>
+<wholesalePrice>259500</wholesalePrice>
 <currencyId>RUB</currencyId>
 <categoryId>283</categoryId>
 <categoryId>296</categoryId>
@@ -23384,8 +23389,8 @@
 </offer>
 <offer id="TT-00003998" available="true">
 <url>http://garda-opt.ru/catalog/modulnye-divany/komplekt-mebeli-3-divan-manchester-uglovoy-s-mekhanizmom</url>
-<price>335600</price>
-<wholesalePrice>205000</wholesalePrice>
+<price>369200</price>
+<wholesalePrice>225500</wholesalePrice>
 <currencyId>RUB</currencyId>
 <categoryId>283</categoryId>
 <categoryId>296</categoryId>
@@ -23451,7 +23456,7 @@
 <vendor>Garda Decor</vendor>
 <material>Зеркало, МДФ, стекло</material>
 <dimensions>65/100/2</dimensions>
-<stock>26</stock>
+<stock>21</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004013" available="true">
@@ -23575,8 +23580,8 @@
 </offer>
 <offer id="TT-00004059" available="true">
 <url>http://garda-opt.ru/catalog/modulnye-divany/komplekt-mebeli-8-divan-lazio-ugol-trapetsiya-levyy-c-mekhanizmom</url>
-<price>288300</price>
-<wholesalePrice>176100</wholesalePrice>
+<price>317100</price>
+<wholesalePrice>193700</wholesalePrice>
 <currencyId>RUB</currencyId>
 <categoryId>283</categoryId>
 <categoryId>513</categoryId>
@@ -23706,7 +23711,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, металл,  МДФ</material>
 <dimensions>81/81/-</dimensions>
-<stock>33</stock>
+<stock>32</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004037" available="true">
@@ -23862,7 +23867,7 @@
 <vendor>Garda Decor</vendor>
 <material>МДФ, нерж.сталь, зеркало, ткань</material>
 <dimensions>40/180/75</dimensions>
-<stock>11</stock>
+<stock>10</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004067" available="true">
@@ -24136,7 +24141,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл, дерево, мрамор</material>
 <dimensions>160/92/60</dimensions>
-<stock>7</stock>
+<stock>6</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004201" available="true">
@@ -24155,7 +24160,7 @@
 <vendor>Garda Decor</vendor>
 <material>фотобумага, дерево, оргстекло, алюминий</material>
 <dimensions>100/70/-</dimensions>
-<stock>1</stock>
+<stock>2</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004202" available="true">
@@ -24283,7 +24288,7 @@
 <vendor>Garda Decor</vendor>
 <material>обивка - велюр, каркас- дерево, основание - нержавеющая сталь</material>
 <dimensions>75/78/67</dimensions>
-<stock>3</stock>
+<stock>1</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004025" available="true">
@@ -24300,7 +24305,7 @@
 <vendor>Garda Decor</vendor>
 <material>обивка - велюр пэ, каркас- дерево, ножки - нержавеющая сталь</material>
 <dimensions>67/77/73</dimensions>
-<stock>3</stock>
+<stock>1</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004026" available="true">
@@ -24336,7 +24341,7 @@
 <vendor>Garda Decor</vendor>
 <material>Стекло белое, МДФ, каркас - нерж. сталь цвет матовое золото</material>
 <dimensions>120/77/42</dimensions>
-<stock>7</stock>
+<stock>6</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004170" available="true">
@@ -24614,7 +24619,7 @@
 <vendor>Garda Decor</vendor>
 <material>алюминий</material>
 <dimensions>23/3/44</dimensions>
-<stock>13</stock>
+<stock>5</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004249" available="true">
@@ -24704,24 +24709,6 @@
 <vendor>Garda Decor</vendor>
 <material>алюминий</material>
 <dimensions>12/2,5/20</dimensions>
-<stock>3</stock>
-<cargo_places>1</cargo_places>
-</offer>
-<offer id="TT-00004257" available="true">
-<url>http://garda-opt.ru/catalog/metallicheskie-stoliki/a98002170-nabor-stolov-stoleshn-belaya-2-sht-d34-36sm-d28-32sm</url>
-<price>12000</price>
-<wholesalePrice>6615</wholesalePrice>
-<currencyId>RUB</currencyId>
-<categoryId>286</categoryId>
-<categoryId>296</categoryId>
-<categoryId>298</categoryId>
-<categoryId>399</categoryId>
-<name>A98002170 Набор столов столешн. белая, 2 шт.d34*36см/d28*32см</name>
-<picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00004257/white/.DS_Store</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00004257/white/TT-00004257_1.jpg</picture>
-<vendorCode>A98002170</vendorCode>
-<vendor>Garda Decor</vendor>
-<material>основание - металл никелированный цвет золото, столешница - металл белый</material>
-<dimensions>34/36/34</dimensions>
 <stock>0</stock>
 <cargo_places>1</cargo_places>
 </offer>
@@ -24741,7 +24728,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл никелированный цвет золото, велюр розовый</material>
 <dimensions>38/44,5/38</dimensions>
-<stock>6</stock>
+<stock>7</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004260" available="true">
@@ -24833,7 +24820,7 @@
 <vendor>Garda Decor</vendor>
 <material>керамика</material>
 <dimensions>7/14/7</dimensions>
-<stock>36</stock>
+<stock>32</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004295" available="true">
@@ -24852,7 +24839,7 @@
 <vendor>Garda Decor</vendor>
 <material>керамика</material>
 <dimensions>7/20/7</dimensions>
-<stock>33</stock>
+<stock>30</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004315" available="true">
@@ -24889,7 +24876,7 @@
 <vendor>Garda Decor</vendor>
 <material>стекло</material>
 <dimensions>14/13/14</dimensions>
-<stock>23</stock>
+<stock>22</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004236" available="true">
@@ -25085,7 +25072,7 @@
 <vendor>Garda Decor</vendor>
 <material>искусственный камень</material>
 <dimensions>12/25/12</dimensions>
-<stock>13</stock>
+<stock>11</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004254" available="true">
@@ -25217,7 +25204,7 @@
 <vendor>Garda Decor</vendor>
 <material>Каркас - дерево. ножки - металл. обивка-ткань 100% ПЭ</material>
 <dimensions>56/84/51</dimensions>
-<stock>0</stock>
+<stock>3</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004158" available="true">
@@ -25249,7 +25236,7 @@
 <vendor>Garda Decor</vendor>
 <material>Каркас - дерево. ножки - металл. обивка-ткань 100% ПЭ</material>
 <dimensions>71/87/58</dimensions>
-<stock>68</stock>
+<stock>67</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004160" available="true">
@@ -25268,7 +25255,23 @@
 <vendor>Garda Decor</vendor>
 <material>Каркас - дерево, ножки - металл, обивка - искусственная кожа 100% ПУ</material>
 <dimensions>42/102/56</dimensions>
-<stock>16</stock>
+<stock>15</stock>
+<cargo_places>1</cargo_places>
+</offer>
+<offer id="TT-00004208" available="true">
+<url>http://garda-opt.ru/catalog/velyurovye-kresla/30c-1231-grb-kreslo-velyur-sero-bezhevyy-55-58-80sm</url>
+<price>13200</price>
+<wholesalePrice>8100</wholesalePrice>
+<currencyId>RUB</currencyId>
+<categoryId>296</categoryId>
+<categoryId>547</categoryId>
+<name>30C-1231 GRB Кресло велюр серо-бежевый 55*58*80см</name>
+<picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00004208/white/TT-00004208_1.jpg</picture>
+<vendorCode>30C-1231 GRB</vendorCode>
+<vendor>Garda Decor</vendor>
+<material>Каркас - дерево. ножки - металл. обивка-ткань 100% ПЭ</material>
+<dimensions>58/80/55</dimensions>
+<stock>56</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004355" available="true">
@@ -25285,7 +25288,7 @@
 <vendor>Garda Decor</vendor>
 <material>МДФ, дерево, металл, стекло</material>
 <dimensions>39/94/157</dimensions>
-<stock>5</stock>
+<stock>3</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004360" available="true">
@@ -25371,7 +25374,7 @@
 <vendor>Garda Decor</vendor>
 <material>МДФ, стекло</material>
 <dimensions>46/88/112</dimensions>
-<stock>12</stock>
+<stock>11</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004365" available="true">
@@ -25388,7 +25391,7 @@
 <vendor>Garda Decor</vendor>
 <material>МДФ, стекло</material>
 <dimensions>46/91/117</dimensions>
-<stock>11</stock>
+<stock>10</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004372" available="true">
@@ -25508,7 +25511,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, МДФ</material>
 <dimensions>62/60/62</dimensions>
-<stock>26</stock>
+<stock>25</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004459" available="true">
@@ -25527,7 +25530,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало,МДФ</material>
 <dimensions>61/63/61</dimensions>
-<stock>7</stock>
+<stock>6</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004188" available="true">
@@ -25576,7 +25579,7 @@
 <vendor>Garda Decor</vendor>
 <material>обивка - ткань, каркас и ножки - дерево, наполнитель HR ППУ, механизм - металл</material>
 <dimensions>186/120/220</dimensions>
-<stock>1</stock>
+<stock>0</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004597" available="true">
@@ -25647,7 +25650,7 @@
 <vendor>Garda Decor</vendor>
 <material>нерж.сталь, стекло</material>
 <dimensions>40/78/120</dimensions>
-<stock>1</stock>
+<stock>0</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004281" available="true">
@@ -25754,7 +25757,7 @@
 <vendor>Garda Decor</vendor>
 <material>велюр, металл, фанера</material>
 <dimensions>62/83/53</dimensions>
-<stock>23</stock>
+<stock>21</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004644" available="true">
@@ -25790,7 +25793,7 @@
 <vendor>Garda Decor</vendor>
 <material>велюр, металл, фанера</material>
 <dimensions>42/46/42</dimensions>
-<stock>5</stock>
+<stock>3</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004646" available="true">
@@ -25826,7 +25829,7 @@
 <vendor>Garda Decor</vendor>
 <material>велюр, металл, фанера</material>
 <dimensions>40/50/40</dimensions>
-<stock>34</stock>
+<stock>33</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00000940" available="true">
@@ -25908,7 +25911,7 @@
 <vendor>Garda Decor</vendor>
 <material>обивка - велюр, каркас и ножки - дерево</material>
 <dimensions>56/98/63</dimensions>
-<stock>0</stock>
+<stock>6</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004449" available="true">
@@ -25958,6 +25961,21 @@
 <material>обивка - ткань, каркас и ножки - дерево, наполнитель HR ППУ, механизм - металл</material>
 <dimensions>186/120/220</dimensions>
 <stock>0</stock>
+<cargo_places>1</cargo_places>
+</offer>
+<offer id="TT-00001555" available="true">
+<url>http://garda-opt.ru/catalog/bra/2s-w1402-svetilnik-nastennyy-d9-v125-tsvet-mednyy</url>
+<price>6000</price>
+<wholesalePrice>3330</wholesalePrice>
+<currencyId>RUB</currencyId>
+<categoryId>354</categoryId>
+<name>2S-W1402 Светильник настенный D9,В125 цвет медный</name>
+<picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00001555/white/TT-00001555_1.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00001555/white/TT-00001555_2.jpg</picture>
+<vendorCode>2S-W1402</vendorCode>
+<vendor>Garda Decor</vendor>
+<material>металл цвета меди</material>
+<dimensions>9/125/9</dimensions>
+<stock>1</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001561" available="true">
@@ -26047,7 +26065,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, МДФ</material>
 <dimensions>100/86/5</dimensions>
-<stock>28</stock>
+<stock>27</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004733" available="true">
@@ -26066,7 +26084,7 @@
 <vendor>Garda Decor</vendor>
 <material>Зеркало, МДФ, каркас - нерж. сталь цвет хром блестящий</material>
 <dimensions>120/77/35</dimensions>
-<stock>23</stock>
+<stock>22</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004735" available="true">
@@ -26082,7 +26100,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, МДФ</material>
 <dimensions>71/101/3</dimensions>
-<stock>12</stock>
+<stock>9</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004736" available="true">
@@ -26098,7 +26116,7 @@
 <vendor>Garda Decor</vendor>
 <material>Зеркало, МДФ, рама - нерж. сталь цвет золото блестящий</material>
 <dimensions>71/91/2</dimensions>
-<stock>12</stock>
+<stock>9</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004737" available="true">
@@ -26114,7 +26132,7 @@
 <vendor>Garda Decor</vendor>
 <material>Зеркало, МДФ, рама - нерж. сталь цвет золото блестящий</material>
 <dimensions>91/91,5/-</dimensions>
-<stock>18</stock>
+<stock>16</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004754" available="true">
@@ -26129,7 +26147,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, металл цвет золото</material>
 <dimensions>45/110/3</dimensions>
-<stock>9</stock>
+<stock>6</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004759" available="true">
@@ -26517,7 +26535,7 @@
 <vendor>Garda Decor</vendor>
 <material>алюминий</material>
 <dimensions>8/5,5/40</dimensions>
-<stock>99</stock>
+<stock>89</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004501" available="true">
@@ -26722,7 +26740,7 @@
 <vendor>Garda Decor</vendor>
 <material>нерж.сталь, стекло</material>
 <dimensions>38/70/38</dimensions>
-<stock>28</stock>
+<stock>27</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004798" available="true">
@@ -26740,7 +26758,7 @@
 <vendor>Garda Decor</vendor>
 <material>нерж.сталь, стекло</material>
 <dimensions>38/50/38</dimensions>
-<stock>23</stock>
+<stock>22</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004799" available="true">
@@ -26758,7 +26776,7 @@
 <vendor>Garda Decor</vendor>
 <material>нерж.сталь, стекло</material>
 <dimensions>38/70/38</dimensions>
-<stock>28</stock>
+<stock>27</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004800" available="true">
@@ -26776,7 +26794,7 @@
 <vendor>Garda Decor</vendor>
 <material>нерж.сталь, стекло</material>
 <dimensions>38/50/38</dimensions>
-<stock>25</stock>
+<stock>24</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004700" available="true">
@@ -26865,7 +26883,7 @@
 <vendor>Garda Decor</vendor>
 <material>керамика</material>
 <dimensions>12/12,5/12</dimensions>
-<stock>39</stock>
+<stock>37</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004708" available="true">
@@ -26984,7 +27002,7 @@
 <vendor>Garda Decor</vendor>
 <material>Белое матовое стекло, металл цвета латунь</material>
 <dimensions>24/50/27</dimensions>
-<stock>46</stock>
+<stock>44</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004890" available="true">
@@ -27029,7 +27047,7 @@
 <vendor>Garda Decor</vendor>
 <material>Белое матовое стекло, металл цвета латунь</material>
 <dimensions>15/15/22</dimensions>
-<stock>56</stock>
+<stock>54</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004893" available="true">
@@ -27059,7 +27077,7 @@
 <vendor>Garda Decor</vendor>
 <material>Прозрачное стекло, металл цвета хром</material>
 <dimensions>29/48/97</dimensions>
-<stock>8</stock>
+<stock>7</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004895" available="true">
@@ -27089,7 +27107,7 @@
 <vendor>Garda Decor</vendor>
 <material>Прозрачное стекло, металл цвета хром</material>
 <dimensions>17/48/30</dimensions>
-<stock>45</stock>
+<stock>43</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004897" available="true">
@@ -27134,7 +27152,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл цвета латунь</material>
 <dimensions>17/24/30</dimensions>
-<stock>106</stock>
+<stock>104</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004900" available="true">
@@ -27149,7 +27167,7 @@
 <vendor>Garda Decor</vendor>
 <material>Прозрачное стекло, металл хром</material>
 <dimensions>11/53/22</dimensions>
-<stock>40</stock>
+<stock>35</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004901" available="true">
@@ -27164,7 +27182,7 @@
 <vendor>Garda Decor</vendor>
 <material>Прозрачное стекло, металл цвета латунь</material>
 <dimensions>11/53/22</dimensions>
-<stock>45</stock>
+<stock>43</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00002268" available="true">
@@ -27331,7 +27349,7 @@
 <vendor>Garda Decor</vendor>
 <material>керамика</material>
 <dimensions>19/20/11</dimensions>
-<stock>157</stock>
+<stock>155</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004958" available="true">
@@ -27350,7 +27368,7 @@
 <vendor>Garda Decor</vendor>
 <material>керамика</material>
 <dimensions>10/28,8/26</dimensions>
-<stock>163</stock>
+<stock>161</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004959" available="true">
@@ -27369,7 +27387,7 @@
 <vendor>Garda Decor</vendor>
 <material>керамика</material>
 <dimensions>9/23,8/22</dimensions>
-<stock>219</stock>
+<stock>216</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004576" available="true">
@@ -27387,7 +27405,7 @@
 <vendor>Garda Decor</vendor>
 <material>обивка - велюр, каркас и ножки - дерево</material>
 <dimensions>56/98/63</dimensions>
-<stock>3</stock>
+<stock>1</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004707" available="true">
@@ -27442,13 +27460,13 @@
 <vendor>Garda Decor</vendor>
 <material>обивка - велюр, каркас и ножки - дерево</material>
 <dimensions>56/98/63</dimensions>
-<stock>4</stock>
+<stock>2</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004726" available="true">
 <url>http://garda-opt.ru/catalog/tkanevaya-obivka/komplekt-mebeli-17-divan-lazio-ugol-trapetsiya-levyy-s-mekhanizmom</url>
-<price>314500</price>
-<wholesalePrice>190700</wholesalePrice>
+<price>346000</price>
+<wholesalePrice>209800</wholesalePrice>
 <currencyId>RUB</currencyId>
 <categoryId>283</categoryId>
 <categoryId>296</categoryId>
@@ -27461,6 +27479,24 @@
 <vendor>Garda Decor</vendor>
 <material>обивка - ткань, каркас и ножки - дерево</material>
 <dimensions>147/90/345</dimensions>
+<stock>0</stock>
+<cargo_places>1</cargo_places>
+</offer>
+<offer id="TT-00004791" available="true">
+<url>http://garda-opt.ru/catalog/velyurovye-divany/divan-ralph-trekhmest-raskl-velyur-zelenyy-v-ka34-232-103-90sm</url>
+<price>242600</price>
+<wholesalePrice>167000</wholesalePrice>
+<currencyId>RUB</currencyId>
+<categoryId>281</categoryId>
+<categoryId>296</categoryId>
+<categoryId>513</categoryId>
+<categoryId>1891</categoryId>
+<name>Диван Ralph трехмест. раскл., велюр зеленый V.Ka34 232*103*90см</name>
+<picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00004791/white/.DS_Store</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00004791/white/TT-00004791_1.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00004791/white/TT-00004791_2.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00004791/white/TT-00004791_3.jpg</picture>
+<vendorCode>RALPH-6K-ЗЕЛЕНЫЙ-V.KAORI 34</vendorCode>
+<vendor>Garda Decor</vendor>
+<material>обивка - ткань, каркас и ножки - дерево, металл, наполнитель HR ППУ</material>
+<dimensions>103/90/232</dimensions>
 <stock>0</stock>
 <cargo_places>1</cargo_places>
 </offer>
@@ -27533,7 +27569,7 @@
 <vendor>Garda Decor</vendor>
 <material>холст натуральный, акрил, золотая поталь, лак, дерево</material>
 <dimensions>50/70/-</dimensions>
-<stock>1</stock>
+<stock>2</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00005005" available="true">
@@ -27568,7 +27604,7 @@
 <vendor>Garda Decor</vendor>
 <material>холст натуральный, акрил, золотая поталь, лак, дерево</material>
 <dimensions>50/70/-</dimensions>
-<stock>0</stock>
+<stock>1</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00005007" available="true">
@@ -27587,7 +27623,7 @@
 <vendor>Garda Decor</vendor>
 <material>холст натуральный, акрил, золотая поталь, лак, дерево</material>
 <dimensions>50/70/-</dimensions>
-<stock>1</stock>
+<stock>2</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00005008" available="true">
@@ -27659,7 +27695,7 @@
 <vendor>Garda Decor</vendor>
 <material>алюминий</material>
 <dimensions>9/22/19</dimensions>
-<stock>17</stock>
+<stock>11</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004492" available="true">
@@ -27692,7 +27728,7 @@
 <vendor>Garda Decor</vendor>
 <material>алюминий</material>
 <dimensions>9/15/11</dimensions>
-<stock>73</stock>
+<stock>68</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004494" available="true">
@@ -27709,7 +27745,7 @@
 <vendor>Garda Decor</vendor>
 <material>алюминий</material>
 <dimensions>9/15/11</dimensions>
-<stock>120</stock>
+<stock>115</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004495" available="true">
@@ -27725,7 +27761,7 @@
 <vendor>Garda Decor</vendor>
 <material>алюминий</material>
 <dimensions>18/15/13</dimensions>
-<stock>46</stock>
+<stock>41</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004496" available="true">
@@ -27742,7 +27778,7 @@
 <vendor>Garda Decor</vendor>
 <material>алюминий</material>
 <dimensions>18/15/13</dimensions>
-<stock>35</stock>
+<stock>30</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004497" available="true">
@@ -27813,7 +27849,7 @@
 <vendor>Garda Decor</vendor>
 <material>металл никелированный цвет золото, велюр серый</material>
 <dimensions>37/46/37</dimensions>
-<stock>0</stock>
+<stock>1</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001571" available="true">
@@ -27845,6 +27881,21 @@
 <vendor>Garda Decor</vendor>
 <material>ткань, ПУ, дерево, металл</material>
 <dimensions>160/115/200</dimensions>
+<stock>1</stock>
+<cargo_places>1</cargo_places>
+</offer>
+<offer id="TT-00000946" available="true">
+<url>http://garda-opt.ru/catalog/krovati/pjb-003-krovat-dvuspalnaya-tkan-rogozhka-bezhevaya-140-160-200sm</url>
+<price>117300</price>
+<currencyId>RUB</currencyId>
+<categoryId>295</categoryId>
+<categoryId>298</categoryId>
+<name>PJB-003 Кровать двуспальная ткань рогожка бежевая 140*160*200см</name>
+<picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00000946/white/TT-00000946_1.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00000946/white/TT-00000946_2.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00000946/white/TT-00000946_3.jpg</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00000946/white/TT-00000946_4.jpg</picture>
+<vendorCode>PJB-003</vendorCode>
+<vendor>Garda Decor</vendor>
+<material>Ткань, дерево, металл</material>
+<dimensions>160/140/200</dimensions>
 <stock>1</stock>
 <cargo_places>1</cargo_places>
 </offer>
@@ -27924,7 +27975,7 @@
 <vendor>Garda Decor</vendor>
 <material>алюминий</material>
 <dimensions>10/6/50</dimensions>
-<stock>28</stock>
+<stock>26</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00004293" available="true">
@@ -27941,7 +27992,7 @@
 <vendor>Garda Decor</vendor>
 <material>зеркало, металл цвет золото, МДФ</material>
 <dimensions>80/80/-</dimensions>
-<stock>27</stock>
+<stock>26</stock>
 <cargo_places>1</cargo_places>
 </offer>
 <offer id="TT-00001554" available="true">
@@ -28177,8 +28228,8 @@
 </offer>
 <offer id="TT-00005262" available="true">
 <url>http://garda-opt.ru/catalog/modulnye-divany/komplekt-mebeli-23-ralph-s-kanape-lev-trekhm-raskl-gen35-podush</url>
-<price>221800</price>
-<wholesalePrice>153800</wholesalePrice>
+<price>244000</price>
+<wholesalePrice>169200</wholesalePrice>
 <currencyId>RUB</currencyId>
 <categoryId>283</categoryId>
 <categoryId>296</categoryId>
@@ -28246,8 +28297,8 @@
 </offer>
 <offer id="TT-00005263" available="true">
 <url>http://garda-opt.ru/catalog/trekhmestnye-divany/komplekt-mebeli-24-ralph-trekhm-raskl-sero-zel-bel37-s-podush</url>
-<price>154800</price>
-<wholesalePrice>107900</wholesalePrice>
+<price>170300</price>
+<wholesalePrice>118700</wholesalePrice>
 <currencyId>RUB</currencyId>
 <categoryId>281</categoryId>
 <categoryId>296</categoryId>
@@ -28279,6 +28330,44 @@
 <material>холст</material>
 <dimensions>70/100/-</dimensions>
 <stock>1</stock>
+<cargo_places>1</cargo_places>
+</offer>
+<offer id="TT-00004689" available="true">
+<url>http://garda-opt.ru/catalog/postery-i-kartiny_1/54str-aquarelle4-org-poster-lik-nezhnosti-70-100sm-baget-zol</url>
+<price>10800</price>
+<wholesalePrice>6700</wholesalePrice>
+<currencyId>RUB</currencyId>
+<categoryId>396</categoryId>
+<categoryId>424</categoryId>
+<categoryId>425</categoryId>
+<categoryId>436</categoryId>
+<categoryId>640</categoryId>
+<name>54STR-AQUARELLE4/ORG  Постер &quot;Лик нежности&quot;70*100см, багет зол.</name>
+<picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00004689/white/TT-00004689_1.jpg</picture>
+<vendorCode>54STR-AQUARELLE4/ORG</vendorCode>
+<vendor>Garda Decor</vendor>
+<material>фотобумага, дерево, оргстекло, алюминий</material>
+<dimensions>70/100/-</dimensions>
+<stock>1</stock>
+<cargo_places>1</cargo_places>
+</offer>
+<offer id="TT-00004690" available="true">
+<url>http://garda-opt.ru/catalog/postery-i-kartiny_1/54str-aquarelle5-org-poster-lik-nezhnosti-100-100sm-baget-zol</url>
+<price>14000</price>
+<wholesalePrice>8750</wholesalePrice>
+<currencyId>RUB</currencyId>
+<categoryId>396</categoryId>
+<categoryId>424</categoryId>
+<categoryId>425</categoryId>
+<categoryId>436</categoryId>
+<categoryId>640</categoryId>
+<name>54STR-AQUARELLE5/ORG Постер &quot;Лик нежности&quot; 100*100см, багет зол.</name>
+<picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00004690/white/.DS_Store</picture><picture>http://garda-opt.ru/upload/1c_catalog/images_1c/TT-00004690/white/TT-00004690_1.jpg</picture>
+<vendorCode>54STR-AQUARELLE5/ORG</vendorCode>
+<vendor>Garda Decor</vendor>
+<material>фотобумага, дерево, оргстекло, алюминий</material>
+<dimensions>100/100/-</dimensions>
+<stock>3</stock>
 <cargo_places>1</cargo_places>
 </offer>
 </offers>
