@@ -115,7 +115,7 @@ export const sortingParametersFurniture = (parameters) => {
     }
   });
   return allParameters;
-}
+};
 
 export const sortingParametersChair = (parameters) => {
   const current = {};

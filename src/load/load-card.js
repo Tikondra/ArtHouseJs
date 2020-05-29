@@ -7,7 +7,7 @@ import {Place, TypeCard} from "../components/consts";
 
 const main = document.querySelector(`main`);
 
-export const getCard = (offs, id, type) => {
+export const getCard = (offs, id, type, pageTitle) => {
   offs.forEach((card) => {
     if (card.id === id) {
       if (type === TypeCard.DECOR) {
@@ -23,6 +23,7 @@ export const getCard = (offs, id, type) => {
         const cardChairPageComponent = new CardChairPageComponent(card);
         render(main, cardChairPageComponent.getElement(card), Place.BEFOREEND);
       }
+      pageTitle.textContent = card.title;
     }
   });
 };

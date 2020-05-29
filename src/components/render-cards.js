@@ -11,7 +11,8 @@ const renderCard = (container, card, Component) => {
   render(container, cardComponent.getElement(card), Place.BEFOREEND);
 };
 
-export const renderCards = (container, cards, component, isSort) => {
+export const renderCards = (container, cards, component) => {
+  // eslint-disable-next-line no-console
   console.log(cards.length);
   const cardsCopy = cards.slice();
   cards.splice(0, START_SHOW_TASK)
@@ -42,7 +43,7 @@ export const renderCards = (container, cards, component, isSort) => {
     }
   };
 
-  if (isSort && cardsCopy.length > START_SHOW_TASK) {
+  if (cardsCopy.length > START_SHOW_TASK) {
     const buttonMoreComponent = new ButtonMoreComponent();
 
     render(buttonMoreBox, buttonMoreComponent.getElement(), Place.BEFOREEND);

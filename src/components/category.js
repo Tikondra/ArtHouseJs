@@ -1,23 +1,24 @@
 import {createElement} from "./utils";
 
-const createCategory = (category) => {
+const createCategory = (category, type) => {
   const {title, id} = category;
 
   return (
     `<li class="sort__item">
-       <a class="sort__link" href="" id="${id}">${title}</a>
+       <a class="sort__link" href="${type}.html?${id}" id="${id}">${title}</a>
      </li>`
   );
 };
 
 export default class Category {
-  constructor(category) {
+  constructor(category, type) {
     this._category = category;
     this._element = null;
+    this._type = type;
   }
 
   getTemplate() {
-    return createCategory(this._category);
+    return createCategory(this._category, this._type);
   }
 
   getElement() {

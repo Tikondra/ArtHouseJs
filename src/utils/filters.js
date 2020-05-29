@@ -366,7 +366,7 @@ export const getSortedOffersByChair = (container, offers) => {
     ...checkedByRoom,
     ...checkedByType,
   ];
-  console.log(offers)
+
   let sortedOffers = offers;
 
   if (checked.length > 0) {
