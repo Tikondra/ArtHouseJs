@@ -12,6 +12,12 @@ const renderCard = (container, card, Component) => {
 };
 
 export const renderCards = (container, cards, component) => {
+  const btnMore = document.querySelector(`.store-content__btn-more`);
+
+  if (btnMore) {
+    btnMore.remove();
+  }
+
   // eslint-disable-next-line no-console
   console.log(cards.length);
   const cardsCopy = cards.slice();

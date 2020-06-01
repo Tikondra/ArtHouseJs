@@ -1,4 +1,5 @@
-import {getOffersFurniture, getOffersLight, getOffers, getFurnitureParameters} from "../components/offers";
+import {getOffersFurniture, getOffersLight, getOffers} from "../components/offers";
+import {getFurnitureParameters} from "../components/categories";
 import {getCard} from "./load-card";
 import {TypeCard, FilterType} from "../components/consts";
 
