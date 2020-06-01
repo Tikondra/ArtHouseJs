@@ -1,6 +1,6 @@
 import {load, loadData, loadDataToFurniture, loadDataToLight, loadDataToChairs} from "./load/load";
 import {loadDataToProduct} from "./load/load-card-page";
-import {LOCAL_CHAIRS, LOCAL_DECOR, LOCAL_FURNITURE, LOCAL_LIGHT} from "./components/consts";
+import {LOCAL_CHAIRS, LOCAL_DECOR, LOCAL_FURNITURE, LOCAL_LIGHT} from "./utils/consts";
 
 if (document.querySelector(`.decor-js`)) {
   load(loadData, LOCAL_DECOR);

@@ -1,6 +1,6 @@
 import CategoriesController from "../controllers/categories-controller";
-import {renderCards} from "../components/render-cards";
-import {getSomeCards} from "../components/sort";
+import {renderCards} from "./render-cards";
+import {getSomeCards} from "../utils/getSome";
 
 const cardBox = document.querySelector(`.cards`);
 

@@ -2,8 +2,8 @@ import CardPageComponent from "../components/card-page";
 import CardLightPageComponent from "../components/card-light-page";
 import CardFurniturePageComponent from "../components/card-furniture-page";
 import CardChairPageComponent from "../components/card-chair-page";
-import {render} from "../components/utils";
-import {Place, TypeCard} from "../components/consts";
+import {render} from "../utils/utils";
+import {Place, TypeCard} from "../utils/consts";
 
 const main = document.querySelector(`main`);
 

@@ -1,7 +1,7 @@
 import CategoryComponent from "../components/category";
-import {getSomeCards, getSomeCategory} from "../components/sort";
-import {cleanContainer, render} from "../components/utils";
-import {Place} from "../components/consts";
+import {getSomeCards, getSomeCategory} from "../utils/getSome";
+import {cleanContainer, render} from "../utils/utils";
+import {Place} from "../utils/consts";
 
 class CategoriesController {
   constructor(offersModel, dataCategories) {

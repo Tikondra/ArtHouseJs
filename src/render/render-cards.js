@@ -1,6 +1,6 @@
-import {Place, START_SHOW_TASK, MORE_SHOW_TASK} from "./consts";
-import {render} from "./utils";
-import ButtonMoreComponent from "./button-more";
+import {Place, START_SHOW_TASK, MORE_SHOW_TASK} from "../utils/consts";
+import {render} from "../utils/utils";
+import ButtonMoreComponent from "../components/button-more";
 
 const buttonMoreBox = document.querySelector(`.store-content__more-box`);
 const loadMoreButton = document.querySelector(`.store-content__btn-more`);

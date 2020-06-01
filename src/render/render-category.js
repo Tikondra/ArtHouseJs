@@ -1,8 +1,8 @@
-import CategoryComponent from "./category";
-import {cleanContainer, render} from "./utils";
-import {getSomeCards, getSomeCategory} from "./sort";
+import CategoryComponent from "../components/category";
+import {cleanContainer, render} from "../utils/utils";
+import {getSomeCards, getSomeCategory} from "../utils/getSome";
 import {renderCards} from "./render-cards";
-import {Place} from "./consts";
+import {Place} from "../utils/consts";
 
 const cardBox = document.querySelector(`.cards`);
 const allCategoryBtn = document.querySelector(`.sort__link--category`);

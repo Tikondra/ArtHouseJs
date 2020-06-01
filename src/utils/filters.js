@@ -3,7 +3,7 @@ import {
   sortingParameters,
   sortingParametersChair,
   sortingParametersFurniture
-} from "../components/offers";
+} from "./offers";
 
 export const getParameters = (data) => {
   return data.reduce((filterList, card) => {

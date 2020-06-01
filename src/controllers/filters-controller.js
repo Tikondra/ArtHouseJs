@@ -8,9 +8,9 @@ import {
   getParametersForChair, getFiltersByChair, getSortedOffersByChair
 } from "../utils/filters";
 import FilterComponent from "../components/filters";
-import {render} from "../components/utils";
-import {Place} from "../components/consts";
-import {renderCards} from "../components/render-cards";
+import {render} from "../utils/utils";
+import {Place} from "../utils/consts";
+import {renderCards} from "../render/render-cards";
 
 const sortedMap = {
   light: getSortedOffersByLight,

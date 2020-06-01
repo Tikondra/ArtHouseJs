@@ -1,4 +1,4 @@
-import AbstractComponent from "./AbstractComponent";
+import AbstractComponent from "../abstract/AbstractComponent";
 
 const createCheckbox = (item) => {
   return (

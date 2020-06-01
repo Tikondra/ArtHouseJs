@@ -1,5 +1,5 @@
-import {getPrice, regexp} from "./utils";
-import AbstractComponent from "./AbstractComponent";
+import {getPrice, regexp} from "../utils/utils";
+import AbstractComponent from "../abstract/AbstractComponent";
 
 const createCard = (card) => {
   const {title, price, image, id, material} = card;

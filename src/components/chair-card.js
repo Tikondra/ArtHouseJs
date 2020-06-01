@@ -1,5 +1,5 @@
-import AbstractComponent from "./AbstractComponent";
-import {getPrice} from "./utils";
+import AbstractComponent from "../abstract/AbstractComponent";
+import {getPrice} from "../utils/utils";
 
 const createCard = (card) => {
   const {title, image, parameters, id} = card;

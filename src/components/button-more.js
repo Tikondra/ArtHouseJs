@@ -1,4 +1,4 @@
-import {createElement} from "./utils";
+import {createElement} from "../utils/utils";
 
 const createButtonMore = () => `<button class="store-content__btn-more" type="button">Показать еще</button>`;
 

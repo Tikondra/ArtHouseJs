@@ -1,7 +1,7 @@
-import {getOffers, getOffersFurniture, getOffersLight} from "../components/offers";
-import {getCategory, getFurnitureParameters} from "../components/categories";
-import {renderCards} from "../components/render-cards";
-import {FilterType, TypeCard} from "../components/consts";
+import {getOffers, getOffersFurniture, getOffersLight} from "../utils/offers";
+import {getCategory, getFurnitureParameters} from "../utils/categories";
+import {renderCards} from "../render/render-cards";
+import {FilterType, TypeCard} from "../utils/consts";
 import CardComponent from "../components/card";
 import CardLightComponent from "../components/light-card";
 import CardFurnitureComponent from "../components/furniture-card";

@@ -1,7 +1,7 @@
-import {getOffersFurniture, getOffersLight, getOffers} from "../components/offers";
-import {getFurnitureParameters} from "../components/categories";
+import {getOffersFurniture, getOffersLight, getOffers} from "../utils/offers";
+import {getFurnitureParameters} from "../utils/categories";
 import {getCard} from "./load-card";
-import {TypeCard, FilterType} from "../components/consts";
+import {TypeCard, FilterType} from "../utils/consts";
 
 export const loadDataToProduct = (data, type, parameters) => {
   let dataOffers;
