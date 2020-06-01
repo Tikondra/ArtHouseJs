@@ -66,19 +66,14 @@ class FilterController {
 
   _onSomeCards(evt) {
     evt.preventDefault();
-    const offers = this._offersModel.getOffersByFilter();
-
+    const offers = this._offersModel.getOffersByCategory();
     const sortedOffers = sortedMap[this._type](this._filterBox, offers);
+    const sortedOffersCopy = sortedOffers.slice();
+    this._offersModel.setOffersByFilter(sortedOffers);
 
     this._cardBox.innerHTML = ``;
 
-    const btnMore = document.querySelector(`.store-content__btn-more`);
-
-    if (btnMore) {
-      btnMore.remove();
-    }
-
-    renderCards(this._cardBox, sortedOffers, this._component, true);
+    renderCards(this._cardBox, sortedOffersCopy, this._component);
   }
 }
 

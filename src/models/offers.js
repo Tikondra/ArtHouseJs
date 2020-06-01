@@ -1,14 +1,35 @@
+import {SortType} from "../utils/consts";
+
 class Offers {
   constructor() {
     this._offers = [];
-    this._sorterOffers = [];
+    this._offersByCategory = [];
+    this._offersByFilter = [];
+    this._sortType = SortType.PRICE_UP;
+  }
+
+  getOffersByCategory() {
+    if (this._offersByCategory.length > 0) {
+      return this._offersByCategory.slice();
+    }
+
+    return this._offers.slice();
+  }
+
+  setOffersByCategory(offers) {
+    this._offersByCategory = offers;
   }
 
   getOffersByFilter() {
-    if (this._sorterOffers.length > 0) {
-      return this._sorterOffers.slice();
+    if (this._offersByFilter.length > 0) {
+      return this._offersByFilter.slice();
     }
-    return this._offers.slice();
+
+    return this.getOffersByCategory();
+  }
+
+  setOffersByFilter(offers) {
+    this._offersByFilter = offers;
   }
 
   getAllOffers() {
@@ -19,8 +40,12 @@ class Offers {
     this._offers = offers;
   }
 
-  setOfferByFilter(offers) {
-    this._sorterOffers = offers;
+  getSortType() {
+    return this._sortType;
+  }
+
+  setSortType(type) {
+    this._sortType = type;
   }
 }
 

@@ -27,7 +27,7 @@ const renderSortedOffers = (strGET, categories, offers, offersModel, Component, 
   const someCards = getSomeCards(parentCategory[0], categories, offers);
   const categoriesController = new CategoriesController(offersModel, categories);
 
-  offersModel.setOfferByFilter(getSomeCards(parentCategory[0], categories, offers));
+  offersModel.setOffersByCategory(getSomeCards(parentCategory[0], categories, offers));
 
   categoriesController.render(parentCategory[0], offers, Component, type, true);
 
@@ -39,7 +39,7 @@ const renderSortedOffers = (strGET, categories, offers, offersModel, Component, 
 };
 
 export const renderLoad = (strGET, categories, offersModel, Component, type) => {
-  const offers = offersModel.getOffersByFilter();
+  const offers = offersModel.getOffersByCategory();
   const btnMore = document.querySelector(`.store-content__btn-more`);
 
   if (btnMore) {

@@ -1,7 +1,7 @@
 import {getOffers, getOffersFurniture, getOffersLight} from "../utils/offers";
 import {getCategory, getFurnitureParameters} from "../utils/categories";
 import {renderCards} from "../render/render-cards";
-import {FilterType, TypeCard} from "../utils/consts";
+import {FilterType, SortType, TypeCard} from "../utils/consts";
 import CardComponent from "../components/card";
 import CardLightComponent from "../components/light-card";
 import CardFurnitureComponent from "../components/furniture-card";
@@ -9,6 +9,7 @@ import CardChairComponent from "../components/chair-card";
 import FilterController from "../controllers/filters-controller";
 import OffersModel from "../models/offers";
 import {renderLoad} from "../render/render-load";
+import {sorting} from "../utils/sorting";
 
 const convert = require(`xml-js`);
 
@@ -67,6 +68,13 @@ export const loadDataToLight = (data) => {
   filterController.render();
 
   renderLoad(strGET, lightCategory, offersModel, CardLightComponent, `svet`);
+
+  const priceSortBtn = document.querySelector(`.store-content__price-btn`);
+
+  priceSortBtn.addEventListener(`click`, () => {
+    priceSortBtn.classList.toggle(`store-content__price-btn--up`);
+    sorting(offersModel, CardLightComponent);
+  });
 };
 
 export const loadDataToFurniture = (data) => {

@@ -30,3 +30,8 @@ export const FilterType = {
   FURNITURE: `furniture`,
   CHAIRS: `chairs`
 };
+
+export const SortType = {
+  PRICE_UP: `price-up`,
+  PRICE_DOWN: `price-down`
+};
