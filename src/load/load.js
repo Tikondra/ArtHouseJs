@@ -1,7 +1,7 @@
 import {getOffers, getOffersFurniture, getOffersLight} from "../utils/offers";
 import {getCategory, getFurnitureParameters} from "../utils/categories";
 import {renderCards} from "../render/render-cards";
-import {FilterType, SortType, TypeCard} from "../utils/consts";
+import {FilterType, TypeCard} from "../utils/consts";
 import CardComponent from "../components/card";
 import CardLightComponent from "../components/light-card";
 import CardFurnitureComponent from "../components/furniture-card";
@@ -14,6 +14,7 @@ import {sorting} from "../utils/sorting";
 const convert = require(`xml-js`);
 
 const cardBox = document.querySelector(`.cards`);
+const priceSortBtn = document.querySelector(`.store-content__price-btn`);
 
 export const preloader = () => {
   document.body.classList.add(`loaded_hiding`);
@@ -51,6 +52,11 @@ export const loadData = (data) => {
   offersModel.setOffers(offersDecor);
 
   renderLoad(strGET, categoriesDecor, offersModel, CardComponent, TypeCard.DECOR);
+
+  priceSortBtn.addEventListener(`click`, () => {
+    priceSortBtn.classList.toggle(`store-content__price-btn--up`);
+    sorting(offersModel, CardComponent, TypeCard.DECOR);
+  });
 };
 
 export const loadDataToLight = (data) => {
@@ -69,11 +75,9 @@ export const loadDataToLight = (data) => {
 
   renderLoad(strGET, lightCategory, offersModel, CardLightComponent, `svet`);
 
-  const priceSortBtn = document.querySelector(`.store-content__price-btn`);
-
   priceSortBtn.addEventListener(`click`, () => {
     priceSortBtn.classList.toggle(`store-content__price-btn--up`);
-    sorting(offersModel, CardLightComponent);
+    sorting(offersModel, CardLightComponent, TypeCard.LIGHT);
   });
 };
 
@@ -91,6 +95,11 @@ export const loadDataToFurniture = (data) => {
   filterController.render();
 
   renderCards(cardBox, offersModel.getAllOffers(), CardFurnitureComponent);
+
+  priceSortBtn.addEventListener(`click`, () => {
+    priceSortBtn.classList.toggle(`store-content__price-btn--up`);
+    sorting(offersModel, CardFurnitureComponent, TypeCard.FURNITURE);
+  });
 };
 
 export const loadDataToChairs = (data) => {
@@ -107,4 +116,9 @@ export const loadDataToChairs = (data) => {
   filterController.render();
 
   renderCards(cardBox, offersModel.getAllOffers(), CardChairComponent);
+
+  priceSortBtn.addEventListener(`click`, () => {
+    priceSortBtn.classList.toggle(`store-content__price-btn--up`);
+    sorting(offersModel, CardChairComponent, TypeCard.FURNITURE);
+  });
 };
