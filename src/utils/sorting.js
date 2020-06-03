@@ -1,39 +1,37 @@
-import {SortType} from "./consts";
 import {renderCards} from "../render/render-cards";
 
 const cardBox = document.querySelector(`.cards`);
 
-const sortByLight = (offers, type) =>
-  type === SortType.PRICE_UP ?
-    offers.sort((a, b) => a.activePrice - b.activePrice) :
-    offers.sort((a, b) => b.activePrice - a.activePrice);
-
-const sortByDecor = (offers, type) =>
-  type === SortType.PRICE_UP ?
-    offers.sort((a, b) => a.price - b.price) :
-    offers.sort((a, b) => b.price - a.price);
-
-const sortByFurniture = (offers, type) =>
-  type === SortType.PRICE_UP ?
-    offers.sort((a, b) => a.parameters.current.price - b.parameters.current.price) :
-    offers.sort((a, b) => b.parameters.current.price - a.parameters.current.price);
-
-const diffMap = {
-  light: sortByLight,
-  decor: sortByDecor,
-  furniture: sortByFurniture,
+const getDefault = (offers) => {
+  return offers;
 };
 
-export const sorting = (offersModel, component, page) => {
-  const offers = offersModel.getOffersByFilter().slice();
-  const type = offersModel.getSortType();
-  let sortedOffers = diffMap[page](offers, type);
+const getPriceUp = (offers) => {
+  return offers.sort((a, b) => a.price - b.price);
+};
 
-  if (type === SortType.PRICE_UP) {
-    offersModel.setSortType(SortType.PRICE_DOWN);
-  } else {
-    offersModel.setSortType(SortType.PRICE_UP);
+const getPriceDown = (offers) => {
+  return offers.sort((a, b) => b.price - a.price);
+};
+
+const sortMap = {
+  "default": getDefault,
+  "price-up": getPriceUp,
+  "price-down": getPriceDown,
+};
+
+export const sorting = (evt, offersModel, component) => {
+  const sortType = evt.target.value;
+  const activeSortType = offersModel.getSortType();
+
+  if (sortType === activeSortType) {
+    return;
   }
+
+  offersModel.setSortType(sortType);
+
+  const offers = offersModel.getOffersByFilter().slice();
+  let sortedOffers = sortMap[sortType](offers);
 
   cardBox.innerHTML = ``;
 

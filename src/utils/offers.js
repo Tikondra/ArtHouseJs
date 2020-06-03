@@ -211,7 +211,7 @@ export const getOffersLight = (data) => {
   return data.reduce((cardList, card) => {
     const product = {
       title: card.name._text,
-      activePrice: card.price._text,
+      price: card.price._text,
       image: getImage(card.picture),
       categoryId: getCategoryId(card.categoryId),
       id: card._attributes.id,
@@ -232,13 +232,15 @@ export const getOffersFurniture = (data, parametersMap, type) => {
   return data.reduce((cardList, card) => {
     const allParameters = getFurnitureParameters(card.ЗначенияСвойств.ЗначенияСвойства, parametersMap);
     const img = [card.Картинка._text];
+    const parameters = toSortingMap[type](allParameters);
 
     const product = {
       id: `card-${getId() + 1}`,
       title: card.Наименование._text,
       image: img,
       description: card.Описание._text,
-      parameters: toSortingMap[type](allParameters),
+      parameters,
+      price: parameters.current.price,
     };
     cardList.push(product);
     return cardList;

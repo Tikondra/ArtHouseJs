@@ -2,8 +2,8 @@ import AbstractComponent from "../abstract/AbstractComponent";
 import {getPrice} from "../utils/utils";
 
 const createCard = (card) => {
-  const {parameters, ...rest} = card;
-  const price = Math.floor(rest.activePrice);
+  const {parameters, title, price, image, id, available} = card;
+  const activePrice = Math.floor(price);
   const oldPrice = Math.floor(parameters.current.oldPrice);
 
   const getAvailable = (param) => {
@@ -13,30 +13,30 @@ const createCard = (card) => {
       return `Нет в наличии`;
     }
   };
-  const getOldPrice = (price) => {
-    if (price) {
+  const getOldPrice = (priceOld) => {
+    if (priceOld) {
       return (
-        `<p class="cards__price cards__price--old">${getPrice(price)} ₽</p>`
-      )
+        `<p class="cards__price cards__price--old">${getPrice(priceOld)} ₽</p>`
+      );
     } else {
       return ``;
     }
   };
 
   const regexp = /[а-я А-Я]/iug;
-  const title = rest.title.match(regexp).join(``);
+  const clearTitle = title.match(regexp).join(``);
 
   return (
     `<li class="cards__item">
-        <a class="cards__link" href="card-light.html?${rest.id}">
-            <img src=${rest.image[0]} width="213" height="213" alt="${rest.title}">
+        <a class="cards__link" href="card-light.html?${id}">
+            <img src=${image[0]} width="213" height="213" alt="${title}">
         </a>
-        <h3 class="cards__title">${title}</h3>
-        <p class="cards__info">${getAvailable(rest.available)}</p>
+        <h3 class="cards__title">${clearTitle}</h3>
+        <p class="cards__info">${getAvailable(available)}</p>
         <p class="cards__info">Бренд: ${parameters.current.brend}</p>
         <p class="cards__info">Страна: ${parameters.current.country}</p>
         ${getOldPrice(oldPrice)}
-        <p class="cards__price">${getPrice(price)} ₽</p>
+        <p class="cards__price">${getPrice(activePrice)} ₽</p>
     </li>`
   );
 };

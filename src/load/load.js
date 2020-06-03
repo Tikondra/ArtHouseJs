@@ -14,7 +14,7 @@ import {sorting} from "../utils/sorting";
 const convert = require(`xml-js`);
 
 const cardBox = document.querySelector(`.cards`);
-const priceSortBtn = document.querySelector(`.store-content__price-btn`);
+const sortSelect = document.querySelector(`.store-content__sort-select`);
 
 export const preloader = () => {
   document.body.classList.add(`loaded_hiding`);
@@ -53,9 +53,8 @@ export const loadData = (data) => {
 
   renderLoad(strGET, categoriesDecor, offersModel, CardComponent, TypeCard.DECOR);
 
-  priceSortBtn.addEventListener(`click`, () => {
-    priceSortBtn.classList.toggle(`store-content__price-btn--up`);
-    sorting(offersModel, CardComponent, TypeCard.DECOR);
+  sortSelect.addEventListener(`change`, (evt) => {
+    sorting(evt, offersModel, CardComponent);
   });
 };
 
@@ -75,9 +74,8 @@ export const loadDataToLight = (data) => {
 
   renderLoad(strGET, lightCategory, offersModel, CardLightComponent, `svet`);
 
-  priceSortBtn.addEventListener(`click`, () => {
-    priceSortBtn.classList.toggle(`store-content__price-btn--up`);
-    sorting(offersModel, CardLightComponent, TypeCard.LIGHT);
+  sortSelect.addEventListener(`change`, (evt) => {
+    sorting(evt, offersModel, CardLightComponent);
   });
 };
 
@@ -96,9 +94,8 @@ export const loadDataToFurniture = (data) => {
 
   renderCards(cardBox, offersModel.getAllOffers(), CardFurnitureComponent);
 
-  priceSortBtn.addEventListener(`click`, () => {
-    priceSortBtn.classList.toggle(`store-content__price-btn--up`);
-    sorting(offersModel, CardFurnitureComponent, TypeCard.FURNITURE);
+  sortSelect.addEventListener(`change`, (evt) => {
+    sorting(evt, offersModel, CardFurnitureComponent);
   });
 };
 
@@ -117,8 +114,7 @@ export const loadDataToChairs = (data) => {
 
   renderCards(cardBox, offersModel.getAllOffers(), CardChairComponent);
 
-  priceSortBtn.addEventListener(`click`, () => {
-    priceSortBtn.classList.toggle(`store-content__price-btn--up`);
-    sorting(offersModel, CardChairComponent, TypeCard.FURNITURE);
+  sortSelect.addEventListener(`change`, (evt) => {
+    sorting(evt, offersModel, CardChairComponent);
   });
 };

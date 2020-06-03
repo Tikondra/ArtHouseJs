@@ -32,6 +32,7 @@ export const FilterType = {
 };
 
 export const SortType = {
+  DEFAULT: `default`,
   PRICE_UP: `price-up`,
   PRICE_DOWN: `price-down`
 };

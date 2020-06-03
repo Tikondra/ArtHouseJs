@@ -5,7 +5,7 @@ class Offers {
     this._offers = [];
     this._offersByCategory = [];
     this._offersByFilter = [];
-    this._sortType = SortType.PRICE_UP;
+    this._sortType = SortType.DEFAULT;
   }
 
   getOffersByCategory() {
