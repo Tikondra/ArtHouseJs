@@ -1,6 +1,6 @@
 import CategoryComponent from "../components/category";
 import {getSomeCards, getSomeCategory} from "../utils/getSome";
-import {cleanContainer, render} from "../utils/utils";
+import {render} from "../utils/utils";
 import {Place} from "../utils/consts";
 
 class CategoriesController {
@@ -10,12 +10,13 @@ class CategoriesController {
     this._categoryList = document.querySelector(`.sort__list--category`);
     this._isAddListener = null;
     this._categoryComponent = null;
-
-    this._renderSubCategory = this._renderSubCategory.bind(this);
   }
 
   render(category, offers, component, type, parentCategory) {
-    this._categoryComponent = new CategoryComponent(category, type);
+    const someCategoryId = getSomeCategory(category, this._data);
+    const someCategories = this._data.filter((it) => someCategoryId.includes(it.id));
+
+    this._categoryComponent = new CategoryComponent(category, type, someCategories);
 
     if (parentCategory) {
       const element = this._categoryComponent.getElement();
@@ -30,7 +31,7 @@ class CategoriesController {
     }
 
     if (getSomeCards(category, this._data, offers).length !== 0) {
-      render(this._categoryList, this._categoryComponent.getElement(category), Place.BEFOREEND);
+      render(this._categoryList, this._categoryComponent.getElement(), Place.BEFOREEND);
     }
 
     if (!this._isAddListener && this._allCategoryBtn) {
@@ -49,25 +50,6 @@ class CategoriesController {
 
       this._isAddListener = true;
     }
-  }
-
-  _renderSubCategory(category, categories, offers, component) {
-    const someCategory = getSomeCategory(category, categories);
-    const someCategoryRender = categories.filter((it) => {
-      return someCategory.includes(it.id);
-    });
-    cleanContainer(this._categoryList);
-    this.render(category, offers, component, true);
-    someCategoryRender.forEach((it) => this.render(it, offers, component));
-
-    if (this._allCategoryBtn) {
-      this._allCategoryBtn.classList.add(`sort__link--hide`);
-    }
-
-    this._categoryList.querySelectorAll(`.sort__link`)
-      .forEach((link) => {
-        link.classList.add(`sort__link--child`);
-      });
   }
 }
 
