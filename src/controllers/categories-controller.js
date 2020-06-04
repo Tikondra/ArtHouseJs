@@ -5,7 +5,7 @@ import {Place} from "../utils/consts";
 
 class CategoriesController {
   constructor(offersModel, dataCategories) {
-    this._data = dataCategories;
+    this._categories = dataCategories;
     this._allCategoryBtn = document.querySelector(`.sort__category-view`);
     this._categoryList = document.querySelector(`.sort__list--category`);
     this._isAddListener = null;
@@ -13,13 +13,13 @@ class CategoriesController {
   }
 
   render(category, offers, component, type, parentCategory) {
-    const someCategoryId = getSomeCategory(category, this._data);
-    const someCategories = this._data.filter((it) => someCategoryId.includes(it.id));
+    const someCategoryId = getSomeCategory(category, this._categories);
+    const someCategories = this._categories.filter((it) => someCategoryId.includes(it.id));
 
-    this._categoryComponent = new CategoryComponent(category, type, someCategories);
+    this._categoryComponent = new CategoryComponent(category, type, someCategories, this._categories, offers);
+    const element = this._categoryComponent.getElement();
 
     if (parentCategory) {
-      const element = this._categoryComponent.getElement();
       const link = element.querySelector(`.sort__link`);
       element.addEventListener(`click`, (evt) => {
         evt.preventDefault();
@@ -30,8 +30,8 @@ class CategoriesController {
       link.innerHTML = `${link.textContent}<span class="sort__link--back">назад</span>`;
     }
 
-    if (getSomeCards(category, this._data, offers).length !== 0) {
-      render(this._categoryList, this._categoryComponent.getElement(), Place.BEFOREEND);
+    if (getSomeCards(category, this._categories, offers).length !== 0) {
+      render(this._categoryList, element, Place.BEFOREEND);
     }
 
     if (!this._isAddListener && this._allCategoryBtn) {
@@ -49,6 +49,29 @@ class CategoriesController {
       });
 
       this._isAddListener = true;
+    }
+
+    const svg = element.querySelector(`.sort__svg`);
+    const subSvg = element.querySelectorAll(`.sort__sublist .sort__svg`);
+
+    if (svg) {
+      svg.addEventListener(`click`, (evt) => {
+        evt.preventDefault();
+        element.classList.toggle(`sort__item--open`);
+      });
+    }
+
+    if (subSvg.length > 0) {
+      subSvg.forEach((it) => {
+        it.addEventListener(`click`, (evt) => {
+          evt.preventDefault();
+
+          const subCategories = it.parentElement.parentElement
+            .querySelector(`.sort__sublist`);
+
+          subCategories.classList.toggle(`sort__sublist--open`);
+        });
+      });
     }
   }
 }

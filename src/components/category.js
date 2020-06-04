@@ -1,22 +1,51 @@
 import {createElement} from "../utils/utils";
+import {getSomeCards, getSomeCategory} from "../utils/getSome";
 
-const createSubCategory = (category, type) => {
-  const {title, id} = category;
+const getSvg = (someCategories) => {
+  if (someCategories.length > 0) {
+    return (
+      `<svg class="sort__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" width="15px" height="15px" fill="none" style="margin: 0 10px 0 5px;">
+        <use xlink:href="#icon-arrow"></use>
+      </svg>`
+    );
+  }
 
   return (
-    `<li>
-        <a class="sort__link sort__link--sub" href="${type}.html?${id}" id="${id}">${title}</a>
-     </li>`
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" width="15px" height="15px" style="margin: 0 10px 0 5px;">
+
+    </svg>`
   );
 };
 
-const createCategory = (category, type, someCategories) => {
+const createSubCategory = (category, type, dataCategories, offers) => {
+  const getSubCategory = () => someCategories.map((it) => createSubCategory(it, type, dataCategories, offers)).join(`\n`);
   const {title, id} = category;
-  const getSubCategory = () => someCategories.map((it) => createSubCategory(it, type)).join(`\n`);
+  const someCategoryId = getSomeCategory(category, dataCategories);
+  const someCategories = dataCategories.filter((it) => someCategoryId.includes(it.id));
+  const someCards = getSomeCards(category, dataCategories, offers);
+
+  return someCards.length === 0 ? `` :
+    `<li>
+        <a class="sort__link sort__link--sub" href="${type}.html?${id}" id="${id}">
+            ${getSvg(someCategories)}
+            ${title}
+        </a>
+        <ul class="sort__sublist">
+          ${getSubCategory()}
+        </ul>
+     </li>`;
+};
+
+const createCategory = (category, type, someCategories, dataCategories, offers) => {
+  const {title, id} = category;
+  const getSubCategory = () => someCategories.map((it) => createSubCategory(it, type, dataCategories, offers)).join(`\n`);
 
   return (
     `<li class="sort__item">
-       <a class="sort__link" href="${type}.html?${id}" id="${id}">${title}</a>
+       <a class="sort__link" href="${type}.html?${id}" id="${id}">
+          ${getSvg(someCategories)}
+          ${title}
+       </a>
        <ul class="sort__sublist">
           ${getSubCategory()}
        </ul>
@@ -25,15 +54,17 @@ const createCategory = (category, type, someCategories) => {
 };
 
 export default class Category {
-  constructor(category, type, someCategories) {
+  constructor(category, type, someCategories, dataCategories, offers) {
     this._someCategories = someCategories;
+    this._dataCategories = dataCategories;
+    this._offers = offers;
     this._category = category;
     this._element = null;
     this._type = type;
   }
 
   getTemplate() {
-    return createCategory(this._category, this._type, this._someCategories);
+    return createCategory(this._category, this._type, this._someCategories, this._dataCategories, this._offers);
   }
 
   getElement() {

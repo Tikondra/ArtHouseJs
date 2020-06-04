@@ -4,8 +4,8 @@ import {getPrice} from "../utils/utils";
 
 const createCardPage = (card) => {
 
-  const {parameters, title, activePrice, image, available} = card;
-  const price = getPrice(Math.floor(activePrice));
+  const {parameters, title, price, image, available} = card;
+  const activePrice = getPrice(Math.floor(price));
 
   const getImages = (pictures) => pictures.map((it) => createImg(it)).join(`\n`);
   const getPreview = (pictures) => pictures.map((it) => createPreview(it)).join(`\n`);
@@ -52,7 +52,7 @@ const createCardPage = (card) => {
         </div>
         <div class="card-page__info">
           <p class="card-page__info-text card-page__info-text--price">
-            <span>Цена:</span> ${price} ₽
+            <span>Цена:</span> ${activePrice} ₽
           </p>
           ${getOldPrice(parameters.current.oldPrice)}
           <p class="card-page__info-text">
