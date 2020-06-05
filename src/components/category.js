@@ -4,14 +4,14 @@ import {getSomeCards, getSomeCategory} from "../utils/getSome";
 const getSvg = (someCategories) => {
   if (someCategories.length > 0) {
     return (
-      `<svg class="sort__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" width="15px" height="15px" fill="none" style="margin: 0 10px 0 5px;">
+      `<svg class="sort__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" width="26px" height="26px" fill="none"">
         <use xlink:href="#icon-arrow"></use>
       </svg>`
     );
   }
 
   return (
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" width="15px" height="15px" style="margin: 0 10px 0 5px;">
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" width="26px" height="26px" style="padding: 5px;">
 
     </svg>`
   );

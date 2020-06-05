@@ -70,6 +70,7 @@ class CategoriesController {
             .querySelector(`.sort__sublist`);
 
           subCategories.classList.toggle(`sort__sublist--open`);
+          it.classList.toggle(`sort__svg--open`);
         });
       });
     }
