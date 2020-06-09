@@ -1,4 +1,5 @@
 import CategoryComponent from "../components/category";
+import ButtonBackComponent from "../components/btn-back";
 import {getSomeCards, getSomeCategory} from "../utils/getSome";
 import {render} from "../utils/utils";
 import {Place} from "../utils/consts";
@@ -20,14 +21,16 @@ class CategoriesController {
     const element = this._categoryComponent.getElement();
 
     if (parentCategory) {
+      const buttonBack = new ButtonBackComponent().getElement();
       const link = element.querySelector(`.sort__link`);
-      element.addEventListener(`click`, (evt) => {
+      element.innerHTML = `<span>${link.textContent}</span>`;
+      element.classList.add(`sort__item--parent`);
+      render(element, buttonBack, Place.AFTERBEGIN);
+
+      buttonBack.addEventListener(`click`, (evt) => {
         evt.preventDefault();
         history.back();
       });
-
-      link.classList.add(`sort__link--parent`);
-      link.innerHTML = `${link.textContent}<span class="sort__link--back">назад</span>`;
     }
 
     if (getSomeCards(category, this._categories, offers).length !== 0) {

@@ -25,7 +25,7 @@ const createSubCategory = (category, type, dataCategories, offers) => {
   const someCards = getSomeCards(category, dataCategories, offers);
 
   return someCards.length === 0 ? `` :
-    `<li>
+    `<li class="sort__item">
         <a class="sort__link sort__link--sub" href="${type}.html?${id}" id="${id}">
             ${getSvg(someCategories)}
             ${title}
