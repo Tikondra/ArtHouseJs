@@ -28,8 +28,14 @@ const createCardPage = (card) => {
       );
     }).join(`\n`);
   };
+  const getAvailable = (param) => {
+    if (param === `true`) {
+      return `Да`;
+    } else {
+      return `Нет`;
+    }
+  };
 
-  const getAvailable = available ? `Да` : `Нет`;
   const country = parameters.current.country ? `<p class="card-page__info-text"><span>Страна:</span> ${parameters.current.country}</p>` : ``;
   const brand = parameters.current.brend ? `<p class="card-page__info-text"><span>Бренд:</span> ${parameters.current.brend}</p>` : ``;
   const style = parameters.current.style ? `<p class="card-page__info-text"><span>Стиль:</span> ${parameters.current.style}</p>` : ``;
@@ -56,7 +62,7 @@ const createCardPage = (card) => {
           </p>
           ${getOldPrice(parameters.current.oldPrice)}
           <p class="card-page__info-text">
-            <span>Наличие:</span>  ${getAvailable}
+            <span>Наличие:</span>  ${getAvailable(available)}
           </p>
            ${country}
            ${brand}
@@ -67,13 +73,7 @@ const createCardPage = (card) => {
         </div>
       </div>
       <div class="card-page__description-box">
-        <div class="card-page__description">
-          <h2>Описание:</h2>
-          <p>
-            Механизм трансформации «Миллениум», обладает усиленными прочностными характеристиками и удобным способом раскладывания раскладывания. При раскладывании дивана не нужно снимать подушки сидения и спинки. Габариты сиденья: длина 186см, высота 50см, глубина 60см. Спальное место : 158*196см, толщина матраса: 14см Декоративные подушки в комплект дивана не входят, их следует заказывать допонительно.
-          </p>
-        </div>
-        <div class="card-page__description">
+        <div class="card-page__description" style="width: 100%; max-width: none">
           <h2>Характеристики:</h2>
           <div class="card-page__box">
               ${getParameterMarkup(parameters.rest)}
