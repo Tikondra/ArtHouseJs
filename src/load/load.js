@@ -1,4 +1,4 @@
-import {getOffers, getOffersFurniture, getOffersLight} from "../utils/offers";
+import {getOffersFurniture, getOffersLight} from "../utils/offers";
 import {getCategory, getFurnitureParameters} from "../utils/categories";
 import {renderCards} from "../render/render-cards";
 import {FilterType, TypeCard} from "../utils/consts";
@@ -10,6 +10,7 @@ import FilterController from "../controllers/filters-controller";
 import OffersModel from "../models/offers";
 import {renderLoad} from "../render/render-load";
 import {sorting} from "../utils/sorting";
+import {parseCategories, parseData} from "../utils/parse";
 
 const convert = require(`xml-js`);
 
@@ -40,22 +41,28 @@ export const load = (onload, url, type, parameters) => {
   xhr.send();
 };
 
-export const loadData = (data) => {
+export const loadData = () => {
   const strGET = window.location.search.replace(`?`, ``);
-  const dataOffers = data.yml_catalog.shop.offers.offer;
-  const dataCategory = data.yml_catalog.shop.categories.category;
-
-  const offersDecor = getOffers(dataOffers);
-  const categoriesDecor = getCategory(dataCategory);
-
   const offersModel = new OffersModel();
-  offersModel.setOffers(offersDecor);
+  const loadDecor = fetch(`/wp-json/myplugin/v1/tovarsgarda`);
 
-  renderLoad(strGET, categoriesDecor, offersModel, CardComponent, TypeCard.DECOR);
-
-  sortSelect.addEventListener(`change`, (evt) => {
-    sorting(evt, offersModel, CardComponent);
-  });
+  loadDecor
+    .then((response) => response.json())
+    .then(parseData)
+    .then((offers) => {
+      offersModel.setOffers(offers);
+      return offers;
+    })
+    .then(() => fetch(`/wp-json/myplugin/v1/categoriesgarda`))
+    .then((response) => response.json())
+    .then(parseCategories)
+    .then((categories) => renderLoad(strGET, categories, offersModel, CardComponent, TypeCard.DECOR))
+    .then(() => sortSelect.addEventListener(`change`, (evt) => {
+      sorting(evt, offersModel, CardComponent);
+    }))
+    .then(preloader)
+    // eslint-disable-next-line no-console
+    .catch((error) => console.log(error));
 };
 
 export const loadDataToLight = (data) => {

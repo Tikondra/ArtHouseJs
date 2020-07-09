@@ -1,13 +1,14 @@
 import {load, loadData, loadDataToFurniture, loadDataToLight, loadDataToChairs} from "./load/load";
 import {loadDataToProduct} from "./load/load-card-page";
-import {LOCAL_CHAIRS, LOCAL_DECOR, LOCAL_FURNITURE, LOCAL_LIGHT} from "./utils/consts";
+import {LOCAL_CHAIRS, LOCAL_FURNITURE, LOCAL_LIGHT} from "./utils/consts";
+import {loadDecorCard} from "./load/load-card";
 
 if (document.querySelector(`.decor-js`)) {
-  load(loadData, LOCAL_DECOR);
+  loadData();
 }
 
 if (document.querySelector(`.product`)) {
-  load(loadDataToProduct, LOCAL_DECOR, `decor`);
+  loadDecorCard();
 }
 
 if (document.querySelector(`.light-js`)) {

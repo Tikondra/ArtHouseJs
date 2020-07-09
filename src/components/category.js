@@ -26,7 +26,7 @@ const createSubCategory = (category, type, dataCategories, offers) => {
 
   return someCards.length === 0 ? `` :
     `<li class="sort__item">
-        <a class="sort__link sort__link--sub" href="${type}.html?${id}" id="${id}">
+        <a class="sort__link sort__link--sub" href="${type}?${id}" id="${id}">
             ${getSvg(someCategories)}
             ${title}
         </a>
@@ -42,7 +42,7 @@ const createCategory = (category, type, someCategories, dataCategories, offers) 
 
   return (
     `<li class="sort__item">
-       <a class="sort__link" href="${type}.html?${id}" id="${id}">
+       <a class="sort__link" href="${type}?${id}" id="${id}">
           ${getSvg(someCategories)}
           ${title}
        </a>

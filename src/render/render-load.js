@@ -6,7 +6,7 @@ const cardBox = document.querySelector(`.cards`);
 
 const renderAll = (categories, offers, offersModel, Component, type) => {
   const someCategory = categories.filter((it) => {
-    return it.parentId === ``;
+    return it.parentId === `0`;
   });
 
   someCategory.forEach((category) => {
