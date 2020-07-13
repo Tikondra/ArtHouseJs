@@ -31,7 +31,8 @@ export const getCard = (offs, id, type, pageTitle) => {
 };
 
 export const loadDecorCard = () => {
-  let id = window.location.search.replace(`?`, ``);
+  const id = window.location.search.replace(`?`, ``);
+  const pageTitle = document.querySelector(`title`);
   const loadCard = fetch(`/wp-json/myplugin/v1/tovarsgarda/${id}`);
 
   loadCard
@@ -40,6 +41,7 @@ export const loadDecorCard = () => {
     .then((card) => {
       const cardPageComponent = new CardPageComponent(card[0]);
       render(main, cardPageComponent.getElement(card[0]), Place.BEFOREEND);
+      pageTitle.textContent = card[0].title;
     })
     .then(() => {
       // eslint-disable-next-line no-undef

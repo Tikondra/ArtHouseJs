@@ -7,7 +7,7 @@ const delLastItem = (arr) => {
   return arr;
 };
 
-const clearImg = (images) => images.filter((it) => it.endsWith(`jpg`));
+const clearImg = (images) => images.filter((it) => it.endsWith(`jpg`) || it.endsWith(`JPG`));
 
 export const parseData = (offers) => {
   return offers.reduce((cardList, offer) => {

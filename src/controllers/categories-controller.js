@@ -23,10 +23,11 @@ class CategoriesController {
     if (parentCategory) {
       const buttonBack = new ButtonBackComponent().getElement();
       const link = element.querySelector(`.sort__link`);
+      const pageTitle = document.querySelector(`title`);
       element.innerHTML = `<span>${link.textContent}</span>`;
+      pageTitle.textContent = `${link.textContent}`;
       element.classList.add(`sort__item--parent`);
       render(element, buttonBack, Place.AFTERBEGIN);
-
       buttonBack.addEventListener(`click`, (evt) => {
         evt.preventDefault();
         history.back();

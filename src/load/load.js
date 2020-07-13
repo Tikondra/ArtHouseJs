@@ -92,7 +92,8 @@ export const loadDataToFurniture = (data) => {
 
   const parametersFurniture = getFurnitureParameters(dataParameters);
   const offersFurniture = getOffersFurniture(dataOffers, parametersFurniture, FilterType.FURNITURE);
-
+  console.log(offersFurniture[2])
+  console.log(parametersFurniture)
   const offersModel = new OffersModel();
   offersModel.setOffers(offersFurniture);
 
