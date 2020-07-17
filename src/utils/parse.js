@@ -24,7 +24,8 @@ export const parseData = (offers) => {
       categoryId,
       id: offer.id,
       material: isTrue(offer.material),
-      article: isTrue(offer.articule)
+      article: isTrue(offer.articule),
+      shop: offer.shop,
     };
     cardList.push(product);
     return cardList;

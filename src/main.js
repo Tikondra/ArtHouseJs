@@ -2,6 +2,7 @@ import {load, loadData, loadDataToFurniture, loadDataToLight, loadDataToChairs} 
 import {loadDataToProduct} from "./load/load-card-page";
 import {LOCAL_CHAIRS, LOCAL_FURNITURE, LOCAL_LIGHT} from "./utils/consts";
 import {loadDecorCard} from "./load/load-card";
+import {initBasket} from "./utils/basket";
 
 if (document.querySelector(`.decor-js`)) {
   loadData();
@@ -34,3 +35,5 @@ if (document.querySelector(`.chairs-js`)) {
 if (document.querySelector(`.product-chair`)) {
   load(loadDataToProduct, LOCAL_CHAIRS, `chair`, true);
 }
+
+initBasket();

@@ -6,6 +6,7 @@ import {render} from "../utils/utils";
 import {Place, TypeCard} from "../utils/consts";
 import {parseData} from "../utils/parse";
 import {preloader} from "./load";
+import {onAddBasketCard} from "../utils/basket";
 
 const main = document.querySelector(`main`);
 
@@ -40,7 +41,11 @@ export const loadDecorCard = () => {
     .then(parseData) // возвращает массив
     .then((card) => {
       const cardPageComponent = new CardPageComponent(card[0]);
-      render(main, cardPageComponent.getElement(card[0]), Place.BEFOREEND);
+      const cardItem = cardPageComponent.getElement(card[0]);
+      cardItem.addEventListener(`click`, (evt) => {
+        onAddBasketCard(evt, card[0]);
+      });
+      render(main, cardItem, Place.BEFOREEND);
       pageTitle.textContent = card[0].title;
     })
     .then(() => {

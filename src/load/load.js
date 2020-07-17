@@ -11,6 +11,7 @@ import OffersModel from "../models/offers";
 import {renderLoad} from "../render/render-load";
 import {sorting} from "../utils/sorting";
 import {parseCategories, parseData} from "../utils/parse";
+import {onAddBasket} from "../utils/basket";
 
 const convert = require(`xml-js`);
 
@@ -45,6 +46,7 @@ export const loadData = () => {
   const strGET = window.location.search.replace(`?`, ``);
   const offersModel = new OffersModel();
   const loadDecor = fetch(`/wp-json/myplugin/v1/tovarsgarda`);
+  const catalog = document.querySelector(`.cards`);
 
   loadDecor
     .then((response) => response.json())
@@ -59,6 +61,9 @@ export const loadData = () => {
     .then((categories) => renderLoad(strGET, categories, offersModel, CardComponent, TypeCard.DECOR))
     .then(() => sortSelect.addEventListener(`change`, (evt) => {
       sorting(evt, offersModel, CardComponent);
+    }))
+    .then(() => catalog.addEventListener(`click`, (evt) => {
+      onAddBasket(evt, offersModel);
     }))
     .then(preloader)
     // eslint-disable-next-line no-console
