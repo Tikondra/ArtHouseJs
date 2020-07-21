@@ -37,3 +37,16 @@ if (document.querySelector(`.product-chair`)) {
 }
 
 initBasket();
+
+const search = document.querySelector(`.search`);
+
+search.addEventListener(`submit`, (evt) => {
+  evt.preventDefault();
+
+  const getData = search.querySelector(`.search__input`).value;
+  const getSearchItems = fetch(`/wp-json/myplugin/v1/search/${getData}`);
+
+  getSearchItems
+    .then((response) => response.json())
+    .then((res) => console.log(res));
+});

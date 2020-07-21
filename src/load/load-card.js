@@ -21,6 +21,10 @@ export const getCard = (offs, id, type, pageTitle) => {
         render(main, cardLightPageComponent.getElement(card), Place.BEFOREEND);
       } else if (type === TypeCard.FURNITURE) {
         const cardFurniturePageComponent = new CardFurniturePageComponent(card);
+        const cardItem = cardFurniturePageComponent.getElement(card);
+        cardItem.addEventListener(`click`, (evt) => {
+          onAddBasketCard(evt, card);
+        });
         render(main, cardFurniturePageComponent.getElement(card), Place.BEFOREEND);
       } else if (type === TypeCard.CHAIR) {
         const cardChairPageComponent = new CardChairPageComponent(card);

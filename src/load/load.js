@@ -46,7 +46,6 @@ export const loadData = () => {
   const strGET = window.location.search.replace(`?`, ``);
   const offersModel = new OffersModel();
   const loadDecor = fetch(`/wp-json/myplugin/v1/tovarsgarda`);
-  const catalog = document.querySelector(`.cards`);
 
   loadDecor
     .then((response) => response.json())
@@ -62,7 +61,7 @@ export const loadData = () => {
     .then(() => sortSelect.addEventListener(`change`, (evt) => {
       sorting(evt, offersModel, CardComponent);
     }))
-    .then(() => catalog.addEventListener(`click`, (evt) => {
+    .then(() => cardBox.addEventListener(`click`, (evt) => {
       onAddBasket(evt, offersModel);
     }))
     .then(preloader)
@@ -109,6 +108,10 @@ export const loadDataToFurniture = (data) => {
 
   sortSelect.addEventListener(`change`, (evt) => {
     sorting(evt, offersModel, CardFurnitureComponent);
+  });
+
+  cardBox.addEventListener(`click`, (evt) => {
+    onAddBasket(evt, offersModel);
   });
 };
 

@@ -2,10 +2,12 @@ import {renderBasketItem} from "../render/render-basket-items";
 import {extend} from "./utils";
 
 const basket = document.querySelector(`.basket`);
+const basketContainer = basket.querySelector(`.basket__items`);
 const basketBtn = document.querySelector(`.header__basket-btn`);
 const basketClose = basket.querySelector(`.basket__close`);
 const basketSum = basket.querySelector(`.basket__sum span`);
 const order = document.querySelector(`.order`);
+const basketEmpty = basket.querySelector(`.basket__empty`);
 let basketBtnCount = document.querySelector(`.header__basket-btn span`);
 let countBasketItems = Number(basketBtnCount.textContent);
 let sum = 0;
@@ -33,13 +35,18 @@ const getData = () => {
   return data;
 };
 
-const addBasket = (card, count = 1) => {
+const addBasket = (container, card, count = 1) => {
+  const basketItems = basket.querySelectorAll(`.basket__item`);
+  if (basketItems.length === 0) {
+    basketEmpty.classList.add(`basket__empty--hide`);
+  }
+
   sum += Number(card.price) * count;
   countBasketItems++;
   basketBtnCount.textContent = String(countBasketItems);
 
   basketSum.textContent = String(sum);
-  renderBasketItem(card);
+  renderBasketItem(container, card);
 
   const saveItem = extend(card, {
     count,
@@ -70,7 +77,7 @@ const loadLocalStorage = () => {
   const data = getData();
 
   data.forEach((it) => {
-    addBasket(it, it.count);
+    addBasket(basketContainer, it, it.count);
   });
 };
 
@@ -80,6 +87,7 @@ export const onAddBasket = (evt, offersModel) => {
     const cardId = evt.target.parentElement.dataset.id;
     const card = offers.find((it) => it.id === cardId);
     const basketItems = basket.querySelectorAll(`.basket__item`);
+    const basketContainerToScroll = basket.querySelector(`#mCSB_1_container`);
     const oldCard = basket.querySelector(`[data-id="` + card.id + `"]`);
     const check = evt.target.parentElement.querySelector(`.check`);
 
@@ -88,13 +96,14 @@ export const onAddBasket = (evt, offersModel) => {
     if (basketItems.length !== 0 && oldCard) {
       updateBasket(oldCard, card);
     } else {
-      addBasket(card);
+      addBasket(basketContainerToScroll, card);
     }
   }
 };
 
 export const onAddBasketCard = (evt, card) => {
   if (evt.target.tagName === `BUTTON`) {
+    const basketContainerToScroll = basket.querySelector(`#mCSB_1_container`);
     const basketItems = basket.querySelectorAll(`.basket__item`);
     const oldCard = basket.querySelector(`[data-id="` + card.id + `"]`);
     const check = document.querySelector(`.check`);
@@ -104,7 +113,7 @@ export const onAddBasketCard = (evt, card) => {
     if (basketItems.length !== 0 && oldCard) {
       updateBasket(oldCard, card);
     } else {
-      addBasket(card);
+      addBasket(basketContainerToScroll, card);
     }
   }
 };
@@ -126,11 +135,22 @@ const sendOrder = () => {
       };
     });
 
-    fetch(`https://arthouse-decor.ru/wp-content/themes/ArtHouse/assets/send.php`, {
-      method: `POST`,
-      body: `data=${JSON.stringify(clearData)}`,
-      headers: {"Content-Type": `application/json`},
-    });
+    const hiddenInput = form.querySelector(`#order-data`);
+    hiddenInput.value = JSON.stringify(clearData);
+
+    const formData = new FormData(form);
+
+    const xhr = new XMLHttpRequest();
+    xhr.open(`POST`, `https://arthouse-decor.ru/wp-content/themes/ArtHouse/assets/send.php`);
+    xhr.send(formData);
+
+    const basketItems = basket.querySelectorAll(`.basket__item`);
+
+    form.reset();
+    localStorage.clear();
+    basketItems.forEach((it) => it.remove());
+    basketSum.textContent = `0`;
+    basketEmpty.classList.remove(`basket__empty--hide`);
   });
 };
 
@@ -167,6 +187,10 @@ export const initBasket = () => {
 
       localStorage.removeItem(`basket-${id}`);
       localStorage.setItem(`sum`, sum);
+
+      if (basket.querySelectorAll(`.basket__item`).length === 0) {
+        basketEmpty.classList.remove(`basket__empty--hide`);
+      }
     }
   });
   /** загрузка из LocalStorage **/
