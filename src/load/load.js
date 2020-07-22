@@ -1,9 +1,8 @@
-import {getOffersFurniture, getOffersLight} from "../utils/offers";
-import {getCategory, getFurnitureParameters} from "../utils/categories";
+import {getOffersFurniture} from "../utils/offers";
+import {getFurnitureParameters} from "../utils/categories";
 import {renderCards} from "../render/render-cards";
 import {FilterType, TypeCard} from "../utils/consts";
 import CardComponent from "../components/card";
-import CardLightComponent from "../components/light-card";
 import CardFurnitureComponent from "../components/furniture-card";
 import CardChairComponent from "../components/chair-card";
 import FilterController from "../controllers/filters-controller";
@@ -67,27 +66,6 @@ export const loadData = () => {
     .then(preloader)
     // eslint-disable-next-line no-console
     .catch((error) => console.log(error));
-};
-
-export const loadDataToLight = (data) => {
-  const strGET = window.location.search.replace(`?`, ``);
-  const dataOffers = data.yml_catalog.shop.offers.offer;
-  const dataCategory = data.yml_catalog.shop.categories.category;
-
-  const lightCategory = getCategory(dataCategory);
-  const lightOffers = getOffersLight(dataOffers);
-
-  const offersModel = new OffersModel();
-  offersModel.setOffers(lightOffers);
-
-  const filterController = new FilterController(offersModel, dataOffers, FilterType.LIGHT, CardLightComponent);
-  filterController.render();
-
-  renderLoad(strGET, lightCategory, offersModel, CardLightComponent, `svet`);
-
-  sortSelect.addEventListener(`change`, (evt) => {
-    sorting(evt, offersModel, CardLightComponent);
-  });
 };
 
 export const loadDataToFurniture = (data) => {

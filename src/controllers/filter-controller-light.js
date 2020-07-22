@@ -1,49 +1,21 @@
-import {
-  getSortedOffersByFurniture,
-  getParametersForFurniture,
-  getFiltersByFurniture,
-  getParametersForChair, getFiltersByChair, getSortedOffersByChair
-} from "../utils/filters";
 import FilterComponent from "../components/filters";
-import {render} from "../utils/utils";
 import {Place} from "../utils/consts";
 import {renderCards} from "../render/render-cards";
+import {getFilters} from "../utils/filters-light";
+import {getOnlyParameters} from "../utils/parameters-light";
+import {render} from "../utils/utils";
+import {getSortedOffersByLight} from "../utils/filters-light";
 
-const sortedMap = {
-  furniture: getSortedOffersByFurniture,
-  chairs: getSortedOffersByChair,
-};
-
-const toParametersMap = {
-  furniture: getParametersForFurniture,
-  chairs: getParametersForChair,
-};
-
-const filtersMap = {
-  furniture: getFiltersByFurniture,
-  chairs: getFiltersByChair,
-};
-
-class FilterController {
-  constructor(offersModel, data, type, component, paramMap) {
+class FilterControllerLight {
+  constructor(offersModel, component) {
     this._offersModel = offersModel;
-    this._data = data;
-    this._type = type;
+    this._offers = this._offersModel.getOffersByCategory();
     this._component = component;
-    this._parametersMap = paramMap;
     this._filterForm = document.querySelector(`.filter__form`);
     this._filterBox = this._filterForm.querySelector(`.filter__box`);
     this._cardBox = document.querySelector(`.cards`);
 
     this._onSomeCards = this._onSomeCards.bind(this);
-  }
-
-  render() {
-    const parameters = toParametersMap[this._type](this._data, this._parametersMap);
-    const filters = filtersMap[this._type](parameters);
-
-    filters.forEach((filter) => this.renderFilters(filter));
-    this._filterForm.addEventListener(`submit`, this._onSomeCards);
   }
 
   renderFilters(filter) {
@@ -61,7 +33,7 @@ class FilterController {
   _onSomeCards(evt) {
     evt.preventDefault();
     const offers = this._offersModel.getOffersByCategory();
-    const sortedOffers = sortedMap[this._type](this._filterBox, offers);
+    const sortedOffers = getSortedOffersByLight(this._filterBox, offers);
     const sortedOffersCopy = sortedOffers.slice();
     this._offersModel.setOffersByFilter(sortedOffers);
 
@@ -69,6 +41,14 @@ class FilterController {
 
     renderCards(this._cardBox, sortedOffersCopy, this._component);
   }
+
+  render() {
+    const parameters = getOnlyParameters(this._offers);
+    const filters = getFilters(parameters);
+
+    filters.forEach((filter) => this.renderFilters(filter));
+    this._filterForm.addEventListener(`submit`, this._onSomeCards);
+  }
 }
 
-export default FilterController;
+export default FilterControllerLight;

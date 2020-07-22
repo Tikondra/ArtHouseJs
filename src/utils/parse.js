@@ -1,11 +1,7 @@
-import {getPercent} from "./utils";
+import {getPercent, delLastItem} from "./utils";
+import {getParametersLight} from "./parameters-light";
 
 const isTrue = (it) => it ? it : ``;
-
-const delLastItem = (arr) => {
-  arr.splice(arr.length - 1);
-  return arr;
-};
 
 const clearImg = (images) => images.filter((it) => it.endsWith(`jpg`) || it.endsWith(`JPG`));
 
@@ -44,3 +40,30 @@ export const parseCategories = (categories) => {
     return categoriesList;
   }, []);
 }; // Категории Декор
+
+export const parseDataLight = (offers) => offers.map((offer) => {
+  const parameters = getParametersLight(offer.param);
+
+  return ({
+    title: offer.name,
+    price: offer.price,
+    image: offer.image,
+    categoryId: offer.categoryId,
+    id: offer.id,
+    vendor: offer.vendor,
+    parameters,
+  });
+});
+
+export const parseCategoriesLight = (categories) => {
+  return categories.reduce((categoriesList, category) => {
+    const cat = {
+      title: category.title,
+      id: category.category_id,
+      parentId: category.parent_id,
+    };
+
+    categoriesList.push(cat);
+    return categoriesList;
+  }, []);
+}; // Категории Свет

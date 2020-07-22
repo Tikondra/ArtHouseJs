@@ -1,15 +1,10 @@
-import {getOffersFurniture, getOffersLight, getOffers} from "../utils/offers";
+import {getOffersFurniture} from "../utils/offers";
 import {getFurnitureParameters} from "../utils/categories";
 import {getCard} from "./load-card";
 import {TypeCard, FilterType} from "../utils/consts";
 
 export const loadDataToProduct = (data, type, parameters) => {
-  let dataOffers;
-  if (type === TypeCard.DECOR || type === TypeCard.LIGHT) {
-    dataOffers = data.yml_catalog.shop.offers.offer;
-  } else {
-    dataOffers = data.КоммерческаяИнформация.Каталог.Товары.Товар;
-  }
+  let dataOffers = data.КоммерческаяИнформация.Каталог.Товары.Товар;
 
   let dataParameters = parameters;
   if (parameters) {
@@ -20,12 +15,6 @@ export const loadDataToProduct = (data, type, parameters) => {
   let offersProduct;
 
   switch (type) {
-    case TypeCard.DECOR:
-      offersProduct = getOffers(dataOffers);
-      break;
-    case TypeCard.LIGHT:
-      offersProduct = getOffersLight(dataOffers);
-      break;
     case TypeCard.FURNITURE:
       offersProduct = getOffersFurniture(dataOffers, dataParameters, FilterType.FURNITURE);
       break;

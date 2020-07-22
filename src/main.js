@@ -1,8 +1,10 @@
-import {load, loadData, loadDataToFurniture, loadDataToLight, loadDataToChairs} from "./load/load";
+import {load, loadData, loadDataToFurniture, loadDataToChairs} from "./load/load";
+import {loadDataToLight} from "./load/load-light";
 import {loadDataToProduct} from "./load/load-card-page";
-import {LOCAL_CHAIRS, LOCAL_FURNITURE, LOCAL_LIGHT} from "./utils/consts";
+import {LOCAL_CHAIRS, LOCAL_FURNITURE} from "./utils/consts";
 import {loadDecorCard} from "./load/load-card";
 import {initBasket} from "./utils/basket";
+import {loadLightCardPage} from "./load/load-card-light-page";
 
 if (document.querySelector(`.decor-js`)) {
   loadData();
@@ -13,11 +15,11 @@ if (document.querySelector(`.product`)) {
 }
 
 if (document.querySelector(`.light-js`)) {
-  load(loadDataToLight, LOCAL_LIGHT);
+  loadDataToLight();
 }
 
 if (document.querySelector(`.product-light`)) {
-  load(loadDataToProduct, LOCAL_LIGHT, `light`);
+  loadLightCardPage();
 }
 
 if (document.querySelector(`.furniture-js`)) {

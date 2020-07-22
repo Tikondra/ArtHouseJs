@@ -4,9 +4,9 @@ import {getPrice} from "../utils/utils";
 
 const createCardPage = (card) => {
 
-  const {parameters, title, price, image, available} = card;
+  const {parameters, title, price, image} = card;
   const activePrice = getPrice(Math.floor(price));
-
+  const imageArr = [image];
   const getImages = (pictures) => pictures.map((it) => createImg(it)).join(`\n`);
   const getPreview = (pictures) => pictures.map((it) => createPreview(it)).join(`\n`);
   const getOldPrice = (val) => {
@@ -24,16 +24,9 @@ const createCardPage = (card) => {
   const getParameterMarkup = (params) => {
     return params.map((it) => {
       return (
-        `<p class="card-page__info-text"><span>${it._attributes.name}:</span> ${it._text}</p>`
+        `<p class="card-page__info-text"><span>${it.name}:</span> ${it.value}</p>`
       );
     }).join(`\n`);
-  };
-  const getAvailable = (param) => {
-    if (param === `true`) {
-      return `Да`;
-    } else {
-      return `Нет`;
-    }
   };
 
   const country = parameters.current.country ? `<p class="card-page__info-text"><span>Страна:</span> ${parameters.current.country}</p>` : ``;
@@ -50,10 +43,10 @@ const createCardPage = (card) => {
       <div class="card-page__info-box">
         <div class="card-page__images">
           <ul class="card-page__list owl-carousel">
-            ${getImages(image)}
+            ${getImages(imageArr)}
           </ul>
           <ul class="card-page__gallery">
-            ${getPreview(image)}
+            ${getPreview(imageArr)}
           </ul>
         </div>
         <div class="card-page__info">
@@ -61,9 +54,6 @@ const createCardPage = (card) => {
             <span>Цена:</span> ${activePrice} ₽
           </p>
           ${getOldPrice(parameters.current.oldPrice)}
-          <p class="card-page__info-text">
-            <span>Наличие:</span>  ${getAvailable(available)}
-          </p>
            ${country}
            ${brand}
            ${style}

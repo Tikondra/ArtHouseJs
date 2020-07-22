@@ -1,9 +1,5 @@
 import {Place} from "./consts";
 
-export const cleanContainer = (container) => {
-  container.innerHTML = ``;
-};
-
 export const render = (container, element, place) => {
   switch (place) {
     case Place.AFTERBEGIN:
@@ -31,17 +27,21 @@ export const getPercent = (value, percent) => {
   return value * (1 - (percent / 100));
 };
 
-export const makeCounter = () => {
-  function counter() {
-    return counter.currentCount++;
-  }
-  counter.currentCount = 0;
-
-  return counter;
-};
-
 export const getPrice = (str) => {
   return String(str).replace(/(\d)(?=(\d{3})+(\D|$))/g, `$1 `);
 };
 
 export const extend = (a, b) => Object.assign({}, a, b);
+
+export const delLastItem = (arr) => {
+  arr.splice(arr.length - 1);
+  return arr;
+};
+
+export const getChecked = (container, type) => {
+  const checked = [...container.querySelectorAll(`[data-type="${type}"] input[type="checkbox"]:checked`)];
+  return checked.reduce((checkedList, it) => {
+    checkedList.push(it.value);
+    return checkedList;
+  }, []);
+};
