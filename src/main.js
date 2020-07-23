@@ -5,6 +5,11 @@ import {loadDecorCard} from "./load/load-card";
 import {initBasket} from "./utils/basket";
 import {loadLightCardPage} from "./load/load-card-light-page";
 import {LOCAL_CHAIRS, LOCAL_FURNITURE} from "./utils/consts";
+import React from "react";
+import ReactDOM from "react-dom";
+import {Provider} from "react-redux";
+import {store} from "./store";
+import App from "./components/app/app";
 
 if (document.querySelector(`.decor-js`)) {
   loadData();
@@ -14,7 +19,18 @@ if (document.querySelector(`.product`)) {
 }
 
 if (document.querySelector(`.light-js`)) {
-  loadDataToLight();
+  // loadDataToLight();
+
+  const init = () => {
+    ReactDOM.render(
+        <Provider store={store}>
+          <App/>
+        </Provider>,
+        document.querySelector(`#root`)
+    );
+  };
+
+  init();
 }
 if (document.querySelector(`.product-light`)) {
   loadLightCardPage();

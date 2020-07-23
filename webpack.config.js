@@ -12,5 +12,16 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'public'),
     watchContentBase: true
-  }
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: `babel-loader`,
+        },
+      }
+    ],
+  },
 };
