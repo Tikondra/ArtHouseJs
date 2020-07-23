@@ -6,8 +6,8 @@ const createCard = (card) => {
   const price = Math.floor(parameters.current.price);
 
   return (
-    `<li class="cards__item">
-        <a class="cards__link" href="card-chair.html?${id}">
+    `<li class="cards__item" data-id="${id}">
+        <a class="cards__link" href="card-chair?${id}">
             <img src=${image} width="213" height="213" alt="${title}">
         </a>
         <h3 class="cards__title">${title}</h3>

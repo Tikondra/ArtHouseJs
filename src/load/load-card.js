@@ -1,11 +1,10 @@
 import CardPageComponent from "../components/card-page";
 import CardFurniturePageComponent from "../components/card-furniture-page";
 import CardChairPageComponent from "../components/card-chair-page";
-import {render} from "../utils/utils";
-import {Place, TypeCard} from "../utils/consts";
+import {render, preloader} from "../utils/utils";
 import {parseData} from "../utils/parse";
-import {preloader} from "./load";
 import {onAddBasketCard} from "../utils/basket";
+import {Place, TypeCard} from "../utils/consts";
 
 const main = document.querySelector(`main`);
 

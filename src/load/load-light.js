@@ -1,10 +1,10 @@
-import OffersModel from "../models/offers";
-import {parseCategoriesLight, parseDataLight} from "../utils/parse";
 import {renderLoad} from "../render/render-load";
+import {parseCategoriesLight, parseDataLight} from "../utils/parse";
 import {sorting} from "../utils/sorting";
+import {preloader} from "../utils/utils";
+import OffersModel from "../models/offers";
 import FilterControllerLight from "../controllers/filter-controller-light";
 import CardLightComponent from "../components/light-card";
-import {preloader} from "./load";
 
 const sortSelect = document.querySelector(`.store-content__sort-select`);
 

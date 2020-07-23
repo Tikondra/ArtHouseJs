@@ -11,19 +11,12 @@ import {renderLoad} from "../render/render-load";
 import {sorting} from "../utils/sorting";
 import {parseCategories, parseData} from "../utils/parse";
 import {onAddBasket} from "../utils/basket";
+import {preloader} from "../utils/utils";
 
 const convert = require(`xml-js`);
 
 const cardBox = document.querySelector(`.cards`);
 const sortSelect = document.querySelector(`.store-content__sort-select`);
-
-export const preloader = () => {
-  document.body.classList.add(`loaded_hiding`);
-  window.setTimeout(function () {
-    document.body.classList.add(`loaded`);
-    document.body.classList.remove(`loaded_hiding`);
-  }, 500);
-};
 
 export const load = (onload, url, type, parameters) => {
   const xhr = new XMLHttpRequest();
@@ -74,8 +67,7 @@ export const loadDataToFurniture = (data) => {
 
   const parametersFurniture = getFurnitureParameters(dataParameters);
   const offersFurniture = getOffersFurniture(dataOffers, parametersFurniture, FilterType.FURNITURE);
-  console.log(offersFurniture[2])
-  console.log(parametersFurniture)
+
   const offersModel = new OffersModel();
   offersModel.setOffers(offersFurniture);
 

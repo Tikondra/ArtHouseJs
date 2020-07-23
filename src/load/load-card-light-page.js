@@ -1,8 +1,7 @@
 import {parseDataLight} from "../utils/parse";
 import {onAddBasketCard} from "../utils/basket";
-import {render} from "../utils/utils";
+import {render, preloader} from "../utils/utils";
 import {Place} from "../utils/consts";
-import {preloader} from "./load";
 import CardLightPageComponent from "../components/card-light-page";
 
 export const loadLightCardPage = () => {
