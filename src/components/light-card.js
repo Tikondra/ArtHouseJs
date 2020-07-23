@@ -24,6 +24,7 @@ const createCard = (card) => {
         <h3 class="cards__title">${title}</h3>
         <p class="cards__info">Бренд: ${parameters.current.brend}</p>
         <p class="cards__info">Страна: ${parameters.current.country}</p>
+        <p class="cards__info">В наличии: ${parameters.current.rest}</p>
         ${getOldPrice(oldPrice)}
         <p class="cards__price">${getPrice(activePrice)} ₽</p>
     </li>`

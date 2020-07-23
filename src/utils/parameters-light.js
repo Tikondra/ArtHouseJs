@@ -32,7 +32,7 @@ const sortingParameters = (parameters) => {
     } else if (parameter.name === `Цвет`) {
       current.color = parameter.value;
     } else if (parameter.name === `Остаток поставщика`) {
-      service.push(parameter);
+      current.rest = parameter.value;
     } else if (parameter.name === `Автоматическая сортировка`) {
       service.push(parameter);
     } else if (parameter.name === `Акция`) {

@@ -34,6 +34,7 @@ const createCardPage = (card) => {
   const style = parameters.current.style ? `<p class="card-page__info-text"><span>Стиль:</span> ${parameters.current.style}</p>` : ``;
   const color = parameters.current.color ? `<p class="card-page__info-text"><span>Цвет:</span> ${parameters.current.color}</p>` : ``;
   const setup = parameters.current.setup ? `<p class="card-page__info-text"><span>Место установки:</span> ${parameters.current.setup}</p>` : ``;
+  const rest = parameters.current.rest ? `<p class="card-page__info-text"><span>В наличии:</span> ${parameters.current.rest}</p>` : ``;
 
   return (
     `<section class="card-page">
@@ -59,6 +60,7 @@ const createCardPage = (card) => {
            ${style}
            ${color}
            ${setup}
+           ${rest}
           <a class="card-page__buy-btn" href="">Купить</a>
         </div>
       </div>
