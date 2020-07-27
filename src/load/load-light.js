@@ -12,7 +12,7 @@ export const loadDataToLight = () => {
   const strGET = window.location.search.replace(`?`, ``);
   const offersModel = new OffersModel();
   const sqlStart = `start=0`;
-  const sqlEnd = `end=2000`;
+  const sqlEnd = `end=5000`;
   const loadLight = fetch(`/wp-json/myplugin/v1/light?${sqlStart}&${sqlEnd}`);
 
   loadLight

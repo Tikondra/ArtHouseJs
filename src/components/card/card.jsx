@@ -11,7 +11,8 @@ const getOldPrice = (priceOld) => {
   }
 };
 
-const Card = ({parameters, title, price, image, id}) => {
+const Card = ({offer}) => {
+  const {parameters, title, price, image, id} = offer;
   const activePrice = Math.floor(price);
   const oldPrice = Math.floor(parameters.current.oldPrice);
   const href = `card-light?${id}`;
@@ -19,11 +20,12 @@ const Card = ({parameters, title, price, image, id}) => {
   return (
     <li className="cards__item">
       <a className="cards__link" href={href}>
-        <img src={image} width="213" height="213" alt="${title}" />
+        <img src={image} width="213" height="213" alt={title} />
       </a>
-      <h3 className="cards__title">${title}</h3>
-      <p className="cards__info">Бренд: ${parameters.current.brend}</p>
-      <p className="cards__info">Страна: ${parameters.current.country}</p>
+      <h3 className="cards__title">{title}</h3>
+      <p className="cards__info">Бренд: {parameters.current.brend}</p>
+      <p className="cards__info">Страна: {parameters.current.country}</p>
+      <p className="cards__info">В наличии: {parameters.current.rest}</p>
       {getOldPrice(oldPrice)}
       <p className="cards__price">{getPrice(activePrice)} ₽</p>
     </li>

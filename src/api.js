@@ -3,7 +3,7 @@ import axios from "axios";
 export const createAPI = () => {
   const api = axios.create({
     baseURL: `/wp-json/myplugin/v1`,
-    timeout: 5000,
+    timeout: 20000,
     withCredentials: true,
   });
 

@@ -9,17 +9,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import {Provider} from "react-redux";
 import {store} from "./store";
-import App from "./components/app/app";
+import App from "./components/app/app.jsx";
+import {Operation} from "./reducer/data";
 
-if (document.querySelector(`.decor-js`)) {
-  loadData();
-}
-if (document.querySelector(`.product`)) {
-  loadDecorCard();
-}
-
-if (document.querySelector(`.light-js`)) {
-  // loadDataToLight();
+if (document.querySelector(`#root`)) {
+  store.dispatch(Operation.loadStartOffers());
+  store.dispatch(Operation.loadFilters());
+  store.dispatch(Operation.loadCategories());
 
   const init = () => {
     ReactDOM.render(
@@ -31,6 +27,17 @@ if (document.querySelector(`.light-js`)) {
   };
 
   init();
+}
+
+if (document.querySelector(`.decor-js`)) {
+  loadData();
+}
+if (document.querySelector(`.product`)) {
+  loadDecorCard();
+}
+
+if (document.querySelector(`.light-js`)) {
+  loadDataToLight();
 }
 if (document.querySelector(`.product-light`)) {
   loadLightCardPage();

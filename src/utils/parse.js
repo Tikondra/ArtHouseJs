@@ -67,3 +67,14 @@ export const parseCategoriesLight = (categories) => {
     return categoriesList;
   }, []);
 }; // Категории Свет
+
+export const parseFiltersLight = (filters) => filters.map((filter) => {
+  const filterValues = filter.values_of_name.split(`:`);
+
+  return ({
+    type: filter.id,
+    title: filter.name,
+    items: filterValues
+  });
+});
+

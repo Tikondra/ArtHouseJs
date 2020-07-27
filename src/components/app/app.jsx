@@ -1,28 +1,14 @@
 import React from "react";
-import {connect} from "react-redux";
-import PropTypes from "prop-types";
-import {getOffers} from "../../reducer/selectors";
-import Filter from "../filter/filter";
-import Catalog from "../catalog/catalog";
+import Filter from "../filter/filter.jsx";
+import Catalog from "../catalog/catalog.jsx";
 
-const App = ({offers}) => {
+const App = () => {
   return (
     <div className="store-content">
       <Filter/>
-      <Catalog
-        offers = {offers}
-      />
+      <Catalog/>
     </div>
   );
 };
 
-App.propTypes = {
-  offers: PropTypes.array.isRequired,
-};
-
-const mapStateToProps = (state) => ({
-  offers: getOffers(state),
-});
-
-export {App};
-export default connect(mapStateToProps)(App);
+export default App;

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Card from "../card/card";
+import Card from "../card/card.jsx";
 
 const getOfferCard = (offers) => offers.map((offer) => {
   return (
@@ -11,16 +11,19 @@ const getOfferCard = (offers) => offers.map((offer) => {
   );
 });
 
-const CardList = ({offers}) => {
+const CardList = ({offers, showingOffersCount}) => {
+  const showingOffers = offers.slice(0, showingOffersCount);
+
   return (
     <ul className="cards">
-      {getOfferCard(offers)}
+      {getOfferCard(showingOffers)}
     </ul>
   );
 };
 
 CardList.propTypes = {
   offers: PropTypes.array.isRequired,
+  showingOffersCount: PropTypes.number.isRequired,
 };
 
 export default CardList;
