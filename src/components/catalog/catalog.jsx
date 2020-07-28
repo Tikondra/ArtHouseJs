@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import Sort from "../sort/sort.jsx";
 import CardList from "../card-list/card-list.jsx";
-import {getIsShowCategories, getOffers, getShowingOffersCount} from "../../reducer/selectors";
+import {getActiveCategory, getIsShowCategories, getOffers, getShowingOffersCount} from "../../reducer/selectors";
 import {ActionCreator, Operation} from "../../reducer/data";
 import {connect} from "react-redux";
 
-const Catalog = ({offers, showingOffersCount, onMoreView}) => {
+const Catalog = ({offers, showingOffersCount, activeCategory, onMoreView}) => {
   return (
     <section className="store-content__cards">
       <h1 className="store-content__title visually-hidden">Свет</h1>
@@ -19,7 +19,7 @@ const Catalog = ({offers, showingOffersCount, onMoreView}) => {
         <button
           className="store-content__btn-more"
           type="button"
-          onClick={onMoreView}
+          onClick={() => { onMoreView(activeCategory)}}
         >
           Показать еще
         </button>
@@ -31,6 +31,7 @@ const Catalog = ({offers, showingOffersCount, onMoreView}) => {
 Catalog.propTypes = {
   offers: PropTypes.array.isRequired,
   showingOffersCount: PropTypes.number.isRequired,
+  activeCategory: PropTypes.number.isRequired,
   onMoreView: PropTypes.func.isRequired,
 };
 
@@ -38,12 +39,13 @@ const mapStateToProps = (state) => ({
   offers: getOffers(state),
   showingOffersCount: getShowingOffersCount(state),
   isShowCategories: getIsShowCategories(state),
+  activeCategory: getActiveCategory(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onMoreView() {
+  onMoreView(id) {
     dispatch(ActionCreator.moreView());
-    dispatch(Operation.loadOffers());
+    dispatch(Operation.loadOffers(id));
   }
 });
 

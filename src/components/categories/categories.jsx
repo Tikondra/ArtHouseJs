@@ -4,7 +4,7 @@ import Category from "../category/category.jsx";
 
 const getSubCategories = (categories, parentId) => categories.filter((category) => category.parentId === parentId);
 
-const Categories = ({categories, isShow, onShowCategories}) => {
+const Categories = ({categories, isShow, onShowCategories, onLoadOffersByCategory}) => {
   const showListClass = isShow ? `sort__list--show-all` : ``;
   const showBtnClass = isShow ? `sort__category-view--open` : ``;
   const showBtnText = isShow ? `Скрыть категории` : `Показать все категории`;
@@ -17,8 +17,10 @@ const Categories = ({categories, isShow, onShowCategories}) => {
             return (
               <Category
                 key = {category.id}
+                type={`parent`}
                 category = {category}
                 subCategories = {getSubCategories(categories, category.id)}
+                onLoadOffersByCategory = {onLoadOffersByCategory}
               />
             );
           }
@@ -44,6 +46,7 @@ Categories.propTypes = {
   categories: PropTypes.array.isRequired,
   isShow: PropTypes.bool.isRequired,
   onShowCategories: PropTypes.func.isRequired,
+  onLoadOffersByCategory: PropTypes.func.isRequired,
 };
 
 export default Categories;

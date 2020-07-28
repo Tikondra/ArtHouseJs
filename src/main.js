@@ -69,5 +69,6 @@ search.addEventListener(`submit`, (evt) => {
 
   getSearchItems
     .then((response) => response.json())
+    // eslint-disable-next-line no-console
     .then((res) => console.log(res));
 });

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Category = ({category: {title, id}, subCategories = []}) => {
+const Category = ({category: {title, id}, type, subCategories = [], onLoadOffersByCategory}) => {
   const svg = subCategories.length > 0 ?
     <svg className="sort__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" width="26" height="26" fill="none">
       <use xlinkHref="#icon-arrow"/>
@@ -16,7 +16,12 @@ const Category = ({category: {title, id}, subCategories = []}) => {
         evt.currentTarget.classList.toggle(`sort__item--open`);
       }
     }}>
-      <a className="sort__link" href="" id={id}>
+      <a className="sort__link" href="" id={id} onClick={(evt) => {
+        evt.preventDefault();
+        if (type === `sub`) {
+          onLoadOffersByCategory(id);
+        }
+      }}>
         {svg}
         {title}
       </a>
@@ -27,7 +32,9 @@ const Category = ({category: {title, id}, subCategories = []}) => {
               return (
                 <Category
                   key = {it.id}
+                  type={`sub`}
                   category = {it}
+                  onLoadOffersByCategory = {onLoadOffersByCategory}
                 />
               );
             }
@@ -45,7 +52,9 @@ Category.propTypes = {
     title: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
   }).isRequired,
+  type: PropTypes.string.isRequired,
   subCategories: PropTypes.array,
+  onLoadOffersByCategory: PropTypes.func.isRequired,
 };
 
 export default Category;

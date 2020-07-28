@@ -2,15 +2,26 @@ import React, {Fragment} from "react";
 import PropTypes from "prop-types";
 import Categories from "../categories/categories.jsx";
 import FilterList from "../filter-list/filter-list.jsx";
-import {getCategories, getFilters, getIsShowCategories} from "../../reducer/selectors";
+import {getCategories, getFilters, getIsShowCategories, getIsShowFilter} from "../../reducer/selectors";
 import {connect} from "react-redux";
-import {ActionCreator} from "../../reducer/data";
+import {ActionCreator, Operation} from "../../reducer/data";
 
-const Filter = ({filters, categories, isShowCategories, onShowCategories}) => {
+const Filter = ({
+  filters, categories, isShowCategories, isShowFilter,
+  onShowCategories, onShowFilter, onLoadOffersByCategory
+}) => {
+  const showClass = isShowFilter ? `filter--open` : ``;
+
   return (
     <Fragment>
-      <button className="filter__open" type="button">Фильтр</button>
-      <section className="filter">
+      <button
+        className="filter__open"
+        type="button"
+        onClick={() => onShowFilter(isShowFilter)}
+      >
+        Фильтр
+      </button>
+      <section className={`filter ${showClass}`}>
         <form className="filter__form" action="" method="" onSubmit={(evt) => {
           evt.preventDefault();
 
@@ -20,6 +31,7 @@ const Filter = ({filters, categories, isShowCategories, onShowCategories}) => {
             categories = {categories}
             isShow = {isShowCategories}
             onShowCategories = {onShowCategories}
+            onLoadOffersByCategory = {onLoadOffersByCategory}
           />
           <FilterList
             filters = {filters}
@@ -30,7 +42,13 @@ const Filter = ({filters, categories, isShowCategories, onShowCategories}) => {
               Очистить
             </button>
           </div>
-          <button className="filter__btn-close" type="button">Х</button>
+          <button
+            className="filter__btn-close"
+            type="button"
+            onClick={() => onShowFilter(isShowFilter)}
+          >
+            Х
+          </button>
         </form>
       </section>
     </Fragment>
@@ -42,17 +60,30 @@ Filter.propTypes = {
   categories: PropTypes.array.isRequired,
   isShowCategories: PropTypes.bool.isRequired,
   onShowCategories: PropTypes.func.isRequired,
+  isShowFilter: PropTypes.bool.isRequired,
+  onShowFilter: PropTypes.func.isRequired,
+  onLoadOffersByCategory: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   filters: getFilters(state),
   categories: getCategories(state),
   isShowCategories: getIsShowCategories(state),
+  isShowFilter: getIsShowFilter(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({
   onShowCategories(state) {
     dispatch(ActionCreator.moreViewCategories(state));
+  },
+
+  onShowFilter(state) {
+    dispatch(ActionCreator.showFilter(state));
+  },
+
+  onLoadOffersByCategory(id) {
+    dispatch(Operation.loadStartOffers(id));
+    dispatch(ActionCreator.changeActiveCategory(id));
   }
 });
 
