@@ -1,12 +1,12 @@
 import AbstractComponent from "../abstract/AbstractComponent";
 
 const createBasketItem = (item) => {
-  const {title, price, image, id, count = 1} = item;
+  const {title, price, image, id, href, count = 1} = item;
 
   return (
     `<li class="basket__item" data-id=${id}>
       <div class="basket__item-discription">
-        <a class="basket__item-link" href="card?${id}"><h3>${title}</h3></a>
+        <a class="basket__item-link" href=${href}><h3>${title}</h3></a>
         <p class="basket__item-price"><span>${price}</span> ₽ x <span class="count">${count}</span></p>
         <button class="basket__item-del red-btn" type="button">Удалить</button>
       </div>

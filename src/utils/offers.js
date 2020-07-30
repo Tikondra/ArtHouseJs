@@ -122,6 +122,7 @@ export const getOffersFurniture = (data, parametersMap, type) => {
     const allParameters = getFurnitureParameters(card.ЗначенияСвойств.ЗначенияСвойства, parametersMap);
     const img = [card.Картинка._text];
     const parameters = toSortingMap[type](allParameters);
+    const href = type === `furniture` ? `card-furniture?${card.Ид._text}` : `card-chair?${card.Ид._text}`;
 
     const product = {
       id: card.Ид._text,
@@ -130,6 +131,7 @@ export const getOffersFurniture = (data, parametersMap, type) => {
       description: card.Описание._text,
       parameters,
       price: parameters.current.price,
+      href
     };
     cardList.push(product);
     return cardList;

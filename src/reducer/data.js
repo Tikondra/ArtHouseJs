@@ -1,5 +1,6 @@
 import {parseCategoriesLight, parseDataLight, parseFiltersLight} from "../utils/parse";
 import {extend, preloader} from "../utils/utils";
+import {TypeSort} from "../utils/consts";
 
 const initialState = {
   offers: [],
@@ -7,8 +8,37 @@ const initialState = {
   filters: [],
   showingOffers: 9,
   activeCategory: null,
+  request: [],
+  sortType: TypeSort.DEFAULT,
   isShowCategories: false,
   isShowFilter: false,
+};
+
+const getFetchConfig = (id = ``, request = [], sortType = ``, sqlStart, sqlEnd) => {
+  let sqlRequest = ``;
+  if (request.length > 0) {
+    request.map((it) => {
+      sqlRequest += `AND \`param\` LIKE "%${it}%" `;
+    });
+  }
+
+  let category = id ? `&category=AND \`categoryId\` = ${id}` : ``;
+  let typeSort = sortType ? `&sort=ORDER BY \`price\` ${sortType}` : ``;
+  let sorting = request.length > 0 ? `&sorting=${sqlRequest}` : ``;
+
+  // if (id && request.length > 0) {
+  //   category = `&category=${id}`;
+  //   sorting = `&sorting=${JSON.stringify(request)}`;
+  //   fetch = `/light-for-sorting-and-category?${sqlStart}&${sqlEnd}${category}${sorting}`;
+  // } else if (id && request.length === 0) {
+  //   category = `&category=${id}`;
+  //   fetch = `/light-for-category?${sqlStart}&${sqlEnd}${category}`;
+  // } else if (!id && request.length > 0) {
+  //   sorting = `&sorting=${JSON.stringify(request)}`;
+  //   fetch = `/light-for-sorting?${sqlStart}&${sqlEnd}${sorting}`;
+  // }
+
+  return `/light?${sqlStart}&${sqlEnd}${category}${sorting}${typeSort}`;
 };
 
 const ActionType = {
@@ -19,7 +49,8 @@ const ActionType = {
   LOAD_FILTERS: `LOAD_FILTERS`,
   SHOW_CATEGORIES: `SHOW_CATEGORIES`,
   SHOW_FILTER: `SHOW_FILTER`,
-  CHANGE_ACTIVE_CATEGORY: `CHANGE_ACTIVE_CATEGORY`
+  CHANGE_ACTIVE_CATEGORY: `CHANGE_ACTIVE_CATEGORY`,
+  CHANGE_REQUEST: `CHANGE_REQUEST`
 };
 
 const ActionCreator = {
@@ -77,34 +108,45 @@ const ActionCreator = {
       type: ActionType.CHANGE_ACTIVE_CATEGORY,
       payload: categoryId,
     };
+  },
+
+  changeRequest: (activeFilter) => {
+    return {
+      type: ActionType.CHANGE_REQUEST,
+      payload: activeFilter
+    };
   }
 };
 
 const Operation = {
-  loadOffers: (id) => (dispatch, getState, api) => {
+  loadOffers: (id, request, sortType) => (dispatch, getState, api) => {
     const offersCount = getState().offers.length;
     const sqlStart = `start=${offersCount}`;
     const sqlEnd = `end=3`;
-    const category = id ? `&category=${id}` : ``;
-    const fetch = id ? `/light-for-category?${sqlStart}&${sqlEnd}${category}` : `/light?${sqlStart}&${sqlEnd}`;
+
+    const fetch = getFetchConfig(id, request, sortType, sqlStart, sqlEnd);
 
     return api.get(fetch)
       .then((response) => parseDataLight(response.data))
       .then((offers) => dispatch(ActionCreator.loadMoreOffers(offers)));
   },
 
-  loadStartOffers: (id) => (dispatch, getState, api) => {
+  loadStartOffers: (id, request, sortType) => (dispatch, getState, api) => {
     const sqlStart = `start=0`;
     const sqlEnd = `end=12`;
-    const category = id ? `&category=${id}` : ``;
-    const fetch = id ? `/light-for-category?${sqlStart}&${sqlEnd}${category}` : `/light?${sqlStart}&${sqlEnd}`;
+
+    const fetch = getFetchConfig(id, request, sortType, sqlStart, sqlEnd);
 
     return api.get(fetch)
       .then((response) => parseDataLight(response.data))
       .then((offers) => {
         dispatch(ActionCreator.loadOffers(offers));
         if (id) {
-          ActionCreator.changeActiveCategory(id);
+          dispatch(ActionCreator.changeActiveCategory(id));
+        }
+
+        if (request) {
+          dispatch(ActionCreator.changeRequest(request));
         }
       })
       .then(preloader);
@@ -164,6 +206,11 @@ const reducer = (state = initialState, action) => {
     case ActionType.CHANGE_ACTIVE_CATEGORY:
       return extend(state, {
         activeCategory: action.payload,
+      });
+
+    case ActionType.CHANGE_REQUEST:
+      return extend(state, {
+        request: action.payload,
       });
   }
 

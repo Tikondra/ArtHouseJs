@@ -2,13 +2,20 @@ import React, {Fragment} from "react";
 import PropTypes from "prop-types";
 import Categories from "../categories/categories.jsx";
 import FilterList from "../filter-list/filter-list.jsx";
-import {getCategories, getFilters, getIsShowCategories, getIsShowFilter} from "../../reducer/selectors";
+import {
+  getActiveCategory,
+  getCategories,
+  getFilters,
+  getIsShowCategories,
+  getIsShowFilter
+} from "../../reducer/selectors";
 import {connect} from "react-redux";
 import {ActionCreator, Operation} from "../../reducer/data";
+import {getChecked} from "../../utils/utils";
 
 const Filter = ({
-  filters, categories, isShowCategories, isShowFilter,
-  onShowCategories, onShowFilter, onLoadOffersByCategory
+  filters, categories, isShowCategories, isShowFilter, activeCategory,
+  onShowCategories, onShowFilter, onLoadOffersByCategory, onFilterOffers
 }) => {
   const showClass = isShowFilter ? `filter--open` : ``;
 
@@ -24,11 +31,20 @@ const Filter = ({
       <section className={`filter ${showClass}`}>
         <form className="filter__form" action="" method="" onSubmit={(evt) => {
           evt.preventDefault();
+          const filterBox = document.querySelector(`.filter__box`);
+          const checkedByBrand = getChecked(filterBox, `1`);
+          const checkedByCountry = getChecked(filterBox, `2`);
+          const checkedByStyle = getChecked(filterBox, `23`);
+          const checkedByColor = getChecked(filterBox, `18`);
+          const checkedBySetup = getChecked(filterBox, `21`);
+          const checked = [...checkedByBrand, ...checkedByCountry, ...checkedByStyle, ...checkedByColor, ...checkedBySetup];
 
+          onFilterOffers(activeCategory, checked);
         }}>
           <h2 className="filter__main-title">Фильтр</h2>
           <Categories
             categories = {categories}
+            activeCategory = {activeCategory}
             isShow = {isShowCategories}
             onShowCategories = {onShowCategories}
             onLoadOffersByCategory = {onLoadOffersByCategory}
@@ -68,6 +84,7 @@ Filter.propTypes = {
 const mapStateToProps = (state) => ({
   filters: getFilters(state),
   categories: getCategories(state),
+  activeCategory: getActiveCategory(state),
   isShowCategories: getIsShowCategories(state),
   isShowFilter: getIsShowFilter(state),
 });
@@ -84,6 +101,12 @@ const mapDispatchToProps = (dispatch) => ({
   onLoadOffersByCategory(id) {
     dispatch(Operation.loadStartOffers(id));
     dispatch(ActionCreator.changeActiveCategory(id));
+    dispatch(ActionCreator.showFilter(true));
+  },
+
+  onFilterOffers(id, request) {
+    dispatch(Operation.loadStartOffers(id, request));
+    dispatch(ActionCreator.showFilter(true));
   }
 });
 

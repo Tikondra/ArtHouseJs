@@ -11,3 +11,5 @@ export const getIsShowCategories = (state) => state.isShowCategories;
 export const getIsShowFilter = (state) => state.isShowFilter;
 
 export const getActiveCategory = (state) => state.activeCategory;
+
+export const getActiveFilter = (state) => state.request;

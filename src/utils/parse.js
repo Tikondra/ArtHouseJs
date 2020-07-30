@@ -3,7 +3,7 @@ import {getParametersLight} from "./parameters-light";
 
 const isTrue = (it) => it ? it : ``;
 
-const clearImg = (images) => images.filter((it) => it.endsWith(`jpg`) || it.endsWith(`JPG`));
+const clearImg = (images) => images.filter((it) => it.endsWith(`jpg`) || it.endsWith(`JPG`) || it.endsWith(`jpeg`));
 
 export const parseData = (offers) => {
   return offers.reduce((cardList, offer) => {
@@ -22,6 +22,7 @@ export const parseData = (offers) => {
       material: isTrue(offer.material),
       article: isTrue(offer.articule),
       shop: offer.shop,
+      href: `card?${offer.id}`
     };
     cardList.push(product);
     return cardList;
@@ -43,15 +44,18 @@ export const parseCategories = (categories) => {
 
 export const parseDataLight = (offers) => offers.map((offer) => {
   const parameters = getParametersLight(offer.param);
+  const image = clearImg(offer.image.split(`;`));
+  const id = offer.id_tovar;
 
   return ({
     title: offer.name,
     price: offer.price,
-    image: offer.image,
+    image,
     categoryId: offer.categoryId,
-    id: offer.id,
+    id,
     vendor: offer.vendor,
     parameters,
+    href: `card-light?${id}`
   });
 });
 

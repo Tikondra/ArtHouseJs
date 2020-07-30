@@ -1,5 +1,6 @@
 import {renderBasketItem} from "../render/render-basket-items";
 import {extend} from "./utils";
+import {parseDataLight} from "./parse";
 
 const basket = document.querySelector(`.basket`);
 const basketContainer = basket.querySelector(`.basket__items`);
@@ -98,6 +99,29 @@ export const onAddBasket = (evt, offersModel) => {
     } else {
       addBasket(basketContainerToScroll, card);
     }
+  }
+};
+
+export const onAddBasketForLight = (evt) => {
+  if (evt.target.tagName === `BUTTON`) {
+    const cardId = evt.target.parentElement.dataset.id;
+    fetch(`/wp-json/myplugin/v1/light/${cardId}`)
+      .then((response) => response.json())
+      .then(parseDataLight) // возвращает массив
+      .then((card) => {
+        const basketItems = basket.querySelectorAll(`.basket__item`);
+        const basketContainerToScroll = basket.querySelector(`#mCSB_1_container`);
+        const oldCard = basket.querySelector(`[data-id="` + card[0].id + `"]`);
+        const check = evt.target.parentElement.querySelector(`.check`);
+
+        addCheck(check);
+
+        if (basketItems.length !== 0 && oldCard) {
+          updateBasket(oldCard, card[0]);
+        } else {
+          addBasket(basketContainerToScroll, card[0]);
+        }
+      });
   }
 };
 

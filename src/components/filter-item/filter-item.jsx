@@ -13,7 +13,7 @@ const getCheckboxes = (items) => items.map((it) => {
 
 const FilterItem = ({filter: {type, title, items}}) => {
   return (
-    <div className="filter__item" datatype={type} onClick={(evt) => {
+    <div className="filter__item" data-type={type} onClick={(evt) => {
       if (evt.target.tagName !== `LABEL` && evt.target.tagName !== `INPUT`) {
         evt.currentTarget.classList.toggle(`filter__item--open`);
       }

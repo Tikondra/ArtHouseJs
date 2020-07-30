@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Card from "../card/card.jsx";
+import {onAddBasketForLight} from "../../utils/basket";
 
 const getOfferCard = (offers) => offers.map((offer) => {
   return (
@@ -15,7 +16,10 @@ const CardList = ({offers, showingOffersCount}) => {
   const showingOffers = offers.slice(0, showingOffersCount);
 
   return (
-    <ul className="cards">
+    <ul className="cards" onClick={(evt) => {
+      evt.persist();
+      onAddBasketForLight(evt);
+    }}>
       {getOfferCard(showingOffers)}
     </ul>
   );

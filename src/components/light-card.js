@@ -19,7 +19,7 @@ const createCard = (card) => {
   return (
     `<li class="cards__item">
         <a class="cards__link" href="card-light?${id}">
-            <img src=${image} width="213" height="213" alt="${title}">
+            <img src=${image[0]} width="213" height="213" alt="${title}">
         </a>
         <h3 class="cards__title">${title}</h3>
         <p class="cards__info">Бренд: ${parameters.current.brend}</p>
