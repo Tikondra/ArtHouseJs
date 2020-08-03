@@ -7,16 +7,21 @@ import {
   getActiveFilter,
   getIsShowCategories,
   getOffers,
-  getShowingOffersCount
+  getShowingOffersCount, getSortType
 } from "../../reducer/selectors";
 import {ActionCreator, Operation} from "../../reducer/data";
 import {connect} from "react-redux";
 
-const Catalog = ({offers, showingOffersCount, activeCategory, activeFilter, onMoreView}) => {
+const Catalog = ({offers, showingOffersCount, activeCategory, activeFilter, sortType, onMoreView, onChangeSortType}) => {
   return (
     <section className="store-content__cards">
       <h1 className="store-content__title visually-hidden">Свет</h1>
-      <Sort/>
+      <Sort
+        activeFilter = {activeFilter}
+        activeCategory = {activeCategory}
+        sortType = {sortType}
+        onChangeSortType = {onChangeSortType}
+      />
       <CardList
         offers = {offers}
         showingOffersCount = {showingOffersCount}
@@ -26,7 +31,7 @@ const Catalog = ({offers, showingOffersCount, activeCategory, activeFilter, onMo
           className="store-content__btn-more"
           type="button"
           onClick={() => {
-            onMoreView(activeCategory, activeFilter);
+            onMoreView(activeCategory, activeFilter, sortType);
           }}
         >
           Показать еще
@@ -40,7 +45,10 @@ Catalog.propTypes = {
   offers: PropTypes.array.isRequired,
   showingOffersCount: PropTypes.number.isRequired,
   activeCategory: PropTypes.string,
+  activeFilter: PropTypes.array,
+  sortType: PropTypes.string,
   onMoreView: PropTypes.func.isRequired,
+  onChangeSortType: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -49,12 +57,17 @@ const mapStateToProps = (state) => ({
   isShowCategories: getIsShowCategories(state),
   activeCategory: getActiveCategory(state),
   activeFilter: getActiveFilter(state),
+  sortType: getSortType(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onMoreView(id, request) {
+  onMoreView(id, request, sortType) {
     dispatch(ActionCreator.moreView());
-    dispatch(Operation.loadOffers(id, request));
+    dispatch(Operation.loadOffers(id, request, sortType));
+  },
+
+  onChangeSortType(id, request, sortType) {
+    dispatch(Operation.loadStartOffers(id, request, sortType));
   }
 });
 

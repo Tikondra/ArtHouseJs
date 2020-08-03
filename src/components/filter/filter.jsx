@@ -3,18 +3,18 @@ import PropTypes from "prop-types";
 import Categories from "../categories/categories.jsx";
 import FilterList from "../filter-list/filter-list.jsx";
 import {
-  getActiveCategory,
+  getActiveCategory, getActiveFilter,
   getCategories,
   getFilters,
   getIsShowCategories,
-  getIsShowFilter
+  getIsShowFilter, getSortType
 } from "../../reducer/selectors";
 import {connect} from "react-redux";
 import {ActionCreator, Operation} from "../../reducer/data";
 import {getChecked} from "../../utils/utils";
 
 const Filter = ({
-  filters, categories, isShowCategories, isShowFilter, activeCategory,
+  filters, categories, isShowCategories, isShowFilter, activeCategory, activeFilter, sortType,
   onShowCategories, onShowFilter, onLoadOffersByCategory, onFilterOffers
 }) => {
   const showClass = isShowFilter ? `filter--open` : ``;
@@ -39,12 +39,14 @@ const Filter = ({
           const checkedBySetup = getChecked(filterBox, `21`);
           const checked = [...checkedByBrand, ...checkedByCountry, ...checkedByStyle, ...checkedByColor, ...checkedBySetup];
 
-          onFilterOffers(activeCategory, checked);
+          onFilterOffers(activeCategory, checked, sortType);
         }}>
           <h2 className="filter__main-title">Фильтр</h2>
           <Categories
             categories = {categories}
+            activeFilter = {activeFilter}
             activeCategory = {activeCategory}
+            sortType = {sortType}
             isShow = {isShowCategories}
             onShowCategories = {onShowCategories}
             onLoadOffersByCategory = {onLoadOffersByCategory}
@@ -75,8 +77,11 @@ Filter.propTypes = {
   filters: PropTypes.array.isRequired,
   categories: PropTypes.array.isRequired,
   isShowCategories: PropTypes.bool.isRequired,
-  onShowCategories: PropTypes.func.isRequired,
   isShowFilter: PropTypes.bool.isRequired,
+  activeCategory: PropTypes.string,
+  activeFilter: PropTypes.array,
+  sortType: PropTypes.string,
+  onShowCategories: PropTypes.func.isRequired,
   onShowFilter: PropTypes.func.isRequired,
   onLoadOffersByCategory: PropTypes.func.isRequired,
 };
@@ -85,6 +90,8 @@ const mapStateToProps = (state) => ({
   filters: getFilters(state),
   categories: getCategories(state),
   activeCategory: getActiveCategory(state),
+  activeFilter: getActiveFilter(state),
+  sortType: getSortType(state),
   isShowCategories: getIsShowCategories(state),
   isShowFilter: getIsShowFilter(state),
 });
@@ -98,14 +105,14 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(ActionCreator.showFilter(state));
   },
 
-  onLoadOffersByCategory(id) {
-    dispatch(Operation.loadStartOffers(id));
+  onLoadOffersByCategory(id, request, sortType) {
+    dispatch(Operation.loadStartOffers(id, request, sortType));
     dispatch(ActionCreator.changeActiveCategory(id));
     dispatch(ActionCreator.showFilter(true));
   },
 
-  onFilterOffers(id, request) {
-    dispatch(Operation.loadStartOffers(id, request));
+  onFilterOffers(id, request, sortType) {
+    dispatch(Operation.loadStartOffers(id, request, sortType));
     dispatch(ActionCreator.showFilter(true));
   }
 });

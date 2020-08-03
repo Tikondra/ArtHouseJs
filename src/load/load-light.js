@@ -11,8 +11,8 @@ const sortSelect = document.querySelector(`.store-content__sort-select`);
 export const loadDataToLight = () => {
   const strGET = window.location.search.replace(`?`, ``);
   const offersModel = new OffersModel();
-  const sqlStart = `start=0`;
-  const sqlEnd = `end=5000`;
+  const sqlStart = `start=10000`;
+  const sqlEnd = `end=20000`;
   const loadLight = fetch(`/wp-json/myplugin/v1/light?${sqlStart}&${sqlEnd}`);
 
   loadLight

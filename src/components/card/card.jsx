@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {getPrice} from "../../utils/utils";
 
 const getOldPrice = (priceOld) => {
@@ -37,6 +38,16 @@ const Card = ({offer}) => {
       <button className="cards__add-basket-btn">В корзину</button>
     </li>
   );
+};
+
+Card.propTypes = {
+  offer: PropTypes.shape({
+    parameters: PropTypes.object.isRequired,
+    title: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired,
+    image: PropTypes.array.isRequired,
+    id: PropTypes.string.isRequired,
+  })
 };
 
 export default Card;

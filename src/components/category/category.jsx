@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Category = ({category: {title, id}, activeCategory, type, subCategories = [], onLoadOffersByCategory}) => {
+const Category = ({category: {title, id}, activeCategory, activeFilter, sortType, type, subCategories = [], onLoadOffersByCategory}) => {
   const svg = subCategories.length > 0 ?
     <svg className="sort__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" width="26" height="26" fill="none">
       <use xlinkHref="#icon-arrow"/>
@@ -21,7 +21,7 @@ const Category = ({category: {title, id}, activeCategory, type, subCategories = 
       <a className={`sort__link ${activeClass}`} href="" id={id} onClick={(evt) => {
         evt.preventDefault();
         if (type === `sub`) {
-          onLoadOffersByCategory(id);
+          onLoadOffersByCategory(id, activeFilter, sortType);
         }
       }}>
         {svg}
@@ -36,7 +36,9 @@ const Category = ({category: {title, id}, activeCategory, type, subCategories = 
                   key = {it.id}
                   type={`sub`}
                   category = {it}
+                  activeFilter = {activeFilter}
                   activeCategory = {activeCategory}
+                  sortType = {sortType}
                   onLoadOffersByCategory = {onLoadOffersByCategory}
                 />
               );
@@ -57,6 +59,9 @@ Category.propTypes = {
   }).isRequired,
   type: PropTypes.string.isRequired,
   subCategories: PropTypes.array,
+  activeCategory: PropTypes.string,
+  activeFilter: PropTypes.array,
+  sortType: PropTypes.string,
   onLoadOffersByCategory: PropTypes.func.isRequired,
 };
 

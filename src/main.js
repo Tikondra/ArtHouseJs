@@ -63,6 +63,7 @@ const search = document.querySelector(`.search`);
 
 search.addEventListener(`submit`, (evt) => {
   evt.preventDefault();
+  document.location.href = `https://arthouse-decor.ru/search/`;
 
   const getData = search.querySelector(`.search__input`).value;
   const getSearchItems = fetch(`/wp-json/myplugin/v1/search/${getData}`);

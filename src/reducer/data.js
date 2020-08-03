@@ -1,6 +1,5 @@
 import {parseCategoriesLight, parseDataLight, parseFiltersLight} from "../utils/parse";
 import {extend, preloader} from "../utils/utils";
-import {TypeSort} from "../utils/consts";
 
 const initialState = {
   offers: [],
@@ -9,7 +8,7 @@ const initialState = {
   showingOffers: 9,
   activeCategory: null,
   request: [],
-  sortType: TypeSort.DEFAULT,
+  sortType: null,
   isShowCategories: false,
   isShowFilter: false,
 };
@@ -26,18 +25,6 @@ const getFetchConfig = (id = ``, request = [], sortType = ``, sqlStart, sqlEnd) 
   let typeSort = sortType ? `&sort=ORDER BY \`price\` ${sortType}` : ``;
   let sorting = request.length > 0 ? `&sorting=${sqlRequest}` : ``;
 
-  // if (id && request.length > 0) {
-  //   category = `&category=${id}`;
-  //   sorting = `&sorting=${JSON.stringify(request)}`;
-  //   fetch = `/light-for-sorting-and-category?${sqlStart}&${sqlEnd}${category}${sorting}`;
-  // } else if (id && request.length === 0) {
-  //   category = `&category=${id}`;
-  //   fetch = `/light-for-category?${sqlStart}&${sqlEnd}${category}`;
-  // } else if (!id && request.length > 0) {
-  //   sorting = `&sorting=${JSON.stringify(request)}`;
-  //   fetch = `/light-for-sorting?${sqlStart}&${sqlEnd}${sorting}`;
-  // }
-
   return `/light?${sqlStart}&${sqlEnd}${category}${sorting}${typeSort}`;
 };
 
@@ -50,7 +37,8 @@ const ActionType = {
   SHOW_CATEGORIES: `SHOW_CATEGORIES`,
   SHOW_FILTER: `SHOW_FILTER`,
   CHANGE_ACTIVE_CATEGORY: `CHANGE_ACTIVE_CATEGORY`,
-  CHANGE_REQUEST: `CHANGE_REQUEST`
+  CHANGE_REQUEST: `CHANGE_REQUEST`,
+  CHANGE_SORT_TYPE: `CHANGE_SORT_TYPE`,
 };
 
 const ActionCreator = {
@@ -115,7 +103,14 @@ const ActionCreator = {
       type: ActionType.CHANGE_REQUEST,
       payload: activeFilter
     };
-  }
+  },
+
+  changeSortType: (sortType) => {
+    return {
+      type: ActionType.CHANGE_SORT_TYPE,
+      payload: sortType,
+    };
+  },
 };
 
 const Operation = {
@@ -147,6 +142,12 @@ const Operation = {
 
         if (request) {
           dispatch(ActionCreator.changeRequest(request));
+        }
+
+        if (sortType) {
+          dispatch(ActionCreator.changeSortType(sortType));
+        } else {
+          dispatch(ActionCreator.changeSortType(null));
         }
       })
       .then(preloader);
@@ -211,6 +212,11 @@ const reducer = (state = initialState, action) => {
     case ActionType.CHANGE_REQUEST:
       return extend(state, {
         request: action.payload,
+      });
+
+    case ActionType.CHANGE_SORT_TYPE:
+      return extend(state, {
+        sortType: action.payload,
       });
   }
 

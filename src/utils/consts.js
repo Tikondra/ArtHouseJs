@@ -36,9 +36,3 @@ export const SortType = {
   PRICE_UP: `price-up`,
   PRICE_DOWN: `price-down`
 };
-
-export const TypeSort = {
-  DEFAULT: ``,
-  PRICE_UP: `ASC`,
-  PRICE_DOWN: `DESC`
-};
