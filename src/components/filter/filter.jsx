@@ -8,9 +8,9 @@ import {
   getFilters,
   getIsShowCategories,
   getIsShowFilter, getSortType
-} from "../../reducer/selectors";
+} from "../../reducer/light/selectors";
 import {connect} from "react-redux";
-import {ActionCreator, Operation} from "../../reducer/data";
+import {ActionCreator, Operation} from "../../reducer/light/data";
 import {getChecked} from "../../utils/utils";
 
 const Filter = ({

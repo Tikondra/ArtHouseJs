@@ -8,8 +8,8 @@ import {
   getIsShowCategories,
   getOffers,
   getShowingOffersCount, getSortType
-} from "../../reducer/selectors";
-import {ActionCreator, Operation} from "../../reducer/data";
+} from "../../reducer/light/selectors";
+import {ActionCreator, Operation} from "../../reducer/light/data";
 import {connect} from "react-redux";
 
 const Catalog = ({offers, showingOffersCount, activeCategory, activeFilter, sortType, onMoreView, onChangeSortType}) => {

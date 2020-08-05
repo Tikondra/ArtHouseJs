@@ -5,6 +5,9 @@ export const LOCAL_DECOR = `https://arthouse-decor.ru/wp-content/themes/ArtHouse
 export const LOCAL_LIGHT = `https://arthouse-decor.ru/wp-content/themes/ArtHouse/assets/data/test.xml`;
 export const LOCAL_FURNITURE = `https://arthouse-decor.ru/wp-content/themes/ArtHouse/assets/data/stoly.xml`;
 export const LOCAL_CHAIRS = `https://arthouse-decor.ru/wp-content/themes/ArtHouse/assets/data/stulya.xml`;
+export const LOCAL_FURNITURE2 = `http://mabzcekh.beget.tech/wp-content/themes/ArtHouse/assets/data/stoly.xml`;
+export const LOCAL_CHAIRS2 = `http://mabzcekh.beget.tech/wp-content/themes/ArtHouse/assets/data/stulya.xml`;
+export const LOCAL_LIGHT2 = `https://arthouse-decor.ru/wp-content/themes/ArtHouse/assets/data/light.xml`;
 
 export const Place = {
   AFTERBEGIN: `afterbegin`,

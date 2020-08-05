@@ -4,29 +4,26 @@ import {loadDataToProduct} from "./load/load-card-page";
 import {loadDecorCard} from "./load/load-card";
 import {initBasket} from "./utils/basket";
 import {loadLightCardPage} from "./load/load-card-light-page";
-import {LOCAL_CHAIRS, LOCAL_FURNITURE} from "./utils/consts";
+import {LOCAL_CHAIRS2, LOCAL_FURNITURE2} from "./utils/consts";
 import React from "react";
 import ReactDOM from "react-dom";
 import {Provider} from "react-redux";
 import {store} from "./store";
 import App from "./components/app/app.jsx";
-import {Operation} from "./reducer/data";
+import {Operation as LightOperation} from "./reducer/light/data";
+import {initSearch} from "./utils/search";
 
 if (document.querySelector(`#root`)) {
-  store.dispatch(Operation.loadStartOffers());
-  store.dispatch(Operation.loadFilters());
-  store.dispatch(Operation.loadCategories());
+  store.dispatch(LightOperation.loadStartOffers());
+  store.dispatch(LightOperation.loadFilters());
+  store.dispatch(LightOperation.loadCategories());
 
-  const init = () => {
-    ReactDOM.render(
-        <Provider store={store}>
-          <App/>
-        </Provider>,
-        document.querySelector(`#root`)
-    );
-  };
-
-  init();
+  ReactDOM.render(
+      <Provider store={store}>
+        <App/>
+      </Provider>,
+      document.querySelector(`#root`)
+  );
 }
 
 if (document.querySelector(`.decor-js`)) {
@@ -44,32 +41,19 @@ if (document.querySelector(`.product-light`)) {
 }
 
 if (document.querySelector(`.furniture-js`)) {
-  load(loadDataToFurniture, LOCAL_FURNITURE);
+  load(loadDataToFurniture, LOCAL_FURNITURE2);
 }
 if (document.querySelector(`.product-furniture`)) {
-  load(loadDataToProduct, LOCAL_FURNITURE, `furniture`, true);
+  load(loadDataToProduct, LOCAL_FURNITURE2, `furniture`, true);
 }
 
 if (document.querySelector(`.chairs-js`)) {
-  load(loadDataToChairs, LOCAL_CHAIRS);
+  load(loadDataToChairs, LOCAL_CHAIRS2);
 }
 if (document.querySelector(`.product-chair`)) {
-  load(loadDataToProduct, LOCAL_CHAIRS, `chair`, true);
+  load(loadDataToProduct, LOCAL_CHAIRS2, `chair`, true);
 }
 
 initBasket();
+initSearch();
 
-const search = document.querySelector(`.search`);
-
-search.addEventListener(`submit`, (evt) => {
-  evt.preventDefault();
-  document.location.href = `https://arthouse-decor.ru/search/`;
-
-  const getData = search.querySelector(`.search__input`).value;
-  const getSearchItems = fetch(`/wp-json/myplugin/v1/search/${getData}`);
-
-  getSearchItems
-    .then((response) => response.json())
-    // eslint-disable-next-line no-console
-    .then((res) => console.log(res));
-});

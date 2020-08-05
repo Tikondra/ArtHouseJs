@@ -126,7 +126,7 @@ export const onAddBasketForLight = (evt) => {
 };
 
 export const onAddBasketCard = (evt, card) => {
-  if (evt.target.tagName === `BUTTON`) {
+  if (evt.target.classList.contains(`cards__add-basket-btn`)) {
     const basketContainerToScroll = basket.querySelector(`#mCSB_1_container`);
     const basketItems = basket.querySelectorAll(`.basket__item`);
     const oldCard = basket.querySelector(`[data-id="` + card.id + `"]`);
@@ -165,7 +165,7 @@ const sendOrder = () => {
     const formData = new FormData(form);
 
     const xhr = new XMLHttpRequest();
-    xhr.open(`POST`, `https://arthouse-decor.ru/wp-content/themes/ArtHouse/assets/send.php`);
+    xhr.open(`POST`, `http://mabzcekh.beget.tech/wp-content/themes/ArtHouse/assets/send.php`);
     xhr.send(formData);
 
     const basketItems = basket.querySelectorAll(`.basket__item`);
