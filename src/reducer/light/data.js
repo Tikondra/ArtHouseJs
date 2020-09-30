@@ -40,6 +40,7 @@ const ActionType = {
   CHANGE_ACTIVE_CATEGORY: `CHANGE_ACTIVE_CATEGORY`,
   CHANGE_REQUEST: `CHANGE_REQUEST`,
   CHANGE_SORT_TYPE: `CHANGE_SORT_TYPE`,
+  RESET_FILTERS: `RESET_FILTERS`,
 };
 
 const ActionCreator = {
@@ -112,6 +113,13 @@ const ActionCreator = {
       payload: sortType,
     };
   },
+
+  resetFilters: () => {
+    return {
+      type: ActionType.RESET_FILTERS,
+      payload: true,
+    };
+  }
 };
 
 const Operation = {
@@ -218,6 +226,13 @@ const reducer = (state = initialState, action) => {
     case ActionType.CHANGE_SORT_TYPE:
       return extend(state, {
         sortType: action.payload,
+      });
+
+    case ActionType.RESET_FILTERS:
+      return extend(state, {
+        activeCategory: null,
+        request: [],
+        sortType: null,
       });
   }
 

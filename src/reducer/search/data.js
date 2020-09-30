@@ -1,5 +1,5 @@
 import {extend} from "../../utils/utils";
-import {parseData} from "../../utils/parse";
+import {parseData, parseDataLight} from "../../utils/parse";
 import NameSpace from "../name-space";
 
 const initialState = {
@@ -45,36 +45,52 @@ const ActionCreator = {
   },
 };
 
+const from = `from=wp_tovarsgarda`;
+const fromLight = `from=wp_tovarslights`;
+const where = `where=title`;
+const whereLight = `where=name`;
+let gardaResult;
+let lightResult;
+
+const getSearchFetch = (api, sqlStart, sqlEnd, searchRequest) => {
+  return api.get(`/search?${sqlStart}&${sqlEnd}&${searchRequest}&${from}&${where}`)
+    .then((response) => parseData(response.data))
+    .then((offers) => {
+      gardaResult = offers;
+    })
+    .then(() => api.get(`/search?${sqlStart}&${sqlEnd}&${searchRequest}&${fromLight}&${whereLight}`)
+      .then((response) => parseDataLight(response.data))
+      .then((offers) => {
+        lightResult = offers;
+      }));
+};
+
 const Operation = {
   loadMoreSearchOffers: (request) => (dispatch, getState, api) => {
     const offersCount = getState()[NameSpace.SEARCH].searchOffers.length;
     const sqlStart = `start=${offersCount}`;
     const sqlEnd = `end=3`;
     const searchRequest = `search=${request[0]}`;
-    const from = `from=wp_tovarsgarda`;
-    const where = `where=title`;
+    const fetch = getSearchFetch(api, sqlStart, sqlEnd, searchRequest);
 
-    return api.get(`/search?${sqlStart}&${sqlEnd}&${searchRequest}&${from}&${where}`)
-      .then((response) => parseData(response.data))
-      .then((offers) => dispatch(ActionCreator.loadMoreSearchOffers(offers)));
+    return fetch
+      .then(() => dispatch(ActionCreator.loadMoreSearchOffers([...gardaResult, ...lightResult])));
   },
 
   loadSearchOffers: (request) => (dispatch, getState, api) => {
     const sqlStart = `start=0`;
     const sqlEnd = `end=12`;
     const searchRequest = `search=${request[0]}`;
-    const from = `from=wp_tovarsgarda`;
-    const where = `where=title`;
+    const fetch = getSearchFetch(api, sqlStart, sqlEnd, searchRequest);
 
     if (request[0].length > 0) {
-      return api.get(`/search?${sqlStart}&${sqlEnd}&${searchRequest}&${from}&${where}`)
-        .then((response) => parseData(response.data))
-        .then((offers) => {
-          dispatch(ActionCreator.loadOffersSearch(offers));
+      return fetch
+        .then(() => {
+          dispatch(ActionCreator.loadOffersSearch([...gardaResult, ...lightResult]));
           dispatch(ActionCreator.changeSearchRequest(request));
         });
     }
-
+    /** очищает поисковый запрос */
     return () => {
       dispatch(ActionCreator.loadOffersSearch([]));
       dispatch(ActionCreator.changeSearchRequest([]));

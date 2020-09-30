@@ -15,7 +15,7 @@ import {getChecked} from "../../utils/utils";
 
 const Filter = ({
   filters, categories, isShowCategories, isShowFilter, activeCategory, activeFilter, sortType,
-  onShowCategories, onShowFilter, onLoadOffersByCategory, onFilterOffers
+  onShowCategories, onShowFilter, onLoadOffersByCategory, onFilterOffers, onResetFilters
 }) => {
   const showClass = isShowFilter ? `filter--open` : ``;
 
@@ -56,7 +56,7 @@ const Filter = ({
           />
           <div className="filter__btn-box">
             <button className="filter__btn" type="submit">Показать</button>
-            <button className="filter__btn filter__btn--reset" type="reset">
+            <button className="filter__btn filter__btn--reset" type="reset" onClick={onResetFilters}>
               Очистить
             </button>
           </div>
@@ -64,9 +64,7 @@ const Filter = ({
             className="filter__btn-close"
             type="button"
             onClick={() => onShowFilter(isShowFilter)}
-          >
-            Х
-          </button>
+          >Х</button>
         </form>
       </section>
     </Fragment>
@@ -84,6 +82,7 @@ Filter.propTypes = {
   onShowCategories: PropTypes.func.isRequired,
   onShowFilter: PropTypes.func.isRequired,
   onLoadOffersByCategory: PropTypes.func.isRequired,
+  onFilterOffers: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -114,6 +113,10 @@ const mapDispatchToProps = (dispatch) => ({
   onFilterOffers(id, request, sortType) {
     dispatch(Operation.loadStartOffers(id, request, sortType));
     dispatch(ActionCreator.showFilter(true));
+  },
+
+  onResetFilters() {
+    dispatch(ActionCreator.resetFilters());
   }
 });
 

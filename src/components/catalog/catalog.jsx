@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import debounce from "lodash.debounce";
 import Sort from "../sort/sort.jsx";
 import CardList from "../card-list/card-list.jsx";
 import {
@@ -30,9 +31,9 @@ const Catalog = ({offers, showingOffersCount, activeCategory, activeFilter, sort
         <button
           className="store-content__btn-more"
           type="button"
-          onClick={() => {
+          onClick={debounce(() => {
             onMoreView(activeCategory, activeFilter, sortType);
-          }}
+          }, 1000)}
         >
           Показать еще
         </button>
