@@ -1,0 +1,106 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <ul class="breadscrums">
+      <li class="breadscrums__item">
+        <a class="breadscrums__link" href="/"
+          >Главная</a
+        >
+      </li>
+      <li class="breadscrums__item">
+        <a class="breadscrums__link">Контакты</a>
+      </li>
+    </ul>
+    <section class="contacts">
+      <h1 class="contacts__title">Контакты</h1>
+      <div class="contacts__wrapper">
+        <div class="contacts__map-box">
+          <iframe
+            class="contacts__map"
+            src="https://yandex.ru/map-widget/v1/-/COcZVQ78"
+          ></iframe>
+        </div>
+        <div class="contacts__info">
+          <img src="{{ site.theme.link }}/assets/img/arthouse.jpg" width="" height="" alt="ArtHouse" />
+          <h2 class="">Мы находимся</h2>
+          <p class="contacts__address">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 11 16"
+              width="11px"
+              height="16px"
+              fill="#A21418"
+            >
+              <use xlink:href="#icon-pin"></use>
+            </svg>
+            <span>Адрес:</span> Пл. Декабристов, 7
+          </p>
+          <a class="contacts__phone" href="tel:79618124245"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 11 12"
+              width="11px"
+              height="12px"
+              fill="#A21418"
+            >
+              <use xlink:href="#icon-phone"></use>
+            </svg>
+            <span>Телефон:</span> +7 961 812 4245</a
+          >
+          <p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 15 14"
+              width="15px"
+              height="14px"
+              fill="#A21418"
+            >
+              <use xlink:href="#icon-clock"></use>
+            </svg>
+            <span>Режим работы:</span> С&nbsp;9:00&nbsp;до&nbsp;19:00
+          </p>
+          <div class="contacts__social">
+            <span>Социальные сети:</span>
+            <ul class="social">
+              <li class="social__item">
+                <a
+                  class="social__link"
+                  href="https://www.instagram.com/arthouse_30/"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 22 23"
+                    width="25px"
+                    height="25px"
+                    fill="#fff0e9"
+                  >
+                    <use xlink:href="#icon-inst"></use></svg
+                ></a>
+              </li>
+              <li class="social__item">
+                <a
+                  class="social__link social__link--fb"
+                  href="https://www.facebook.com/arthouse30/"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 23 22"
+                    width="25px"
+                    height="25px"
+                    fill="#fff0e9"
+                  >
+                    <use xlink:href="#icon-fb"></use></svg
+                ></a>
+              </li>
+              <!-- <li class="social__item">
+                <a class="social__link social__link--ok" href="">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 22" width="25px" height="25px" fill="#fff0e9">
+                    <use xlink:href="#icon-ok"></use>
+                  </svg>
+                </a>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock %}

@@ -37,3 +37,5 @@ export const sorting = (evt, offersModel, component) => {
 
   renderCards(cardBox, sortedOffers, component);
 };
+
+export const sortingReact = (offers, type) => sortMap[type](offers);

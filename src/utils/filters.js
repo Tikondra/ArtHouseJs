@@ -25,15 +25,11 @@ export const getParametersForChair = (data, parametersMap) => {
   }, []);
 };
 
-export const getFiltersByFurniture = (parameters) => {
+export const getFiltersByFurniture = (offers) => {
   const countries = [];
-  const styles = [];
-  const materials = [];
-  const materialsUp = [];
-  const sizes = [];
-  const rooms = [];
-  const types = [];
-  const forms = [];
+  const vendors = [];
+  const frameMaterials = [];
+  const frameColors = [];
 
   const allFilters = [
     {
@@ -42,60 +38,32 @@ export const getFiltersByFurniture = (parameters) => {
       items: countries
     },
     {
-      type: `style`,
-      title: `Стиль`,
-      items: styles
+      type: `vendor`,
+      title: `Производитель`,
+      items: vendors
     },
     {
-      type: `materialKarkas`,
+      type: `frameMaterial`,
       title: `Материал каркаса`,
-      items: materials
+      items: frameMaterials
     },
     {
-      type: `materialUp`,
-      title: `Материал столешницы`,
-      items: materialsUp
-    },
-    {
-      type: `size`,
-      title: `Размер`,
-      items: sizes
-    },
-    {
-      type: `rooms`,
-      title: `В какую комнату`,
-      items: rooms
-    },
-    {
-      type: `form`,
-      title: `Форма`,
-      items: forms
-    },
-    {
-      type: `type`,
-      title: `По раскладке`,
-      items: types
+      type: `frameColor`,
+      title: `Цвет каркаса`,
+      items: frameColors
     },
   ];
 
-  parameters.map((parameter) => {
+  offers.map((offer) => {
 
-    if (!countries.includes(parameter.parameters.current.country) && parameter.parameters.current.country) {
-      countries.push(parameter.parameters.current.country);
-    } else if (!styles.includes(parameter.parameters.current.style) && parameter.parameters.current.style) {
-      styles.push(parameter.parameters.current.style);
-    } else if (!materials.includes(parameter.parameters.current.materialKarkas) && parameter.parameters.current.materialKarkas) {
-      materials.push(parameter.parameters.current.materialKarkas);
-    } else if (!materialsUp.includes(parameter.parameters.current.materialUp) && parameter.parameters.current.materialUp) {
-      materialsUp.push(parameter.parameters.current.materialUp);
-    } else if (!sizes.includes(parameter.parameters.current.size) && parameter.parameters.current.size) {
-      sizes.push(parameter.parameters.current.size);
-    } else if (!rooms.includes(parameter.parameters.current.room) && parameter.parameters.current.room) {
-      rooms.push(parameter.parameters.current.room);
-    } else if (!forms.includes(parameter.parameters.current.form) && parameter.parameters.current.form) {
-      forms.push(parameter.parameters.current.form);
-    } else if (!types.includes(parameter.parameters.current.type) && parameter.parameters.current.type) {
-      types.push(parameter.parameters.current.type);
+    if (!countries.includes(offer.country) && offer.country) {
+      countries.push(offer.country);
+    } else if (!vendors.includes(offer.vendor) && offer.vendor) {
+      vendors.push(offer.vendor);
+    } else if (!frameMaterials.includes(offer.frameMaterial) && offer.frameMaterial) {
+      frameMaterials.push(offer.frameMaterial);
+    } else if (!frameColors.includes(offer.frameColor) && offer.frameColor) {
+      frameColors.push(offer.frameColor);
     }
   });
 
@@ -163,70 +131,44 @@ export const getFiltersByChair = (parameters) => {
   return allFilters;
 };
 
-export const getSortedOffersByFurniture = (container, offers) => {
+export const getSortedOffersByFurniture = (offers) => {
+  const container = document.querySelector(`.filter__box`);
+
   const checkedByCountry = getChecked(container, `country`);
-  const checkedByStyle = getChecked(container, `style`);
-  const checkedByMaterialBase = getChecked(container, `materialKarkas`);
-  const checkedByMaterialUp = getChecked(container, `materialUp`);
-  const checkedBySize = getChecked(container, `size`);
-  const checkedByRoom = getChecked(container, `rooms`);
-  const checkedByForm = getChecked(container, `form`);
-  const checkedByType = getChecked(container, `type`);
+  const checkedByVendor = getChecked(container, `vendor`);
+  const checkedByFrameMaterial = getChecked(container, `frameMaterial`);
+  const checkedByFrameColor = getChecked(container, `frameColor`);
 
   const checked = [
+    ...checkedByVendor,
     ...checkedByCountry,
-    ...checkedByStyle,
-    ...checkedByMaterialBase,
-    ...checkedByMaterialUp,
-    ...checkedBySize,
-    ...checkedByRoom,
-    ...checkedByForm,
-    ...checkedByType,
+    ...checkedByFrameMaterial,
+    ...checkedByFrameColor
   ];
 
   let sortedOffers = offers;
 
   if (checked.length > 0) {
-    sortedOffers = offers.filter((it) => {
+    sortedOffers = offers.filter((offer) => {
       if (checkedByCountry.length === 0) {
         return true;
       }
-      return checkedByCountry.includes(it.parameters.current.country);
-    }).filter((it) => {
-      if (checkedByStyle.length === 0) {
+      return checkedByCountry.includes(offer.country);
+    }).filter((offer) => {
+      if (checkedByVendor.length === 0) {
         return true;
       }
-      return checkedByStyle.includes(it.parameters.current.style);
+      return checkedByVendor.includes(offer.vendor);
     }).filter((it) => {
-      if (checkedByMaterialBase.length === 0) {
+      if (checkedByFrameMaterial.length === 0) {
         return true;
       }
-      return checkedByMaterialBase.includes(it.parameters.current.materialKarkas);
+      return checkedByFrameMaterial.includes(it.frameMaterial);
     }).filter((it) => {
-      if (checkedByMaterialUp.length === 0) {
+      if (checkedByFrameColor.length === 0) {
         return true;
       }
-      return checkedByMaterialUp.includes(it.parameters.current.materialUp);
-    }).filter((it) => {
-      if (checkedBySize.length === 0) {
-        return true;
-      }
-      return checkedBySize.includes(it.parameters.current.size);
-    }).filter((it) => {
-      if (checkedByRoom.length === 0) {
-        return true;
-      }
-      return checkedByRoom.includes(it.parameters.current.room);
-    }).filter((it) => {
-      if (checkedByForm.length === 0) {
-        return true;
-      }
-      return checkedByForm.includes(it.parameters.current.form);
-    }).filter((it) => {
-      if (checkedByType.length === 0) {
-        return true;
-      }
-      return checkedByType.includes(it.parameters.current.type);
+      return checkedByFrameColor.includes(it.frameColor);
     });
   }
 

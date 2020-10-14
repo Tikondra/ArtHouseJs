@@ -2,17 +2,16 @@ import AbstractComponent from "../abstract/AbstractComponent";
 import {getPrice} from "../utils/utils";
 
 const createCard = (card) => {
-  const {title, image, parameters, id} = card;
-  const price = Math.floor(parameters.current.price);
+  const {title, image, id, price, vendor, country, href} = card;
 
   return (
     `<li class="cards__item" data-id="${id}">
-        <a class="cards__link" href="card-furniture?${id}">
-            <img src=${image} width="213" height="213" alt="${title}">
+        <a class="cards__link" href=${href}>
+            <img src=${image[0]} width="213" height="213" alt="${title}">
         </a>
         <h3 class="cards__title">${title}</h3>
-        <p class="cards__info">Бренд: ${parameters.current.brand}</p>
-        <p class="cards__info">Страна: ${parameters.current.country}</p>
+        <p class="cards__info">Бренд: ${vendor}</p>
+        <p class="cards__info">Страна: ${country}</p>
         <p class="cards__price">${getPrice(price)} ₽</p>
         <div class="check">
           <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">

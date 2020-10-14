@@ -142,8 +142,24 @@ export const onAddBasketCard = (evt, card) => {
   }
 };
 
+export const onAddBasketCardReact = (evt, card) => {
+  const basketContainerToScroll = basket.querySelector(`#mCSB_1_container`);
+  const basketItems = basket.querySelectorAll(`.basket__item`);
+  const oldCard = basket.querySelector(`[data-id="` + card.id + `"]`);
+  const check = evt.target.parentElement.querySelector(`.check`);
+
+  addCheck(check);
+
+  if (basketItems.length !== 0 && oldCard) {
+    updateBasket(oldCard, card);
+  } else {
+    addBasket(basketContainerToScroll, card);
+  }
+};
+
 const sendOrder = () => {
   const form = document.querySelector(`.order__form`);
+  const formSuccess = document.querySelector(`.order__success`);
 
   form.addEventListener(`submit`, (evt) => {
     evt.preventDefault();
@@ -165,7 +181,7 @@ const sendOrder = () => {
     const formData = new FormData(form);
 
     const xhr = new XMLHttpRequest();
-    xhr.open(`POST`, `http://mabzcekh.beget.tech/wp-content/themes/ArtHouse/assets/send.php`);
+    xhr.open(`POST`, `https://arthouse-decor.ru/wp-content/themes/ArtHouse/assets/send.php`);
     xhr.send(formData);
 
     const basketItems = basket.querySelectorAll(`.basket__item`);
@@ -175,6 +191,10 @@ const sendOrder = () => {
     basketItems.forEach((it) => it.remove());
     basketSum.textContent = `0`;
     basketEmpty.classList.remove(`basket__empty--hide`);
+    formSuccess.classList.remove(`order__success--hide`);
+    setTimeout(() => {
+      formSuccess.classList.add(`order__success--hide`);
+    }, 2000);
   });
 };
 

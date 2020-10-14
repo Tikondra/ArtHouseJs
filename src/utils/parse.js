@@ -10,7 +10,7 @@ export const parseData = (offers) => {
     const price = offer.price;
     const sale = Math.floor(getPercent(price, 20));
     const image = clearImg(offer.picture.split(`;`));
-    const categoryId = delLastItem(offer.cat.split(`;`));
+    const categoryId = delLastItem(offer.categories.split(`;`));
 
     const product = {
       title: offer.title,
@@ -20,7 +20,7 @@ export const parseData = (offers) => {
       categoryId,
       id: offer.id,
       material: isTrue(offer.material),
-      article: isTrue(offer.articule),
+      article: isTrue(offer.article),
       shop: offer.shop,
       href: `card?${offer.id}`
     };
@@ -33,8 +33,8 @@ export const parseCategories = (categories) => {
   return categories.reduce((categoriesList, category) => {
     const cat = {
       title: category.title,
-      id: category.self_id,
-      parentId: category.parent_id,
+      id: category.id,
+      parentId: category.parentId,
     };
 
     categoriesList.push(cat);
@@ -82,3 +82,22 @@ export const parseFiltersLight = (filters) => filters.map((filter) => {
   });
 });
 
+export const parseFurniture = (offers) => offers.map((offer) => {
+  const id = `furniture-${offer.id}`;
+  const image = offer.image.split(` `);
+
+  return ({
+    id,
+    article: offer.article,
+    title: offer.title,
+    price: offer.price,
+    vendor: offer.vendor,
+    country: offer.country,
+    description: offer.description,
+    image,
+    categoryId: Number(offer.category),
+    href: `card-furniture?${offer.id}`,
+    frameMaterial: offer.frame_material,
+    frameColor: offer.frame_color,
+  });
+});
