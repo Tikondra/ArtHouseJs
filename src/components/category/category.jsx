@@ -22,6 +22,8 @@ const Category = ({category: {title, id}, activeCategory, activeFilter, sortType
         evt.preventDefault();
         if (type === `sub`) {
           onLoadOffersByCategory(id, activeFilter, sortType);
+        } else {
+          onLoadOffersByCategory(id, activeFilter, sortType, subCategories);
         }
       }}>
         {svg}

@@ -104,8 +104,8 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(ActionCreator.showFilter(state));
   },
 
-  onLoadOffersByCategory(id, request, sortType) {
-    dispatch(Operation.loadStartOffers(id, request, sortType));
+  onLoadOffersByCategory(id, request, sortType, subCategories) {
+    dispatch(Operation.loadStartOffers(id, request, sortType, subCategories));
     dispatch(ActionCreator.changeActiveCategory(id));
     dispatch(ActionCreator.showFilter(true));
   },

@@ -14,7 +14,12 @@ const initialState = {
   isShowFilter: false,
 };
 
-const getFetchConfig = (id = ``, request = [], sortType = ``, sqlStart, sqlEnd) => {
+const getCategoriesSql = (idList) => {
+  const sql = idList.map((it, i) => i < idList.length - 1 ? `\`categoryId\` = ${it} OR` : `\`categoryId\` = ${it}`);
+  return sql.join(` `);
+};
+
+const getFetchConfig = (id = ``, request = [], sortType = ``, sqlStart, sqlEnd, idList) => {
   let sqlRequest = ``;
   if (request.length > 0) {
     request.map((it) => {
@@ -22,7 +27,12 @@ const getFetchConfig = (id = ``, request = [], sortType = ``, sqlStart, sqlEnd) 
     });
   }
 
-  let category = id ? `&category=AND \`categoryId\` = ${id}` : ``;
+  let category = ``;
+  if (idList.length) {
+    category = `&category=AND ${getCategoriesSql(idList)}`;
+  } else if (id) {
+    category = `&category=AND \`categoryId\` = ${id}`;
+  }
   let typeSort = sortType ? `&sort=ORDER BY \`price\` ${sortType}` : ``;
   let sorting = request.length > 0 ? `&sorting=${sqlRequest}` : ``;
 
@@ -135,11 +145,16 @@ const Operation = {
       .then((offers) => dispatch(ActionCreator.loadMoreOffers(offers)));
   },
 
-  loadStartOffers: (id, request, sortType) => (dispatch, getState, api) => {
+  loadStartOffers: (id, request, sortType, subCategories = []) => (dispatch, getState, api) => {
     const sqlStart = `start=0`;
     const sqlEnd = `end=12`;
+    const idList = [];
 
-    const fetch = getFetchConfig(id, request, sortType, sqlStart, sqlEnd);
+    if (subCategories.length) {
+      subCategories.map((it) => idList.push(it.id));
+    }
+
+    const fetch = getFetchConfig(id, request, sortType, sqlStart, sqlEnd, idList);
 
     return api.get(fetch)
       .then((response) => parseDataLight(response.data))
